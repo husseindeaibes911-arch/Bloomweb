@@ -277,27 +277,55 @@ function initMobileMenu() {
     const toggle = document.getElementById('mobileToggle');
     const links = document.getElementById('navLinks');
     if (!toggle || !links) return;
-    toggle.addEventListener('click', () => {
-        links.classList.toggle('open');
+
+    function toggleMenu(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = links.classList.contains('open');
+        if (isOpen) {
+            links.classList.remove('open');
+            toggle.style.zIndex = '';
+        } else {
+            links.classList.add('open');
+            toggle.style.zIndex = '1100';
+        }
         const icon = toggle.querySelector('i');
-        icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-xmark');
+        if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
+    }
+
+    toggle.addEventListener('click', toggleMenu);
+    toggle.addEventListener('touchend', toggleMenu, {passive: false});
+
+    links.querySelectorAll('a').forEach(a => {
+        function closeMenu(e) {
+            links.classList.remove('open');
+            toggle.style.zIndex = '';
+            const icon = toggle.querySelector('i');
+            if (icon) {
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            }
+        }
+        a.addEventListener('click', closeMenu);
+        a.addEventListener('touchend', closeMenu, {passive: true});
     });
-    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        links.classList.remove('open');
-        const icon = toggle.querySelector('i');
-        icon.classList.add('fa-bars'); icon.classList.remove('fa-xmark');
-    }));
 }
 
 // ===== FAQ =====
 function initFAQ() {
     document.querySelectorAll('.faq-question').forEach(btn => {
-        btn.addEventListener('click', () => {
+        function handleFAQ(e) {
+            e.preventDefault();
             const item = btn.parentElement;
             const wasOpen = item.classList.contains('open');
             document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
             if (!wasOpen) item.classList.add('open');
-        });
+        }
+        btn.addEventListener('click', handleFAQ);
+        btn.addEventListener('touchend', handleFAQ, {passive: false});
     });
 }
 
