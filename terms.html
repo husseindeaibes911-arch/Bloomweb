@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — BloomWeb</title>
+    <meta name="description" content="Terms of Service for BloomWeb website services.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+<canvas id="particles"></canvas>
+<div class="bg-glow bg-glow-1"></div>
+<div class="bg-glow bg-glow-2"></div>
+<div class="bg-glow bg-glow-3"></div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="nav-top">
+            <a href="index.html" class="nav-logo">
+                <svg class="nav-logo-icon" viewBox="0 0 40 40" fill="none">
+                    <defs><linearGradient id="p1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#e91e8c"/><stop offset="100%" stop-color="#c026d3"/></linearGradient><linearGradient id="p2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#9333ea"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient><linearGradient id="p3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#00d4e8"/></linearGradient></defs>
+                    <path d="M20 6C14 6 8 12 8 20C8 16 12 10 20 8Z" fill="url(#p1)" opacity=".9"/><path d="M20 6C20 6 16 14 20 22C24 14 20 6 20 6Z" fill="url(#p2)" opacity=".85"/><path d="M20 6C26 6 32 12 32 20C32 16 28 10 20 8Z" fill="url(#p3)" opacity=".9"/>
+                    <rect x="26" y="8" width="3" height="3" rx=".5" fill="#e91e8c" opacity=".7"/><rect x="30" y="6" width="2" height="2" rx=".5" fill="#c026d3" opacity=".5"/><rect x="28" y="12" width="2" height="2" rx=".5" fill="#9333ea" opacity=".6"/>
+                </svg>
+                BloomWeb
+            </a>
+            <div class="nav-right">
+                <div class="nav-contact-info">
+                    <a href="tel:5149499111"><i class="fas fa-phone"></i> (514) 949-9111</a>
+                    <a href="mailto:bloomweb.info@gmail.com"><i class="fas fa-envelope"></i> bloomweb.info@gmail.com</a>
+                </div>
+                <div class="lang-toggle">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="fr">FR</button>
+                </div>
+            </div>
+        </div>
+        <div class="nav-main">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html"><i class="fas fa-house"></i> <span data-i18n="navHome">Home</span></a></li>
+                <li><a href="pricing.html"><i class="fas fa-tags"></i> <span data-i18n="navPricing">Pricing</span></a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> <span data-i18n="navContact">Contact</span></a></li>
+                <li><a href="contact.html" class="nav-cta-link"><i class="fas fa-calendar"></i> <span data-i18n="navBookCall">Book a Call</span></a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</nav>
+
+<!-- ===== TERMS OF SERVICE PAGE ===== -->
+<section class="legal-page">
+    <div class="container">
+        <div class="legal-content">
+            <h1>Terms of Service</h1>
+            <p class="updated">Last updated: April 2026</p>
+
+            <h2>Agreement</h2>
+            <p>By completing your purchase, you agree to the following terms.</p>
+
+            <h2>Services</h2>
+            <p>Services are provided based on the selected plan (Starter, Growth, or Premium), including website design, maintenance, and support.</p>
+
+            <h2>Payments & Billing</h2>
+            <p>Payments include any upfront setup fee and a recurring monthly subscription. By purchasing, you authorize automatic monthly billing to your provided payment method. Failed payments may result in late fees, service suspension, and a $100 reactivation fee.</p>
+
+            <h2>Commitment & Cancellation</h2>
+            <p>A minimum 12-month commitment applies. Early cancellation before this period will result in a $100 cancellation fee. After 12 months, services may be canceled at any time with written notice.</p>
+
+            <h2>Ownership</h2>
+            <p>The Service Provider retains ownership of the website and related assets. Clients are granted access and usage rights while the subscription remains active.</p>
+
+            <h2>No Guarantees</h2>
+            <p>No guarantees are made regarding website performance, search rankings, or business results.</p>
+
+            <h2>Limitation of Liability</h2>
+            <p>The Service Provider is not liable for any indirect or consequential damages, including loss of revenue, traffic, or data.</p>
+
+            <h2>Acceptance</h2>
+            <p>By proceeding with payment, you acknowledge and accept these terms.</p>
+
+            <h2>Contact</h2>
+            <p>Questions? Email <a href="mailto:bloomweb.info@gmail.com">bloomweb.info@gmail.com</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo">
+                    <svg class="nav-logo-icon" viewBox="0 0 40 40" fill="none"><path d="M20 6C14 6 8 12 8 20C8 16 12 10 20 8Z" fill="url(#p1)" opacity=".9"/><path d="M20 6C20 6 16 14 20 22C24 14 20 6 20 6Z" fill="url(#p2)" opacity=".85"/><path d="M20 6C26 6 32 12 32 20C32 16 28 10 20 8Z" fill="url(#p3)" opacity=".9"/><rect x="26" y="8" width="3" height="3" rx=".5" fill="#e91e8c" opacity=".7"/><rect x="30" y="6" width="2" height="2" rx=".5" fill="#c026d3" opacity=".5"/><rect x="28" y="12" width="2" height="2" rx=".5" fill="#9333ea" opacity=".6"/></svg>
+                    BloomWeb
+                </a>
+                <p data-i18n="footerDesc">We build stunning, affordable websites for small businesses across Canada.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col"><h4 data-i18n="footerQuick">Quick Links</h4><ul><li><a href="index.html" data-i18n="navHome">Home</a></li><li><a href="pricing.html" data-i18n="navPricing">Pricing</a></li><li><a href="contact.html" data-i18n="navContact">Contact</a></li></ul></div>
+            <div class="footer-col"><h4 data-i18n="footerServices">Servi
