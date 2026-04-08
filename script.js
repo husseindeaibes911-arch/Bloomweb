@@ -202,11 +202,11 @@ const translations = {
 };
 
 // ===== LANGUAGE SWITCHER =====
-let currentLang = localStorage.getItem('bloomweb-lang') || 'en';
+let currentLang = 'en';
 
 function setLang(lang) {
     currentLang = lang;
-    localStorage.setItem('bloomweb-lang', lang);
+    try { localStorage.setItem('bloomweb-lang', lang); } catch(e) {}
     document.documentElement.lang = lang;
     // Update toggle buttons
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -228,14 +228,7 @@ function setLang(lang) {
     });
 }
 
-// Init language on page load
-document.addEventListener('DOMContentLoaded', () => {
-    setLang(currentLang);
-    // Lang toggle clicks
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => setLang(btn.dataset.lang));
-    });
-});
+// Lang init merged into main DOMContentLoaded below
 
 // ===== PARTICLES =====
 function initParticles() {
@@ -284,26 +277,40 @@ function initMobileMenu() {
     const toggle = document.getElementById('mobileToggle');
     const links = document.getElementById('navLinks');
     if (!toggle || !links) return;
-    toggle.addEventListener('click', () => {
-        links.classList.toggle('open');
-        const icon = toggle.querySelector('i');
-        icon.classList.toggle('fa-bars'); icon.classList.toggle('fa-xmark');
+
+    toggle.addEventListener('click', function() {
+        const isOpen = links.classList.contains('open');
+        if (isOpen) {
+            links.classList.remove('open');
+            toggle.style.zIndex = '';
+            const icon = toggle.querySelector('i');
+            if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-xmark'); }
+        } else {
+            links.classList.add('open');
+            toggle.style.zIndex = '1100';
+            const icon = toggle.querySelector('i');
+            if (icon) { icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark'); }
+        }
     });
-    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        links.classList.remove('open');
-        const icon = toggle.querySelector('i');
-        icon.classList.add('fa-bars'); icon.classList.remove('fa-xmark');
-    }));
+
+    links.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+            links.classList.remove('open');
+            toggle.style.zIndex = '';
+            const icon = toggle.querySelector('i');
+            if (icon) { icon.classList.add('fa-bars'); icon.classList.remove('fa-xmark'); }
+        });
+    });
 }
 
 // ===== FAQ =====
 function initFAQ() {
-    document.querySelectorAll('.faq-question').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const item = btn.parentElement;
-            const wasOpen = item.classList.contains('open');
-            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-            if (!wasOpen) item.classList.add('open');
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var item = btn.parentElement;
+            var wasOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+            if (!wasOpen) { item.classList.add('open'); }
         });
     });
 }
@@ -361,15 +368,36 @@ function initActiveNav() {
     });
 }
 
+// ===== MOBILE DETECTION =====
+const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
+
 // ===== INIT ALL =====
 document.addEventListener('DOMContentLoaded', () => {
-    initParticles();
-    initCursorGlow();
+    if (!isMobile) {
+        initParticles();
+        initCursorGlow();
+        initTilt();
+    }
     initMobileMenu();
     initFAQ();
     initReveal();
     initSmoothScroll();
-    initTilt();
     initCarousel();
     initActiveNav();
+
+    // ===== LANGUAGE SWITCHER INIT =====
+    try {
+        const savedLang = localStorage.getItem('bloomweb-lang') || 'en';
+        setLang(savedLang);
+    } catch(e) {
+        setLang('en');
+    }
+    // Use event delegation for lang buttons - most reliable approach
+    document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.lang-btn');
+        if (btn) {
+            const lang = btn.dataset.lang;
+            setLang(lang);
+        }
+    });
 });
