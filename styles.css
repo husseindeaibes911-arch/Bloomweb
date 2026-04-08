@@ -307,3 +307,80 @@ section{padding:100px 0;position:relative}
     .trusted-logos{gap:30px}
     .cursor-glow{display:none}
 }
+
+/* ===== MOBILE FIXES ===== */
+@media(max-width:768px){
+    /* Fix btn inside pricing cards on mobile */
+    .pricing-card .btn,
+    .pricing-card .btn-primary,
+    a.btn, a.btn-primary {
+        display:flex!important;
+        justify-content:center;
+        align-items:center;
+        width:100%!important;
+        box-sizing:border-box;
+        min-height:52px;
+        font-size:1rem;
+        -webkit-tap-highlight-color:transparent;
+        touch-action:manipulation;
+    }
+
+    /* Fix pricing grid on mobile - stack vertically */
+    .pricing-grid {
+        grid-template-columns:1fr!important;
+        max-width:100%!important;
+        padding:0 16px;
+    }
+
+    /* Fix pricing card wrappers */
+    .pricing-grid > div {
+        width:100%;
+    }
+
+    /* Fix mockup overflow on mobile */
+    .pricing-grid > div > div:first-child {
+        border-radius:12px 12px 0 0;
+        overflow:hidden;
+    }
+
+    /* Ensure pricing cards don't overflow */
+    .pricing-card {
+        padding:28px 20px!important;
+        border-radius:0 0 16px 16px!important;
+    }
+
+    /* Fix price amount on mobile */
+    .price-amount {
+        font-size:2rem!important;
+    }
+
+    /* Contact form mobile fix */
+    .contact-form button,
+    form button[type="submit"],
+    form .btn-primary {
+        min-height:52px;
+        width:100%;
+        display:flex!important;
+        justify-content:center;
+        align-items:center;
+        touch-action:manipulation;
+    }
+
+    /* Nav CTA link fix */
+    .nav-cta-link {
+        display:flex!important;
+        align-items:center;
+        min-height:44px;
+    }
+}
+
+/* Ensure all buttons are tappable on any screen size */
+.btn, .btn-primary, .btn-secondary {
+    -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation;
+    cursor:pointer;
+}
+
+a[href] {
+    -webkit-tap-highlight-color:transparent;
+}
