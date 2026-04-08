@@ -75,7 +75,7 @@ section{padding:100px 0;position:relative}
 
 /* ===== HERO ===== */
 .hero{min-height:calc(100vh - 110px);display:flex;align-items:center;padding-top:130px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(123,45,206,.12) 0%,transparent 70%);pointer-events:none}
+.hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(123,45,206,.12) 0%,transparent 70%);pointer-events:none;z-index:0}
 .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
 .hero-content{position:relative;z-index:1}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(123,45,206,.1);border:1px solid var(--border-color);border-radius:50px;font-size:.85rem;color:var(--text-secondary);margin-bottom:28px;animation:fadeInDown .8s ease}
@@ -131,7 +131,7 @@ section{padding:100px 0;position:relative}
 
 /* ===== STATS ===== */
 .stats-bar{padding:60px 0;border-bottom:1px solid var(--border-color);background:var(--bg-secondary);position:relative;overflow:hidden}
-.stats-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(233,30,140,.02),rgba(123,45,206,.04),rgba(0,212,232,.02));pointer-events:none}
+.stats-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(233,30,140,.02),rgba(123,45,206,.04),rgba(0,212,232,.02));pointer-events:none;z-index:0}
 .stats-bar .container{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;position:relative;z-index:1}
 .stat h3{font-family:var(--font-display);font-size:2.8rem;font-weight:800;margin-bottom:8px}
 .stat p{color:var(--text-secondary);font-size:.9rem}
@@ -251,7 +251,7 @@ section{padding:100px 0;position:relative}
 
 /* ===== CTA SECTION ===== */
 .cta-section{padding:100px 0;text-align:center;position:relative;overflow:hidden}
-.cta-section::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(233,30,140,.05),rgba(123,45,206,.1),rgba(0,212,232,.05));pointer-events:none}
+.cta-section::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(233,30,140,.05),rgba(123,45,206,.1),rgba(0,212,232,.05));pointer-events:none;z-index:0}
 .cta-section h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);font-weight:800;margin-bottom:16px;position:relative;z-index:1}
 .cta-section p{color:var(--text-secondary);font-size:1.1rem;margin-bottom:32px;position:relative;z-index:1}
 .cta-buttons{display:flex;gap:16px;justify-content:center;position:relative;z-index:1}
@@ -287,27 +287,6 @@ section{padding:100px 0;position:relative}
     .footer-grid{grid-template-columns:1fr 1fr}
     .nav-contact-info{display:none}
 }
-@media(max-width:768px){
-    section{padding:70px 0}
-    .nav-links{display:none!important}
-    .mobile-toggle{display:block}
-    .nav-links.open{display:flex!important;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(7,6,11,.98);backdrop-filter:blur(20px);padding:80px 24px 24px;gap:0;z-index:999}
-    .nav-links.open a{padding:18px 24px;font-size:1.1rem;border-bottom:1px solid var(--border-color);justify-content:flex-start}
-    .stats-bar .container{grid-template-columns:repeat(2,1fr);gap:24px}
-    .services-grid,.testimonials-grid{grid-template-columns:1fr}
-    .pricing-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto;margin-top:50px}
-    .pricing-card.featured{transform:none}.pricing-card.featured:hover{transform:translateY(-8px)}
-    .pricing-card:last-child{max-width:none}
-    .steps-grid{grid-template-columns:1fr;max-width:350px;margin-left:auto;margin-right:auto;margin-top:50px}
-    .contact-grid{grid-template-columns:1fr}
-    .form-row{grid-template-columns:1fr}
-    .footer-grid{grid-template-columns:1fr}
-    .footer-bottom{flex-direction:column;gap:12px;text-align:center}
-    .hero-buttons,.cta-buttons{flex-direction:column;align-items:center}
-    .trusted-logos{gap:30px}
-    .cursor-glow{display:none}
-}
-
 
 
 /* ===== MOBILE FRIENDLY ===== */
@@ -330,7 +309,7 @@ a, button, input, select, textarea, label,
     justify-content: center;
     cursor: pointer;
     position: relative;
-    z-index: 1100;
+    z-index: 10000;
 }
 
 /* FAQ questions - easy to tap */
@@ -367,18 +346,23 @@ a, button, input, select, textarea, label,
     .nav-links { display: none !important; }
 
     /* Full screen mobile nav when open */
+    /* Note: position:fixed inside a backdrop-filter parent is treated as
+       position:absolute (browser spec). We work around this by using
+       height:100vh + width:100vw and negative offsets to escape the navbar. */
     .nav-links.open {
         display: flex !important;
         flex-direction: column;
         position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(7,6,11,0.98);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        background: rgb(7,6,11);
         padding: 90px 24px 24px;
         gap: 0;
-        z-index: 1000;
+        z-index: 9999;
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-links.open li { width: 100%; }
@@ -452,4 +436,17 @@ a, button, input, select, textarea, label,
 
     /* Hide cursor glow */
     .cursor-glow { display: none; }
+
+    /* Disable particle canvas on mobile — heavy rAF loop */
+    #particles { display: none; }
+
+    /* Disable expensive background blur glows on mobile */
+    .bg-glow { display: none; }
+
+    /* Remove backdrop-filter on navbar for mobile — it creates a containing
+       block that breaks position:fixed on the mobile menu overlay */
+    .navbar { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(7,6,11,0.99); }
+
+    /* Disable floating element animations on mobile */
+    .float-element { animation: none; }
 }

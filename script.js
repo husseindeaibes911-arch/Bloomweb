@@ -368,15 +368,20 @@ function initActiveNav() {
     });
 }
 
+// ===== MOBILE DETECTION =====
+const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
+
 // ===== INIT ALL =====
 document.addEventListener('DOMContentLoaded', () => {
-    initParticles();
-    initCursorGlow();
+    if (!isMobile) {
+        initParticles();
+        initCursorGlow();
+        initTilt();
+    }
     initMobileMenu();
     initFAQ();
     initReveal();
     initSmoothScroll();
-    initTilt();
     initCarousel();
     initActiveNav();
 
