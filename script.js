@@ -202,11 +202,11 @@ const translations = {
 };
 
 // ===== LANGUAGE SWITCHER =====
-let currentLang = localStorage.getItem('bloomweb-lang') || 'en';
+let currentLang = 'en';
 
 function setLang(lang) {
     currentLang = lang;
-    localStorage.setItem('bloomweb-lang', lang);
+    try { localStorage.setItem('bloomweb-lang', lang); } catch(e) {}
     document.documentElement.lang = lang;
     // Update toggle buttons
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -228,14 +228,7 @@ function setLang(lang) {
     });
 }
 
-// Init language on page load
-document.addEventListener('DOMContentLoaded', () => {
-    setLang(currentLang);
-    // Lang toggle clicks
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => setLang(btn.dataset.lang));
-    });
-});
+// Lang init merged into main DOMContentLoaded below
 
 // ===== PARTICLES =====
 function initParticles() {
@@ -372,4 +365,19 @@ document.addEventListener('DOMContentLoaded', () => {
     initTilt();
     initCarousel();
     initActiveNav();
+
+    // ===== LANGUAGE SWITCHER INIT =====
+    try {
+        const savedLang = localStorage.getItem('bloomweb-lang') || 'en';
+        setLang(savedLang);
+    } catch(e) {
+        setLang('en');
+    }
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.dataset.lang;
+            try { localStorage.setItem('bloomweb-lang', lang); } catch(e) {}
+            setLang(lang);
+        });
+    });
 });
