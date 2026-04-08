@@ -309,73 +309,70 @@ section{padding:100px 0;position:relative}
 }
 
 
-/* ===== COMPREHENSIVE MOBILE FIXES ===== */
 
-/* Mobile toggle always on top */
+/* ===== MOBILE FRIENDLY ===== */
+
+/* Remove 300ms tap delay on ALL interactive elements */
+a, button, input, select, textarea, label,
+.btn, .btn-primary, .btn-secondary,
+.lang-btn, .faq-question, .mobile-toggle,
+.nav-links a, .pricing-card a {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile toggle button - large enough to tap */
 .mobile-toggle {
-    position: relative;
-    z-index: 1100;
-    min-width: 44px;
-    min-height: 44px;
+    min-width: 48px;
+    min-height: 48px;
     display: none;
     align-items: center;
     justify-content: center;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
     cursor: pointer;
+    position: relative;
+    z-index: 1100;
 }
 
-/* FAQ questions tappable on mobile */
+/* FAQ questions - easy to tap */
 .faq-question {
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
     width: 100%;
-    min-height: 56px;
+    min-height: 60px;
+    padding: 18px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    user-select: none;
-    -webkit-user-select: none;
-}
-
-/* All buttons tap-friendly */
-button, .btn, .btn-primary, .btn-secondary, a.btn, a.btn-primary, a.btn-secondary {
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    cursor: pointer;
+    background: none;
+    border: none;
+    text-align: left;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 /* Lang buttons */
 .lang-btn {
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    cursor: pointer;
     min-width: 44px;
     min-height: 36px;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
-    /* Show mobile toggle as flex */
-    .mobile-toggle {
-        display: flex !important;
-    }
+    section { padding: 70px 0; }
 
-    /* Nav links hidden on mobile until open */
-    .nav-links {
-        display: none !important;
-    }
+    /* Show hamburger */
+    .mobile-toggle { display: flex !important; }
 
-    /* When open, show full screen menu above everything */
+    /* Hide desktop nav */
+    .nav-links { display: none !important; }
+
+    /* Full screen mobile nav when open */
     .nav-links.open {
         display: flex !important;
         flex-direction: column;
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(7,6,11,.98);
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(7,6,11,0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         padding: 90px 24px 24px;
@@ -384,108 +381,75 @@ button, .btn, .btn-primary, .btn-secondary, a.btn, a.btn-primary, a.btn-secondar
         overflow-y: auto;
     }
 
+    .nav-links.open li { width: 100%; }
+
     .nav-links.open a {
-        padding: 18px 24px;
+        padding: 20px 24px;
         font-size: 1.1rem;
         border-bottom: 1px solid var(--border-color);
         justify-content: flex-start;
-        min-height: 56px;
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
+        min-height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
     }
 
-    /* Pricing grid on mobile */
+    /* Hide contact info in nav on mobile */
+    .nav-contact-info { display: none; }
+
+    /* Pricing stacks vertically */
     .pricing-grid {
         grid-template-columns: 1fr !important;
         max-width: 100% !important;
-        padding: 0 8px;
+        padding: 0 4px;
     }
 
-    .pricing-grid > div {
-        width: 100%;
-        margin-bottom: 40px;
-    }
+    .pricing-grid > div { margin-bottom: 40px; }
 
     .pricing-card {
         padding: 28px 20px !important;
     }
 
-    /* Big tappable buttons on mobile */
+    /* All CTA buttons full width on mobile */
     .btn-primary, .btn-secondary,
-    a.btn, a.btn-primary, a.btn-secondary {
-        min-height: 52px !important;
+    a.btn-primary, a.btn-secondary {
+        width: 100% !important;
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
+        min-height: 54px !important;
         font-size: 1rem !important;
-        padding: 14px 20px !important;
+        box-sizing: border-box !important;
     }
 
-    /* Hero buttons stacked on mobile */
-    .hero-buttons, .cta-buttons {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-    }
-
-    /* Services grid single col */
-    .services-grid, .testimonials-grid {
+    /* Hero */
+    .hero .container {
         grid-template-columns: 1fr;
-    }
-
-    /* Contact grid single col */
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* Form rows single col */
-    .form-row {
-        grid-template-columns: 1fr;
-    }
-
-    /* Footer single col */
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 12px;
         text-align: center;
     }
+    .hero p { margin: 0 auto 36px; }
+    .hero-buttons { justify-content: center; flex-direction: column; align-items: stretch; gap: 12px; }
+    .hero-visual { display: none; }
 
-    /* FAQ items larger touch target */
-    .faq-item {
-        cursor: pointer;
-    }
+    /* CTA */
+    .cta-buttons { flex-direction: column; align-items: stretch; gap: 12px; }
 
-    .faq-question {
-        padding: 18px 0;
-        font-size: 1rem;
-    }
+    /* Grids */
+    .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+    .stats-bar .container { grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .steps-grid { grid-template-columns: 1fr; max-width: 350px; margin-left: auto; margin-right: auto; }
+    .steps-grid::before { display: none; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
 
-    /* Steps single col */
-    .steps-grid {
-        grid-template-columns: 1fr;
-        max-width: 350px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+    /* FAQ */
+    .faq-question { font-size: 0.95rem; }
 
-    /* Hide cursor glow on mobile */
-    .cursor-glow {
-        display: none;
-    }
+    /* Trusted logos */
+    .trusted-logos { gap: 30px; }
 
-    /* Stat bar 2 cols on mobile */
-    .stats-bar .container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
-
-    section {
-        padding: 70px 0;
-    }
+    /* Hide cursor glow */
+    .cursor-glow { display: none; }
 }
