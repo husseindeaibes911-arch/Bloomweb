@@ -373,11 +373,12 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch(e) {
         setLang('en');
     }
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+    // Use event delegation for lang buttons - most reliable approach
+    document.addEventListener('click', function(e) {
+        const btn = e.target.closest('.lang-btn');
+        if (btn) {
             const lang = btn.dataset.lang;
-            try { localStorage.setItem('bloomweb-lang', lang); } catch(e) {}
             setLang(lang);
-        });
+        }
     });
 });
