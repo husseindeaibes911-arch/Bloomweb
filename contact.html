@@ -268,6 +268,75 @@
     </div>
 </section>
 
+<!-- ===== BOOK A MEETING ===== -->
+<section style="background:var(--bg-secondary); padding:80px 0; border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); position:relative; overflow:hidden">
+    <!-- Decorative glow -->
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(123,45,206,.08) 0%,transparent 70%);pointer-events:none;z-index:0"></div>
+
+    <div class="container" style="position:relative;z-index:1">
+        <div style="text-align:center; margin-bottom:50px" class="reveal">
+            <div class="section-label">Schedule a Meeting</div>
+            <h2 class="section-title" style="margin:0 auto 16px" data-i18n="bookMeetingTitle">Book a Meeting With Us</h2>
+            <p class="section-subtitle" style="margin:0 auto; max-width:550px" data-i18n="bookMeetingSubtitle">Pick a time that works for you. We'll walk you through your custom website preview and answer any questions.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center" class="calendly-layout">
+            <!-- Left side: info card -->
+            <div class="reveal" style="display:flex;flex-direction:column;gap:24px">
+                <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:20px; padding:36px; position:relative; overflow:hidden">
+                    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-main)"></div>
+                    <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+                        <div style="width:56px;height:56px;background:linear-gradient(135deg,#7b2dce,#e91e8c);border-radius:16px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(123,45,206,.3)">
+                            <i class="fas fa-video" style="font-size:22px;color:white"></i>
+                        </div>
+                        <div>
+                            <h3 style="font-size:1.15rem;font-weight:700;color:var(--text-primary)">30-Minute Free Call</h3>
+                            <p style="font-size:.85rem;color:var(--text-muted)">No obligation, no pressure</p>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;flex-direction:column;gap:16px">
+                        <div style="display:flex;align-items:center;gap:12px">
+                            <div style="width:36px;height:36px;border-radius:10px;background:rgba(0,212,232,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                <i class="fas fa-eye" style="font-size:.85rem;color:#00d4e8"></i>
+                            </div>
+                            <p style="font-size:.9rem;color:var(--text-secondary)">See your custom website preview live</p>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px">
+                            <div style="width:36px;height:36px;border-radius:10px;background:rgba(233,30,140,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                <i class="fas fa-comments" style="font-size:.85rem;color:#e91e8c"></i>
+                            </div>
+                            <p style="font-size:.9rem;color:var(--text-secondary)">Discuss your goals and ask questions</p>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px">
+                            <div style="width:36px;height:36px;border-radius:10px;background:rgba(123,45,206,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                <i class="fas fa-tags" style="font-size:.85rem;color:#7b2dce"></i>
+                            </div>
+                            <p style="font-size:.9rem;color:var(--text-secondary)">Get a personalized plan recommendation</p>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:12px">
+                            <div style="width:36px;height:36px;border-radius:10px;background:rgba(16,185,129,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                <i class="fas fa-rocket" style="font-size:.85rem;color:#10b981"></i>
+                            </div>
+                            <p style="font-size:.9rem;color:var(--text-secondary)">Learn about our launch timeline</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direct link button fallback -->
+                <a href="https://calendly.com/husseindeaibes911/30min" target="_blank" rel="noopener" class="btn-primary" style="justify-content:center;padding:16px 32px;text-decoration:none">
+                    <i class="fas fa-calendar-check"></i> <span data-i18n="bookMeetingBtn">Book Your Free 30-Min Call</span>
+                </a>
+            </div>
+
+            <!-- Right side: Calendly embed -->
+            <div class="reveal reveal-delay-1" style="min-height:580px; background:var(--bg-card); border:1px solid var(--border-color); border-radius:20px; overflow:hidden; position:relative">
+                <div class="calendly-inline-widget" data-url="https://calendly.com/husseindeaibes911/30min?hide_gdpr_banner=1&background_color=13111c&text_color=f0eef5&primary_color=7b2dce" style="min-width:100%;height:580px;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ===== CTA SECTION ===== -->
 <div class="cta-section">
     <div class="container reveal">
@@ -309,5 +378,12 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<style>
+    @media (max-width: 768px) {
+        .calendly-layout { grid-template-columns: 1fr !important; gap: 32px !important; }
+        .calendly-inline-widget { height: 700px !important; }
+    }
+</style>
 </body>
 </html>
