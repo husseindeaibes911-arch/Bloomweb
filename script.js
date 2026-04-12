@@ -368,6 +368,175 @@ function initActiveNav() {
     });
 }
 
+// ===== 3D WIREFRAME GLOBE =====
+function initGlobe() {
+    const canvas = document.getElementById('globeCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    // High-DPI support
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.scale(dpr, dpr);
+    const W = rect.width;
+    const H = rect.height;
+    const cx = W / 2;
+    const cy = H / 2;
+    const R = Math.min(W, H) * 0.4; // globe radius
+
+    let angle = 0;
+    const rotSpeed = 0.003; // slow spin
+
+    // Generate globe points — latitude/longitude grid
+    const latLines = 18; // number of latitude lines
+    const lonLines = 24; // number of longitude lines
+    const dotsPerLine = 60;
+
+    function project(lat, lon, rot) {
+        // Spherical to 3D
+        const phi = lat;
+        const theta = lon + rot;
+        const x3d = R * Math.cos(phi) * Math.cos(theta);
+        const y3d = R * Math.sin(phi);
+        const z3d = R * Math.cos(phi) * Math.sin(theta);
+
+        // Simple perspective
+        const perspective = 800;
+        const scale = perspective / (perspective + z3d);
+        const x2d = cx + x3d * scale;
+        const y2d = cy - y3d * scale;
+
+        return { x: x2d, y: y2d, z: z3d, scale: scale };
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+        angle += rotSpeed;
+
+        // Draw longitude lines (meridians)
+        for (let i = 0; i < lonLines; i++) {
+            const lon = (i / lonLines) * Math.PI * 2;
+            ctx.beginPath();
+            let started = false;
+            for (let j = 0; j <= dotsPerLine; j++) {
+                const lat = (j / dotsPerLine) * Math.PI - Math.PI / 2;
+                const p = project(lat, lon, angle);
+                if (p.z > 0) {
+                    // front face
+                    if (!started) { ctx.moveTo(p.x, p.y); started = true; }
+                    else ctx.lineTo(p.x, p.y);
+                } else {
+                    started = false;
+                }
+            }
+            ctx.strokeStyle = 'rgba(147, 51, 234, 0.35)';
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+        }
+
+        // Draw latitude lines (parallels)
+        for (let i = 0; i <= latLines; i++) {
+            const lat = (i / latLines) * Math.PI - Math.PI / 2;
+            ctx.beginPath();
+            let started = false;
+            for (let j = 0; j <= dotsPerLine; j++) {
+                const lon = (j / dotsPerLine) * Math.PI * 2;
+                const p = project(lat, lon, angle);
+                if (p.z > 0) {
+                    if (!started) { ctx.moveTo(p.x, p.y); started = true; }
+                    else ctx.lineTo(p.x, p.y);
+                } else {
+                    started = false;
+                }
+            }
+            ctx.strokeStyle = 'rgba(147, 51, 234, 0.3)';
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+        }
+
+        // Draw glowing dots at grid intersections
+        for (let i = 0; i < lonLines; i++) {
+            const lon = (i / lonLines) * Math.PI * 2;
+            for (let j = 1; j < latLines; j++) {
+                const lat = (j / latLines) * Math.PI - Math.PI / 2;
+                const p = project(lat, lon, angle);
+                if (p.z > 0) {
+                    const brightness = 0.3 + (p.z / R) * 0.7;
+                    const size = 1.2 * p.scale;
+
+                    // Purple-cyan gradient based on position
+                    const t = (j / latLines);
+                    const r = Math.round(147 * (1 - t) + 0 * t);
+                    const g = Math.round(51 * (1 - t) + 212 * t);
+                    const b = Math.round(234 * (1 - t) + 232 * t);
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${r},${g},${b},${brightness})`;
+                    ctx.fill();
+
+                    // Add glow to some dots
+                    if (brightness > 0.7 && Math.random() > 0.92) {
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, size * 3, 0, Math.PI * 2);
+                        ctx.fillStyle = `rgba(${r},${g},${b},0.15)`;
+                        ctx.fill();
+                    }
+                }
+            }
+        }
+
+        // Draw connecting network lines (random connections on surface)
+        const connectionSeeds = [
+            [0.3, 0.8, 0.5, 1.2], [0.7, 1.5, 0.9, 2.0], [-0.2, 0.5, 0.1, 1.8],
+            [0.5, 2.5, 0.3, 3.0], [-0.4, 1.0, -0.1, 1.5], [0.8, 3.5, 0.6, 4.0],
+            [-0.3, 2.0, 0.2, 2.8], [0.6, 4.5, 0.4, 5.0], [-0.5, 3.2, -0.2, 3.8],
+            [0.1, 5.5, 0.4, 0.3], [-0.6, 0.2, -0.3, 0.8], [0.2, 1.8, 0.5, 2.5],
+        ];
+        connectionSeeds.forEach(seed => {
+            const p1 = project(seed[0], seed[1], angle);
+            const p2 = project(seed[2], seed[3], angle);
+            if (p1.z > 0 && p2.z > 0) {
+                ctx.beginPath();
+                ctx.moveTo(p1.x, p1.y);
+                ctx.lineTo(p2.x, p2.y);
+                ctx.strokeStyle = 'rgba(0, 212, 232, 0.2)';
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+
+                // Node dots at endpoints
+                [p1, p2].forEach(p => {
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 2 * p.scale, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(0, 212, 232, 0.6)';
+                    ctx.fill();
+                });
+            }
+        });
+
+        // Outer ring glow
+        ctx.beginPath();
+        ctx.arc(cx, cy, R + 2, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(147, 51, 234, 0.12)';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        requestAnimationFrame(draw);
+    }
+
+    draw();
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+        const newRect = canvas.getBoundingClientRect();
+        canvas.width = newRect.width * dpr;
+        canvas.height = newRect.height * dpr;
+        ctx.scale(dpr, dpr);
+    });
+}
+
 // ===== MOBILE DETECTION =====
 const isMobile = window.matchMedia('(max-width: 768px)').matches || 'ontouchstart' in window;
 
@@ -384,6 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initCarousel();
     initActiveNav();
+    initGlobe();
 
     // ===== LANGUAGE SWITCHER INIT =====
     try {
