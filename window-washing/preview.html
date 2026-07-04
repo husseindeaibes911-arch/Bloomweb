@@ -1,4 +1,4 @@
-<title>Lumière Window Washing — Montreal</title>
+<title>HD Ultra Exterior — Montreal (preview)</title>
 <style>
 /* =========================================================
    Lumière Window Washing — Montreal
@@ -22,11 +22,17 @@
     --ink-soft: #4a4266;
     --muted:    #7b7597;
     --line:     #ece7f7;
-    --bg:       #ffffff;
     --bg-soft:  #faf8ff;
     --bg-lav:   #f4f0ff;
 
     --white: #ffffff;
+
+    /* Lavender-purple page background */
+    --bg: #e9e2fb;
+    --page-bg:
+        radial-gradient(1100px 640px at 82% -8%, #dccffb 0%, transparent 58%),
+        radial-gradient(820px 520px at -6% 6%, #e8e0fc 0%, transparent 52%),
+        #e9e2fb;
 
     --grad: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 55%, #a385f7 100%);
     --grad-soft: linear-gradient(135deg, #f4f0ff 0%, #ece7ff 100%);
@@ -50,7 +56,8 @@ html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 body {
     font-family: var(--font);
     color: var(--ink);
-    background: var(--bg);
+    background: var(--page-bg);
+    background-attachment: fixed;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
@@ -90,7 +97,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
 .section-head { max-width: 720px; margin: 0 auto 56px; text-align: center; }
 .section-head.left { margin-left: 0; text-align: left; }
 .section-head h2 { font-size: clamp(2rem, 4vw, 2.9rem); letter-spacing: -.02em; }
-.section-head p { color: var(--muted); font-size: 1.08rem; margin-top: 16px; }
+.section-head p { color: var(--ink-soft); font-size: 1.08rem; margin-top: 16px; }
 
 .text-grad {
     background: var(--grad);
@@ -230,10 +237,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
 .hero {
     position: relative;
     padding: 150px 0 90px;
-    background:
-        radial-gradient(1100px 520px at 78% -8%, var(--lav-100) 0%, transparent 60%),
-        radial-gradient(760px 460px at 5% 12%, var(--lav-50) 0%, transparent 55%),
-        var(--bg);
     overflow: hidden;
 }
 .hero-grid {
@@ -340,6 +343,36 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
 .hero-float.f2 i { background: var(--grad); }
 
 /* =========================================================
+   PAGE HEADER (sub-pages)
+   ========================================================= */
+.page-header {
+    padding: 140px 0 56px;
+    text-align: center;
+    position: relative;
+}
+.page-header .eyebrow { margin-bottom: 18px; }
+.page-header h1 {
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    letter-spacing: -.025em;
+}
+.page-header p {
+    max-width: 640px;
+    margin: 18px auto 0;
+    color: var(--ink-soft);
+    font-size: 1.12rem;
+}
+.crumb {
+    display: inline-flex; align-items: center; gap: 9px;
+    font-size: .86rem; font-weight: 500; color: var(--muted);
+    margin-bottom: 22px;
+}
+.crumb a { color: var(--lav-700); font-weight: 600; }
+.crumb a:hover { text-decoration: underline; }
+.crumb i { font-size: .6rem; }
+.page-section { padding: 40px 0 90px; }
+.page-section.tight { padding-top: 10px; }
+
+/* =========================================================
    LOGO / TRUST STRIP
    ========================================================= */
 .strip {
@@ -393,9 +426,55 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
 .svc-list li i { color: var(--lav-500); margin-top: 5px; font-size: .8rem; flex-shrink: 0; }
 
 /* =========================================================
+   SERVICE DETAIL ROWS (services page)
+   ========================================================= */
+.detail-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 54px;
+    align-items: center;
+    padding: 46px 0;
+    border-bottom: 1px solid var(--line);
+}
+.detail-row:last-child { border-bottom: none; }
+.detail-row:nth-child(even) .detail-media { order: -1; }
+.detail-text .svc-icon { margin-bottom: 20px; }
+.detail-text h2 { font-size: clamp(1.7rem, 3.2vw, 2.3rem); letter-spacing: -.02em; margin-bottom: 14px; }
+.detail-text > p { color: var(--ink-soft); font-size: 1.06rem; margin-bottom: 22px; }
+.info-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 34px;
+    box-shadow: var(--shadow);
+}
+.info-card h4 {
+    font-size: .82rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--lav-600); margin-bottom: 18px;
+}
+.info-card .svc-list li { font-size: 1rem; margin-bottom: 4px; }
+.detail-media.grad-panel {
+    background: var(--grad);
+    color: #fff;
+    border: none;
+    box-shadow: var(--shadow-lg);
+}
+.detail-media.grad-panel h4 { color: rgba(255,255,255,.85); }
+.detail-media.grad-panel .svc-list li { color: #fff; }
+.detail-media.grad-panel .svc-list li i { color: #fff; }
+
+.svc-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 600; color: var(--lav-700); font-size: .98rem;
+    margin-top: 4px;
+}
+.svc-link i { transition: transform .2s; }
+.svc-link:hover i { transform: translateX(4px); }
+
+/* =========================================================
    PROCESS
    ========================================================= */
-.process { padding: 100px 0; background: var(--bg-soft); }
+.process { padding: 100px 0; background: rgba(255,255,255,.44); }
 .process-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -466,7 +545,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
 /* =========================================================
    WHY / FEATURES
    ========================================================= */
-.why { padding: 100px 0; background: var(--bg-soft); }
+.why { padding: 100px 0; background: rgba(255,255,255,.44); }
 .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .why-list { display: grid; gap: 22px; }
 .why-item { display: flex; gap: 18px; align-items: flex-start; }
@@ -519,7 +598,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
 /* =========================================================
    TESTIMONIALS
    ========================================================= */
-.reviews { padding: 100px 0; background: var(--bg-soft); }
+.reviews { padding: 100px 0; background: rgba(255,255,255,.44); }
 .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .review {
     background: #fff; border: 1px solid var(--line);
@@ -672,6 +751,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
     .process-grid { grid-template-columns: 1fr 1fr; }
     .why-panel { order: -1; }
 }
+@media (max-width: 1150px) {
+    .nav-phone { display: none; }
+    .nav-links a { padding: 9px 12px; font-size: .92rem; }
+}
+@media (max-width: 900px) {
+    .nav-logo small { display: none; }
+}
 @media (max-width: 760px) {
     .nav-links, .nav-phone { display: none; }
     .mobile-toggle { display: grid; place-items: center; }
@@ -703,27 +789,22 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; font-weigh
 --font-display:'Space Grotesk','Inter',system-ui,-apple-system,'Segoe UI',sans-serif;}
 i[class*="fa-"]{display:inline-flex;align-items:center;justify-content:center;vertical-align:-0.125em;line-height:0;}
 i[class*="fa-"] svg{width:1em;height:1em;display:block;}
+.pg{display:none;} .pg.active{display:block;}
 
 </style>
-
-
-<!-- ============ NAVBAR ============ -->
 <nav class="navbar" id="navbar">
     <div class="container nav-inner">
-        <a href="#top" class="nav-logo">
+        <a href="index.html" class="nav-logo">
             <span class="logo-mark"><i class="fas fa-droplet"></i></span>
-            <span>Lumière<b></b><small>Window &amp; Gutter Care</small></span>
+            <span>HD Ultra Exterior<small>Window &amp; Gutter Care</small></span>
         </a>
-
         <ul class="nav-links" id="navLinks">
-            <li><a href="#services" data-i18n="navServices">Services</a></li>
-            <li><a href="#process" data-i18n="navProcess">Our Process</a></li>
-            <li><a href="#guards" data-i18n="navGuards">Gutter Guards</a></li>
-            <li><a href="#why" data-i18n="navWhy">Why Us</a></li>
-            <li><a href="#faq" data-i18n="navFaq">FAQ</a></li>
-            <li><a href="#quote" data-i18n="navQuote">Get a Quote</a></li>
+            <li><a href="index.html" class="active" data-i18n="navHome">Home</a></li>
+            <li><a href="services.html" data-i18n="navServices">Services</a></li>
+            <li><a href="gutter-guards.html" data-i18n="navGuards">Gutter Guards</a></li>
+            <li><a href="about.html" data-i18n="navAbout">About</a></li>
+            <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
         </ul>
-
         <div class="nav-actions">
             <div class="lang-toggle">
                 <button class="lang-btn active" data-lang="en">EN</button>
@@ -734,8 +815,8 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
         </div>
     </div>
 </nav>
-
-<span id="top"></span>
+<main id="app">
+<div class="pg active" data-page="index.html">
 
 <!-- ============ HERO ============ -->
 <section class="hero">
@@ -748,8 +829,8 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
             <h1><span data-i18n="heroTitle1">Streak-free windows.</span> <span class="text-grad" data-i18n="heroTitle2">Spotless, mess-free gutters.</span></h1>
             <p class="hero-sub" data-i18n="heroSub">Purified water-fed pole cleaning that lifts every bit of build-up from your glass, frames and seals — then rinses clean with filtered water so nothing streaky is left behind. Careful, tidy gutter care from a local Montreal crew.</p>
             <div class="hero-cta">
-                <a href="#quote" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> <span data-i18n="heroCta1">Get a Free Quote</span></a>
-                <a href="#services" class="btn btn-ghost btn-lg"><span data-i18n="heroCta2">See What We Do</span> <i class="fas fa-arrow-down"></i></a>
+                <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> <span data-i18n="heroCta1">Get a Free Quote</span></a>
+                <a href="services.html" class="btn btn-ghost btn-lg"><span data-i18n="heroCta2">See What We Do</span> <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="hero-trust">
                 <div class="t-item"><i class="fas fa-house-chimney"></i><div><b>500+</b><span data-i18n="heroT1">Homes served</span></div></div>
@@ -763,7 +844,7 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
                 <div class="hc-top">
                     <div class="hc-icon"><i class="fas fa-hand-sparkles"></i></div>
                     <div>
-                        <h3 data-i18n="hcTitle">The Lumière difference</h3>
+                        <h3 data-i18n="hcTitle">The HD Ultra difference</h3>
                         <p data-i18n="hcSub">Done properly, top to bottom</p>
                     </div>
                 </div>
@@ -773,10 +854,10 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
                     <li><i class="fas fa-check"></i> <span data-i18n="hc3">Gutter debris bagged, never blown around</span></li>
                     <li><i class="fas fa-check"></i> <span data-i18n="hc4">Downspouts checked &amp; cleared for flow</span></li>
                 </ul>
-                <div class="hc-foot">
+                <a href="contact.html" class="hc-foot" style="color:#fff">
                     <div><div class="p" data-i18n="hcFoot">Free, no-pressure estimate</div><div class="v" data-i18n="hcFootV">Book today</div></div>
                     <i class="fas fa-arrow-right" style="font-size:1.3rem"></i>
-                </div>
+                </a>
             </div>
             <div class="hero-float f1"><i class="fas fa-star"></i><div><b data-i18n="floatb1">Streak-free</b><span data-i18n="floats1">every single pane</span></div></div>
             <div class="hero-float f2"><i class="fas fa-leaf"></i><div><b data-i18n="floatb2">No mess left</b><span data-i18n="floats2">we bag it &amp; go</span></div></div>
@@ -794,8 +875,8 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
     </div>
 </div>
 
-<!-- ============ SERVICES ============ -->
-<section class="services" id="services">
+<!-- ============ SERVICES OVERVIEW ============ -->
+<section class="services">
     <div class="container">
         <div class="section-head reveal">
             <span class="eyebrow"><i class="fas fa-list-check"></i> <span data-i18n="svcEyebrow">Our Services</span></span>
@@ -808,147 +889,36 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
                 <div class="svc-icon"><i class="fas fa-window-maximize"></i></div>
                 <h3 data-i18n="svc1Title">Window Washing</h3>
                 <p data-i18n="svc1Desc">Our water-fed pole system brushes away every bit of build-up on the glass, frames and seals, then rinses with pure filtered water so the panes dry perfectly clear.</p>
-                <ul class="svc-list">
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc1a">Build-up brushed off glass, frames &amp; seals</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc1b">Pure filtered-water rinse — no streaks, no spots</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc1c">Reaches high windows safely from the ground</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc1d">Interior &amp; exterior options available</span></li>
-                </ul>
+                <a href="services.html#window-washing" class="svc-link" data-i18n="svcMore">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
-
             <div class="svc-card reveal">
                 <div class="svc-icon"><i class="fas fa-house-flood-water"></i></div>
                 <h3 data-i18n="svc2Title">Gutter Cleaning</h3>
                 <p data-i18n="svc2Desc">We scoop out every bit of debris and bag it up — we never blow it all over your house and yard. Then we hose the gutters clean and make sure water flows freely.</p>
-                <ul class="svc-list">
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc2a">All debris hand-scooped &amp; bagged — no mess</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc2b">Gutters flushed clean with water</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc2c">Drains &amp; downspouts checked for proper flow</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc2d">Clogged downspouts dismantled, cleared &amp; reassembled</span></li>
-                </ul>
+                <a href="services.html#gutter-cleaning" class="svc-link" data-i18n="svcMore">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
-
             <div class="svc-card reveal">
                 <div class="svc-icon"><i class="fas fa-shield-halved"></i></div>
                 <h3 data-i18n="svc3Title">Gutter Guard Installation</h3>
                 <p data-i18n="svc3Desc">Stop the clogs before they start. We supply and install three types of gutter guards so leaves and debris stay out and your gutters keep flowing.</p>
-                <ul class="svc-list">
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc3a">Three options: foam, PVC mesh &amp; aluminum</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc3b">Professional supply &amp; installation</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc3c">Fewer cleanings, less overflow</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc3d">Guidance on the right fit for your roof</span></li>
-                </ul>
+                <a href="gutter-guards.html" class="svc-link" data-i18n="svcMore">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
-
             <div class="svc-card reveal">
                 <div class="svc-icon"><i class="fas fa-hand-sparkles"></i></div>
                 <h3 data-i18n="svc4Title">Exterior Gutter Whitening</h3>
                 <p data-i18n="svc4Desc">Offered separately — we clean the outside face of your gutters so they look bright and spotless from the ground, removing those grimy black tiger stripes.</p>
-                <ul class="svc-list">
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc4a">Removes streaks &amp; grime from the gutter face</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc4b">Restores that clean, bright curb-appeal look</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc4c">Great add-on with a full gutter cleaning</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="svc4d">Available as a stand-alone service</span></li>
-                </ul>
+                <a href="services.html#gutter-whitening" class="svc-link" data-i18n="svcMore">Learn more <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ============ PROCESS ============ -->
-<section class="process" id="process">
-    <div class="container">
-        <div class="section-head reveal">
-            <span class="eyebrow"><i class="fas fa-diagram-project"></i> <span data-i18n="prEyebrow">How We Work</span></span>
-            <h2 data-i18n="prTitle">Careful, tidy &amp; done right</h2>
-            <p data-i18n="prSub">A methodical process that protects your home and leaves nothing behind but shine.</p>
-        </div>
-
-        <div class="process-grid">
-            <div class="step reveal">
-                <span class="step-num"></span>
-                <i class="fas fa-brush step-ico"></i>
-                <h4 data-i18n="step1Title">Brush &amp; loosen</h4>
-                <p data-i18n="step1Desc">The water-fed pole brush lifts all the build-up off the glass, frames and seals.</p>
-            </div>
-            <div class="step reveal">
-                <span class="step-num"></span>
-                <i class="fas fa-droplet step-ico"></i>
-                <h4 data-i18n="step2Title">Pure-water rinse</h4>
-                <p data-i18n="step2Desc">We rinse everything down with filtered water so it dries with zero streaks or spots.</p>
-            </div>
-            <div class="step reveal">
-                <span class="step-num"></span>
-                <i class="fas fa-hand-holding-heart step-ico"></i>
-                <h4 data-i18n="step3Title">Scoop &amp; bag</h4>
-                <p data-i18n="step3Desc">Gutter debris is scooped out and bagged — never blown onto your house or yard.</p>
-            </div>
-            <div class="step reveal">
-                <span class="step-num"></span>
-                <i class="fas fa-wrench step-ico"></i>
-                <h4 data-i18n="step4Title">Flush &amp; clear</h4>
-                <p data-i18n="step4Desc">We hose it all down and confirm drains flow — clogged downspouts are opened up, cleared with a tool, and reassembled.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============ GUTTER GUARDS ============ -->
-<section class="guards" id="guards">
-    <div class="container">
-        <div class="section-head reveal">
-            <span class="eyebrow"><i class="fas fa-shield-halved"></i> <span data-i18n="gdEyebrow">Gutter Guards</span></span>
-            <h2 data-i18n="gdTitle">Three guard options, professionally installed</h2>
-            <p data-i18n="gdSub">Keep leaves and debris out for good. We'll help you choose the right one for your home and budget.</p>
-        </div>
-
-        <div class="guard-grid">
-            <div class="guard-card reveal">
-                <div class="guard-visual"><i class="fas fa-cloud"></i></div>
-                <h3 data-i18n="gd1Title">Foam</h3>
-                <div class="guard-type" data-i18n="gd1Type">Budget-friendly</div>
-                <p data-i18n="gd1Desc">Porous foam inserts sit inside the gutter and block debris while letting water pass through. Simple and cost-effective.</p>
-                <ul class="guard-feats">
-                    <li><i class="fas fa-check"></i> <span data-i18n="gd1a">Lowest-cost option</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="gd1b">Quick, no-fuss installation</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="gd1c">Blocks leaves &amp; larger debris</span></li>
-                </ul>
-            </div>
-
-            <div class="guard-card featured reveal">
-                <span class="guard-tag" data-i18n="gd2Tag">Popular</span>
-                <div class="guard-visual"><i class="fas fa-border-all"></i></div>
-                <h3 data-i18n="gd2Title">PVC Mesh</h3>
-                <div class="guard-type" data-i18n="gd2Type">Net-style screen</div>
-                <p data-i18n="gd2Desc">A durable net-like mesh that clips over the gutter, keeping out leaves and fine debris while water flows straight through.</p>
-                <ul class="guard-feats">
-                    <li><i class="fas fa-check"></i> <span data-i18n="gd2a">Fine mesh blocks small debris</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="gd2b">Great balance of price &amp; performance</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="gd2c">Lightweight &amp; long-lasting</span></li>
-                </ul>
-            </div>
-
-            <div class="guard-card reveal">
-                <div class="guard-visual"><i class="fas fa-layer-group"></i></div>
-                <h3 data-i18n="gd3Title">Aluminum</h3>
-                <div class="guard-type" data-i18n="gd3Type">Premium &amp; durable</div>
-                <p data-i18n="gd3Desc">Rigid aluminum guards are the most durable choice — they won't rust or sag and stand up to Montreal winters year after year.</p>
-                <ul class="guard-feats">
-                    <li><i class="fas fa-check"></i> <span data-i18n="gd3a">Strongest, longest-lasting option</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="gd3b">Rust-proof &amp; weather-resistant</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="gd3c">Best protection for heavy leaf areas</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============ WHY US ============ -->
-<section class="why" id="why">
+<!-- ============ WHY TEASER ============ -->
+<section class="why">
     <div class="container why-grid">
         <div class="reveal">
             <div class="section-head left" style="margin-bottom:34px">
-                <span class="eyebrow"><i class="fas fa-award"></i> <span data-i18n="whyEyebrow">Why Choose Lumière</span></span>
+                <span class="eyebrow"><i class="fas fa-award"></i> <span data-i18n="whyEyebrow">Why Choose HD Ultra</span></span>
                 <h2 data-i18n="whyTitle">Local pros who treat your home like ours</h2>
             </div>
             <div class="why-list">
@@ -964,11 +934,8 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
                     <div class="wi-ico"><i class="fas fa-screwdriver-wrench"></i></div>
                     <div><h4 data-i18n="why3Title">We fix the flow</h4><p data-i18n="why3Desc">Clogged downspouts get dismantled, cleared with the right tool and put back together properly.</p></div>
                 </div>
-                <div class="why-item">
-                    <div class="wi-ico"><i class="fas fa-map-location-dot"></i></div>
-                    <div><h4 data-i18n="why4Title">Proudly Montreal-based</h4><p data-i18n="why4Desc">A local crew that knows our weather, our homes, and shows up when we say we will.</p></div>
-                </div>
             </div>
+            <a href="about.html" class="btn btn-ghost" style="margin-top:30px"><span data-i18n="whyCta">More about us</span> <i class="fas fa-arrow-right"></i></a>
         </div>
 
         <div class="why-panel reveal">
@@ -979,35 +946,6 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
                 <div class="why-stat"><b>100%</b><span data-i18n="whyStat2">Filtered-water rinse</span></div>
                 <div class="why-stat"><b>3</b><span data-i18n="whyStat3">Gutter guard options</span></div>
                 <div class="why-stat"><b>0</b><span data-i18n="whyStat4">Mess left behind</span></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ============ SERVICE AREA ============ -->
-<section class="area">
-    <div class="container area-grid">
-        <div class="reveal">
-            <span class="eyebrow"><i class="fas fa-location-dot"></i> <span data-i18n="areaEyebrow">Service Area</span></span>
-            <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);letter-spacing:-.02em;margin-bottom:16px" data-i18n="areaTitle">Serving Montreal &amp; the surrounding areas</h2>
-            <p style="color:var(--muted);font-size:1.06rem;margin-bottom:26px" data-i18n="areaSub">Based right here in Montreal, we cover the island and nearby communities. Not sure if you're in our zone? Just ask — we're happy to help.</p>
-            <a href="#quote" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-i18n="areaCta">Check my address</span></a>
-        </div>
-        <div class="area-card reveal">
-            <h3 data-i18n="areaCardTitle">Neighbourhoods we serve</h3>
-            <div class="area-tags">
-                <span class="area-tag">Montreal</span>
-                <span class="area-tag">West Island</span>
-                <span class="area-tag">Laval</span>
-                <span class="area-tag">NDG</span>
-                <span class="area-tag">Westmount</span>
-                <span class="area-tag">Verdun</span>
-                <span class="area-tag">LaSalle</span>
-                <span class="area-tag">Dollard-des-Ormeaux</span>
-                <span class="area-tag">Pointe-Claire</span>
-                <span class="area-tag">Kirkland</span>
-                <span class="area-tag">Beaconsfield</span>
-                <span class="area-tag" data-i18n="areaMore">&amp; more</span>
             </div>
         </div>
     </div>
@@ -1040,52 +978,428 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
     </div>
 </section>
 
-<!-- ============ FAQ ============ -->
-<section class="faq" id="faq">
+<!-- ============ CTA ============ -->
+<section class="cta">
     <div class="container">
-        <div class="section-head reveal">
-            <span class="eyebrow"><i class="fas fa-circle-question"></i> <span data-i18n="faqEyebrow">FAQ</span></span>
-            <h2 data-i18n="faqTitle">Questions, answered</h2>
-        </div>
-        <div class="faq-wrap">
-            <div class="faq-item reveal">
-                <button class="faq-q"><span data-i18n="faq1q">How does the water-fed pole system work?</span> <i class="fas fa-plus"></i></button>
-                <div class="faq-a"><p data-i18n="faq1a">A brush on the end of an extending pole scrubs the build-up off your glass, frames and seals, while purified filtered water flows through to rinse. Because the water is mineral-free, the windows dry clear on their own — no streaks, no spotting, and no ladders against the house.</p></div>
-            </div>
-            <div class="faq-item reveal">
-                <button class="faq-q"><span data-i18n="faq2q">Will you make a mess cleaning my gutters?</span> <i class="fas fa-plus"></i></button>
-                <div class="faq-a"><p data-i18n="faq2a">Never. We scoop the debris out by hand and bag it up rather than blowing it all over your house and yard. After that we hose the gutters down and confirm the drains and downspouts are flowing properly.</p></div>
-            </div>
-            <div class="faq-item reveal">
-                <button class="faq-q"><span data-i18n="faq3q">What if a downspout is clogged?</span> <i class="fas fa-plus"></i></button>
-                <div class="faq-a"><p data-i18n="faq3a">If a downspout is blocked, we disassemble the pole, use the proper tool to make sure nothing is stuck inside, then reassemble it so water drains the way it should.</p></div>
-            </div>
-            <div class="faq-item reveal">
-                <button class="faq-q"><span data-i18n="faq4q">Which gutter guard should I choose?</span> <i class="fas fa-plus"></i></button>
-                <div class="faq-a"><p data-i18n="faq4a">We offer three: foam (the most budget-friendly), PVC mesh (a durable net-style screen and our most popular pick), and aluminum (the strongest, longest-lasting option). We'll look at your roof and leaf situation and recommend the best fit.</p></div>
-            </div>
-            <div class="faq-item reveal">
-                <button class="faq-q"><span data-i18n="faq5q">Can you just clean the outside of my gutters?</span> <i class="fas fa-plus"></i></button>
-                <div class="faq-a"><p data-i18n="faq5a">Yes. We offer exterior gutter whitening as a separate service — we clean the outer face so your gutters look bright and spotless from the ground, even if the inside doesn't need work.</p></div>
-            </div>
-            <div class="faq-item reveal">
-                <button class="faq-q"><span data-i18n="faq6q">Do you serve my area?</span> <i class="fas fa-plus"></i></button>
-                <div class="faq-a"><p data-i18n="faq6a">We're based in Montreal and cover the island plus surrounding communities including the West Island and Laval. Send us your address in the quote form and we'll confirm right away.</p></div>
+        <div class="cta-box reveal">
+            <h2 data-i18n="ctaTitle">Let's make your home shine</h2>
+            <p data-i18n="ctaSub">Join 500+ Montreal homeowners who trust HD Ultra Exterior for streak-free windows and mess-free gutter care.</p>
+            <div class="cta-actions">
+                <a href="contact.html" class="btn btn-white btn-lg"><i class="fas fa-calendar-check"></i> <span data-i18n="ctaBtn1">Get My Free Quote</span></a>
+                <a href="tel:+15140000000" class="btn btn-ghost btn-lg" style="background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.35)"><i class="fas fa-phone"></i> (514) 000-0000</a>
             </div>
         </div>
     </div>
 </section>
 
+<!-- ============ FOOTER ============ -->
+</div>
+<div class="pg" data-page="services.html">
+
+<!-- ============ PAGE HEADER ============ -->
+<header class="page-header">
+    <div class="container">
+        <div class="crumb reveal"><a href="index.html" data-i18n="navHome">Home</a> <i class="fas fa-chevron-right"></i> <span data-i18n="navServices">Services</span></div>
+        <span class="eyebrow reveal"><i class="fas fa-list-check"></i> <span data-i18n="svcEyebrow">Our Services</span></span>
+        <h1 class="reveal" data-i18n="svcPageTitle">Everything your windows &amp; gutters need</h1>
+        <p class="reveal" data-i18n="svcPageSub">One trusted local crew for the exterior details that make a home look cared for. Here's exactly what we do — and how we do it right.</p>
+    </div>
+</header>
+
+<!-- ============ SERVICE DETAILS ============ -->
+<section class="page-section tight">
+    <div class="container">
+
+        <!-- Window Washing -->
+        <div class="detail-row reveal" id="window-washing">
+            <div class="detail-text">
+                <div class="svc-icon"><i class="fas fa-window-maximize"></i></div>
+                <h2 data-i18n="svc1Title">Window Washing</h2>
+                <p data-i18n="svc1LongDesc">Our water-fed pole system brushes away every bit of build-up on the glass, frames and seals, then rinses everything down with pure filtered water. Because the water is mineral-free, your windows dry perfectly clear — no streaks, no spots, and no ladders leaning against your home.</p>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-calendar-check"></i> <span data-i18n="svcQuote">Book this service</span></a>
+            </div>
+            <div class="detail-media info-card">
+                <h4 data-i18n="svcIncludes">What's included</h4>
+                <ul class="svc-list">
+                    <li><i class="fas fa-check"></i> <span data-i18n="svc1a">Build-up brushed off glass, frames &amp; seals</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="svc1b">Pure filtered-water rinse — no streaks, no spots</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="svc1c">Reaches high windows safely from the ground</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="svc1d">Interior &amp; exterior options available</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Gutter Cleaning -->
+        <div class="detail-row reveal" id="gutter-cleaning">
+            <div class="detail-text">
+                <div class="svc-icon"><i class="fas fa-house-flood-water"></i></div>
+                <h2 data-i18n="svc2Title">Gutter Cleaning</h2>
+                <p data-i18n="svc2LongDesc">We scoop out every bit of debris and bag it up — we never blow it all over your house and yard and leave a mess behind. Then we hose the gutters clean and make sure the drains and downspouts are working properly. If a downspout is clogged, we disassemble the pole, use the proper tool to clear whatever is stuck inside, and reassemble it so water flows the way it should.</p>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-calendar-check"></i> <span data-i18n="svcQuote">Book this service</span></a>
+            </div>
+            <div class="detail-media info-card grad-panel">
+                <h4 data-i18n="svcIncludes">What's included</h4>
+                <ul class="svc-list">
+                    <li><i class="fas fa-check"></i> <span data-i18n="svc2a">All debris hand-scooped &amp; bagged — no mess</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="svc2b">Gutters flushed clean with water</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="svc2c">Drains &amp; downspouts checked for proper flow</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="svc2d">Clogged downspouts dismantled, cleared &amp; reassembled</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Gutter Whitening -->
+        <div class="detail-row reveal" id="gutter-whitening">
+            <div class="detail-text">
+                <div class="svc-icon"><i class="fas fa-hand-sparkles"></i></div>
+                <h2 data-i18n="svc4Title">Exterior Gutter Whitening</h2>
+                <p data-i18n="svc4LongDesc">Offered separately from a full gutter cleaning, this service focuses on the outside face of your gutters — removing the grimy black streaks (tiger stripes) so they look bright, white and spotless from the ground. It's a great add-on to a cleaning, or a stand-alone way to boost your home's curb appeal.</p>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-calendar-check"></i> <span data-i18n="svcQuote">Book this service</span></a>
+            </div>
+            <div class="detail-media info-card">
+                <h4 data-i18n="svcIncludes">What's included</h4>
+                <ul class="svc-list">
+                    <li><i class="fas fa-check"></i> <span data-i18n="svc4a">Removes streaks &amp; grime from the gutter face</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="svc4b">Restores that clean, bright curb-appeal look</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="svc4c">Great add-on with a full gutter cleaning</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="svc4d">Available as a stand-alone service</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Gutter guards cross-link -->
+        <div class="detail-row reveal">
+            <div class="detail-text">
+                <div class="svc-icon"><i class="fas fa-shield-halved"></i></div>
+                <h2 data-i18n="svc3Title">Gutter Guard Installation</h2>
+                <p data-i18n="svc3LongDesc">Stop the clogs before they start. We supply and install three types of gutter guards — foam, PVC mesh and aluminum — so leaves and debris stay out and your gutters keep flowing with far fewer cleanings.</p>
+                <a href="gutter-guards.html" class="btn btn-primary"><span data-i18n="svc3Cta">See the 3 options</span> <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="detail-media info-card">
+                <h4 data-i18n="svcOptions">Your options</h4>
+                <ul class="svc-list">
+                    <li><i class="fas fa-check"></i> <span data-i18n="gd1Title">Foam</span> — <span data-i18n="gd1Type">budget-friendly</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="gd2Title">PVC Mesh</span> — <span data-i18n="gd2Type">net-style screen</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="gd3Title">Aluminum</span> — <span data-i18n="gd3Type">premium &amp; durable</span></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="process">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fas fa-diagram-project"></i> <span data-i18n="prEyebrow">How We Work</span></span>
+            <h2 data-i18n="prTitle">Careful, tidy &amp; done right</h2>
+            <p data-i18n="prSub">A methodical process that protects your home and leaves nothing behind but shine.</p>
+        </div>
+        <div class="process-grid">
+            <div class="step reveal">
+                <span class="step-num"></span>
+                <i class="fas fa-brush step-ico"></i>
+                <h4 data-i18n="step1Title">Brush &amp; loosen</h4>
+                <p data-i18n="step1Desc">The water-fed pole brush lifts all the build-up off the glass, frames and seals.</p>
+            </div>
+            <div class="step reveal">
+                <span class="step-num"></span>
+                <i class="fas fa-droplet step-ico"></i>
+                <h4 data-i18n="step2Title">Pure-water rinse</h4>
+                <p data-i18n="step2Desc">We rinse everything down with filtered water so it dries with zero streaks or spots.</p>
+            </div>
+            <div class="step reveal">
+                <span class="step-num"></span>
+                <i class="fas fa-hand-holding-heart step-ico"></i>
+                <h4 data-i18n="step3Title">Scoop &amp; bag</h4>
+                <p data-i18n="step3Desc">Gutter debris is scooped out and bagged — never blown onto your house or yard.</p>
+            </div>
+            <div class="step reveal">
+                <span class="step-num"></span>
+                <i class="fas fa-wrench step-ico"></i>
+                <h4 data-i18n="step4Title">Flush &amp; clear</h4>
+                <p data-i18n="step4Desc">We hose it all down and confirm drains flow — clogged downspouts are opened up, cleared with a tool, and reassembled.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-box reveal">
+            <h2 data-i18n="ctaTitle">Let's make your home shine</h2>
+            <p data-i18n="ctaSub">Join 500+ Montreal homeowners who trust HD Ultra Exterior for streak-free windows and mess-free gutter care.</p>
+            <div class="cta-actions">
+                <a href="contact.html" class="btn btn-white btn-lg"><i class="fas fa-calendar-check"></i> <span data-i18n="ctaBtn1">Get My Free Quote</span></a>
+                <a href="tel:+15140000000" class="btn btn-ghost btn-lg" style="background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.35)"><i class="fas fa-phone"></i> (514) 000-0000</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+<div class="pg" data-page="gutter-guards.html">
+
+<!-- ============ PAGE HEADER ============ -->
+<header class="page-header">
+    <div class="container">
+        <div class="crumb reveal"><a href="index.html" data-i18n="navHome">Home</a> <i class="fas fa-chevron-right"></i> <span data-i18n="navGuards">Gutter Guards</span></div>
+        <span class="eyebrow reveal"><i class="fas fa-shield-halved"></i> <span data-i18n="gdEyebrow">Gutter Guards</span></span>
+        <h1 class="reveal" data-i18n="gdTitle">Three guard options, professionally installed</h1>
+        <p class="reveal" data-i18n="gdSub">Keep leaves and debris out for good. We'll help you choose the right one for your home and budget.</p>
+    </div>
+</header>
+
+<!-- ============ GUARD OPTIONS ============ -->
+<section class="guards" style="padding-top:20px">
+    <div class="container">
+        <div class="guard-grid">
+            <div class="guard-card reveal">
+                <div class="guard-visual"><i class="fas fa-cloud"></i></div>
+                <h3 data-i18n="gd1Title">Foam</h3>
+                <div class="guard-type" data-i18n="gd1Type">Budget-friendly</div>
+                <p data-i18n="gd1Desc">Porous foam inserts sit inside the gutter and block debris while letting water pass through. Simple and cost-effective.</p>
+                <ul class="guard-feats">
+                    <li><i class="fas fa-check"></i> <span data-i18n="gd1a">Lowest-cost option</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="gd1b">Quick, no-fuss installation</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="gd1c">Blocks leaves &amp; larger debris</span></li>
+                </ul>
+            </div>
+            <div class="guard-card featured reveal">
+                <span class="guard-tag" data-i18n="gd2Tag">Popular</span>
+                <div class="guard-visual"><i class="fas fa-border-all"></i></div>
+                <h3 data-i18n="gd2Title">PVC Mesh</h3>
+                <div class="guard-type" data-i18n="gd2Type">Net-style screen</div>
+                <p data-i18n="gd2Desc">A durable net-like mesh that clips over the gutter, keeping out leaves and fine debris while water flows straight through.</p>
+                <ul class="guard-feats">
+                    <li><i class="fas fa-check"></i> <span data-i18n="gd2a">Fine mesh blocks small debris</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="gd2b">Great balance of price &amp; performance</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="gd2c">Lightweight &amp; long-lasting</span></li>
+                </ul>
+            </div>
+            <div class="guard-card reveal">
+                <div class="guard-visual"><i class="fas fa-layer-group"></i></div>
+                <h3 data-i18n="gd3Title">Aluminum</h3>
+                <div class="guard-type" data-i18n="gd3Type">Premium &amp; durable</div>
+                <p data-i18n="gd3Desc">Rigid aluminum guards are the most durable choice — they won't rust or sag and stand up to Montreal winters year after year.</p>
+                <ul class="guard-feats">
+                    <li><i class="fas fa-check"></i> <span data-i18n="gd3a">Strongest, longest-lasting option</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="gd3b">Rust-proof &amp; weather-resistant</span></li>
+                    <li><i class="fas fa-check"></i> <span data-i18n="gd3c">Best protection for heavy leaf areas</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ WHY GUARDS ============ -->
+<section class="why">
+    <div class="container why-grid">
+        <div class="reveal">
+            <div class="section-head left" style="margin-bottom:34px">
+                <span class="eyebrow"><i class="fas fa-circle-check"></i> <span data-i18n="ggWhyEyebrow">Why Add Guards</span></span>
+                <h2 data-i18n="ggWhyTitle">Fewer cleanings, fewer clogs, less worry</h2>
+            </div>
+            <div class="why-list">
+                <div class="why-item">
+                    <div class="wi-ico"><i class="fas fa-leaf"></i></div>
+                    <div><h4 data-i18n="ggWhy1Title">Keep leaves out</h4><p data-i18n="ggWhy1Desc">Guards block the leaves and debris that cause clogs and overflow in the first place.</p></div>
+                </div>
+                <div class="why-item">
+                    <div class="wi-ico"><i class="fas fa-house-flood-water"></i></div>
+                    <div><h4 data-i18n="ggWhy2Title">Protect your home</h4><p data-i18n="ggWhy2Desc">Free-flowing gutters help move water away from your roof, foundation and basement.</p></div>
+                </div>
+                <div class="why-item">
+                    <div class="wi-ico"><i class="fas fa-screwdriver-wrench"></i></div>
+                    <div><h4 data-i18n="ggWhy3Title">Expert fit</h4><p data-i18n="ggWhy3Desc">We assess your roof and leaf load and install the right guard properly — no guesswork.</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="why-panel reveal">
+            <h3 data-i18n="ggPanelTitle">Not sure which to choose?</h3>
+            <p data-i18n="ggPanelSub">Tell us about your home and the trees around it — we'll recommend the best guard for your budget and get it installed.</p>
+            <a href="contact.html" class="btn btn-white" style="margin-top:8px"><i class="fas fa-paper-plane"></i> <span data-i18n="ggPanelCta">Get a recommendation</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-box reveal">
+            <h2 data-i18n="ctaTitle">Let's make your home shine</h2>
+            <p data-i18n="ctaSub">Join 500+ Montreal homeowners who trust HD Ultra Exterior for streak-free windows and mess-free gutter care.</p>
+            <div class="cta-actions">
+                <a href="contact.html" class="btn btn-white btn-lg"><i class="fas fa-calendar-check"></i> <span data-i18n="ctaBtn1">Get My Free Quote</span></a>
+                <a href="tel:+15140000000" class="btn btn-ghost btn-lg" style="background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.35)"><i class="fas fa-phone"></i> (514) 000-0000</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+<div class="pg" data-page="about.html">
+
+<!-- ============ PAGE HEADER ============ -->
+<header class="page-header">
+    <div class="container">
+        <div class="crumb reveal"><a href="index.html" data-i18n="navHome">Home</a> <i class="fas fa-chevron-right"></i> <span data-i18n="navAbout">About</span></div>
+        <span class="eyebrow reveal"><i class="fas fa-award"></i> <span data-i18n="aboutEyebrow">About HD Ultra Exterior</span></span>
+        <h1 class="reveal" data-i18n="aboutTitle">A local Montreal crew that cares about the details</h1>
+        <p class="reveal" data-i18n="aboutSub">We're an exterior cleaning company built on careful, tidy work and truly streak-free results — trusted by more than 500 homes across Montreal.</p>
+    </div>
+</header>
+
+<!-- ============ STORY ============ -->
+<section class="page-section tight">
+    <div class="container why-grid">
+        <div class="reveal">
+            <div class="section-head left" style="margin-bottom:30px">
+                <span class="eyebrow"><i class="fas fa-heart"></i> <span data-i18n="storyEyebrow">Our Story</span></span>
+                <h2 data-i18n="storyTitle">Built on doing the job right</h2>
+            </div>
+            <p style="color:var(--ink-soft);font-size:1.06rem;margin-bottom:16px" data-i18n="storyP1">HD Ultra Exterior started with a simple idea: exterior cleaning should be done thoroughly and tidily, with real pride in the result. Too many homeowners were used to streaky windows and gutter crews that blew debris all over the yard.</p>
+            <p style="color:var(--ink-soft);font-size:1.06rem" data-i18n="storyP2">So we invested in a proper water-fed pole system for spotless, filtered-water results, and we clean gutters the careful way — scooping and bagging every bit of debris, checking that downspouts flow, and clearing them when they don't. More than 500 Montreal homes later, that approach is still what sets us apart.</p>
+        </div>
+        <div class="why-panel reveal">
+            <h3 data-i18n="aboutPanelTitle">500+ homes and counting</h3>
+            <p data-i18n="aboutPanelSub">The numbers behind our work across Montreal.</p>
+            <div class="why-stats">
+                <div class="why-stat"><b>500+</b><span data-i18n="whyStat1">Homes cleaned</span></div>
+                <div class="why-stat"><b>100%</b><span data-i18n="whyStat2">Filtered-water rinse</span></div>
+                <div class="why-stat"><b>3</b><span data-i18n="whyStat3">Gutter guard options</span></div>
+                <div class="why-stat"><b>0</b><span data-i18n="whyStat4">Mess left behind</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="why">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fas fa-award"></i> <span data-i18n="whyEyebrow">Why Choose HD Ultra</span></span>
+            <h2 data-i18n="whyTitle">Local pros who treat your home like ours</h2>
+        </div>
+        <div class="services-grid">
+            <div class="svc-card reveal">
+                <div class="svc-icon"><i class="fas fa-broom"></i></div>
+                <h3 data-i18n="why1Title">We leave no mess</h3>
+                <p data-i18n="why1Desc">Debris gets bagged and hauled away — we never blow it across your roof, siding and lawn.</p>
+            </div>
+            <div class="svc-card reveal">
+                <div class="svc-icon"><i class="fas fa-droplet"></i></div>
+                <h3 data-i18n="why2Title">Truly streak-free</h3>
+                <p data-i18n="why2Desc">Pure filtered water leaves no minerals behind, so windows dry crystal clear with no wiping.</p>
+            </div>
+            <div class="svc-card reveal">
+                <div class="svc-icon"><i class="fas fa-screwdriver-wrench"></i></div>
+                <h3 data-i18n="why3Title">We fix the flow</h3>
+                <p data-i18n="why3Desc">Clogged downspouts get dismantled, cleared with the right tool and put back together properly.</p>
+            </div>
+            <div class="svc-card reveal">
+                <div class="svc-icon"><i class="fas fa-map-location-dot"></i></div>
+                <h3 data-i18n="why4Title">Proudly Montreal-based</h3>
+                <p data-i18n="why4Desc">A local crew that knows our weather, our homes, and shows up when we say we will.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section class="area">
+    <div class="container area-grid">
+        <div class="reveal">
+            <span class="eyebrow"><i class="fas fa-location-dot"></i> <span data-i18n="areaEyebrow">Service Area</span></span>
+            <h2 style="font-size:clamp(1.8rem,3.5vw,2.5rem);letter-spacing:-.02em;margin-bottom:16px" data-i18n="areaTitle">Serving Montreal &amp; the surrounding areas</h2>
+            <p style="color:var(--ink-soft);font-size:1.06rem;margin-bottom:26px" data-i18n="areaSub">Based right here in Montreal, we cover the island and nearby communities. Not sure if you're in our zone? Just ask — we're happy to help.</p>
+            <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> <span data-i18n="areaCta">Check my address</span></a>
+        </div>
+        <div class="area-card reveal">
+            <h3 data-i18n="areaCardTitle">Neighbourhoods we serve</h3>
+            <div class="area-tags">
+                <span class="area-tag">Montreal</span>
+                <span class="area-tag">West Island</span>
+                <span class="area-tag">Laval</span>
+                <span class="area-tag">NDG</span>
+                <span class="area-tag">Westmount</span>
+                <span class="area-tag">Verdun</span>
+                <span class="area-tag">LaSalle</span>
+                <span class="area-tag">Dollard-des-Ormeaux</span>
+                <span class="area-tag">Pointe-Claire</span>
+                <span class="area-tag">Kirkland</span>
+                <span class="area-tag">Beaconsfield</span>
+                <span class="area-tag" data-i18n="areaMore">&amp; more</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fas fa-star"></i> <span data-i18n="revEyebrow">Happy Homeowners</span></span>
+            <h2 data-i18n="revTitle">What Montreal homeowners say</h2>
+        </div>
+        <div class="reviews-grid">
+            <div class="review reveal">
+                <div class="review-stars">★★★★★</div>
+                <p data-i18n="rev1">"My windows haven't looked this clear in years — not a single streak. They reached the second-floor panes easily and left everything spotless."</p>
+                <div class="review-by"><div class="review-avatar">S</div><div><b>Sophie L.</b><span>NDG</span></div></div>
+            </div>
+            <div class="review reveal">
+                <div class="review-stars">★★★★★</div>
+                <p data-i18n="rev2">"Finally a crew that cleans the gutters without making a mess. They bagged everything and even cleared a downspout that was totally blocked."</p>
+                <div class="review-by"><div class="review-avatar">M</div><div><b>Marc T.</b><span>Pointe-Claire</span></div></div>
+            </div>
+            <div class="review reveal">
+                <div class="review-stars">★★★★★</div>
+                <p data-i18n="rev3">"Installed aluminum guards and cleaned the outside of my gutters — they look brand new from the street. Professional, on time, and friendly."</p>
+                <div class="review-by"><div class="review-avatar">A</div><div><b>Amira K.</b><span>Laval</span></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-box reveal">
+            <h2 data-i18n="ctaTitle">Let's make your home shine</h2>
+            <p data-i18n="ctaSub">Join 500+ Montreal homeowners who trust HD Ultra Exterior for streak-free windows and mess-free gutter care.</p>
+            <div class="cta-actions">
+                <a href="contact.html" class="btn btn-white btn-lg"><i class="fas fa-calendar-check"></i> <span data-i18n="ctaBtn1">Get My Free Quote</span></a>
+                <a href="tel:+15140000000" class="btn btn-ghost btn-lg" style="background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.35)"><i class="fas fa-phone"></i> (514) 000-0000</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+<div class="pg" data-page="contact.html">
+
+<!-- ============ PAGE HEADER ============ -->
+<header class="page-header">
+    <div class="container">
+        <div class="crumb reveal"><a href="index.html" data-i18n="navHome">Home</a> <i class="fas fa-chevron-right"></i> <span data-i18n="navContact">Contact</span></div>
+        <span class="eyebrow reveal"><i class="fas fa-paper-plane"></i> <span data-i18n="qEyebrow">Get a Quote</span></span>
+        <h1 class="reveal" data-i18n="qTitle">Ready for clearer windows &amp; cleaner gutters?</h1>
+        <p class="reveal" data-i18n="qSub">Tell us a little about your home and what you need. We'll get back to you with a free, no-pressure estimate.</p>
+    </div>
+</header>
+
 <!-- ============ QUOTE ============ -->
-<section class="quote" id="quote" style="padding-top:100px">
+<section class="quote" style="padding-top:20px">
     <div class="container quote-grid">
         <div class="quote-info reveal">
-            <span class="eyebrow"><i class="fas fa-paper-plane"></i> <span data-i18n="qEyebrow">Get a Quote</span></span>
-            <h2 data-i18n="qTitle">Ready for clearer windows &amp; cleaner gutters?</h2>
-            <p data-i18n="qSub">Tell us a little about your home and what you need. We'll get back to you with a free, no-pressure estimate.</p>
+            <h2 style="font-size:clamp(1.6rem,3vw,2.1rem);margin-bottom:18px" data-i18n="cInfoTitle">Get in touch</h2>
+            <p style="color:var(--ink-soft);margin-bottom:28px" data-i18n="cInfoSub">Call or text for the fastest response, or send the form and we'll reply shortly.</p>
             <div class="quote-contacts">
-                <div class="qc-item"><div class="qc-ico"><i class="fas fa-phone"></i></div><div><b>(514) 000-0000</b><span data-i18n="qc1">Call or text — we answer fast</span></div></div>
-                <div class="qc-item"><div class="qc-ico"><i class="fas fa-envelope"></i></div><div><b>hello@lumierewash.ca</b><span data-i18n="qc2">Email us anytime</span></div></div>
+                <a class="qc-item" href="tel:+15140000000" style="color:inherit"><div class="qc-ico"><i class="fas fa-phone"></i></div><div><b>(514) 000-0000</b><span data-i18n="qc1">Call or text — we answer fast</span></div></a>
+                <a class="qc-item" href="mailto:hello@hdultraexterior.ca" style="color:inherit"><div class="qc-ico"><i class="fas fa-envelope"></i></div><div><b>hello@hdultraexterior.ca</b><span data-i18n="qc2">Email us anytime</span></div></a>
                 <div class="qc-item"><div class="qc-ico"><i class="fas fa-location-dot"></i></div><div><b>Montreal, QC</b><span data-i18n="qc3">Serving the island &amp; surrounding areas</span></div></div>
                 <div class="qc-item"><div class="qc-ico"><i class="fas fa-clock"></i></div><div><b data-i18n="qc4b">Mon–Sat, 8am–6pm</b><span data-i18n="qc4">Flexible scheduling available</span></div></div>
             </div>
@@ -1138,89 +1452,122 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
     </div>
 </section>
 
-<!-- ============ CTA ============ -->
-<section class="cta">
+<!-- ============ FAQ ============ -->
+<section class="faq">
     <div class="container">
-        <div class="cta-box reveal">
-            <h2 data-i18n="ctaTitle">Let's make your home shine</h2>
-            <p data-i18n="ctaSub">Join 500+ Montreal homeowners who trust Lumière for streak-free windows and mess-free gutter care.</p>
-            <div class="cta-actions">
-                <a href="#quote" class="btn btn-white btn-lg"><i class="fas fa-calendar-check"></i> <span data-i18n="ctaBtn1">Get My Free Quote</span></a>
-                <a href="tel:+15140000000" class="btn btn-ghost btn-lg" style="background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.35)"><i class="fas fa-phone"></i> (514) 000-0000</a>
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fas fa-circle-question"></i> <span data-i18n="faqEyebrow">FAQ</span></span>
+            <h2 data-i18n="faqTitle">Questions, answered</h2>
+        </div>
+        <div class="faq-wrap">
+            <div class="faq-item reveal">
+                <button class="faq-q"><span data-i18n="faq1q">How does the water-fed pole system work?</span> <i class="fas fa-plus"></i></button>
+                <div class="faq-a"><p data-i18n="faq1a">A brush on the end of an extending pole scrubs the build-up off your glass, frames and seals, while purified filtered water flows through to rinse. Because the water is mineral-free, the windows dry clear on their own — no streaks, no spotting, and no ladders against the house.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q"><span data-i18n="faq2q">Will you make a mess cleaning my gutters?</span> <i class="fas fa-plus"></i></button>
+                <div class="faq-a"><p data-i18n="faq2a">Never. We scoop the debris out by hand and bag it up rather than blowing it all over your house and yard. After that we hose the gutters down and confirm the drains and downspouts are flowing properly.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q"><span data-i18n="faq3q">What if a downspout is clogged?</span> <i class="fas fa-plus"></i></button>
+                <div class="faq-a"><p data-i18n="faq3a">If a downspout is blocked, we disassemble the pole, use the proper tool to make sure nothing is stuck inside, then reassemble it so water drains the way it should.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q"><span data-i18n="faq4q">Which gutter guard should I choose?</span> <i class="fas fa-plus"></i></button>
+                <div class="faq-a"><p data-i18n="faq4a">We offer three: foam (the most budget-friendly), PVC mesh (a durable net-style screen and our most popular pick), and aluminum (the strongest, longest-lasting option). We'll look at your roof and leaf situation and recommend the best fit.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q"><span data-i18n="faq5q">Can you just clean the outside of my gutters?</span> <i class="fas fa-plus"></i></button>
+                <div class="faq-a"><p data-i18n="faq5a">Yes. We offer exterior gutter whitening as a separate service — we clean the outer face so your gutters look bright and spotless from the ground, even if the inside doesn't need work.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q"><span data-i18n="faq6q">Do you serve my area?</span> <i class="fas fa-plus"></i></button>
+                <div class="faq-a"><p data-i18n="faq6a">We're based in Montreal and cover the island plus surrounding communities including the West Island and Laval. Send us your address in the quote form and we'll confirm right away.</p></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <div class="footer-logo"><span class="logo-mark"><i class="fas fa-droplet"></i></span> Lumière</div>
-                <p data-i18n="footBrand">Professional window washing and gutter care in Montreal. Streak-free filtered-water cleaning, mess-free gutters, and gutter guard installation. Over 500 homes served.</p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Google"><i class="fab fa-google"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4 data-i18n="footServices">Services</h4>
-                <ul>
-                    <li><a href="#services" data-i18n="footS1">Window washing</a></li>
-                    <li><a href="#services" data-i18n="footS2">Gutter cleaning</a></li>
-                    <li><a href="#guards" data-i18n="footS3">Gutter guards</a></li>
-                    <li><a href="#services" data-i18n="footS4">Gutter whitening</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4 data-i18n="footCompany">Company</h4>
-                <ul>
-                    <li><a href="#why" data-i18n="footC1">Why us</a></li>
-                    <li><a href="#process" data-i18n="footC2">Our process</a></li>
-                    <li><a href="#faq" data-i18n="footC3">FAQ</a></li>
-                    <li><a href="#quote" data-i18n="footC4">Get a quote</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4 data-i18n="footContact">Contact</h4>
-                <ul>
-                    <li><i class="fas fa-phone"></i> (514) 000-0000</li>
-                    <li><i class="fas fa-envelope"></i> hello@lumierewash.ca</li>
-                    <li><i class="fas fa-location-dot"></i> Montreal, QC</li>
-                    <li><i class="fas fa-clock"></i> <span data-i18n="footHours">Mon–Sat, 8am–6pm</span></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>© <span id="year"></span> Lumière Window Washing. <span data-i18n="footRights">All rights reserved.</span></span>
-            <span data-i18n="footMade">Proudly serving Montreal &amp; surrounding areas.</span>
-        </div>
-    </div>
-</footer>
-
-
+</div>
+</main>
+<div id="footer"></div>
 <script>
-
-(function(){
- var ICONS={"droplet":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 2.7s6.5 6.8 6.5 11.3a6.5 6.5 0 0 1-13 0C5.5 9.5 12 2.7 12 2.7z\"/>","phone":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z\"/>","envelope":"<rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m22 6-10 7L2 6\"/>","bars":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"3\" y1=\"6\" x2=\"21\" y2=\"6\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"3\" y1=\"12\" x2=\"21\" y2=\"12\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"3\" y1=\"18\" x2=\"21\" y2=\"18\"/>","xmark":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"/>","arrow-down":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"12\" y1=\"5\" x2=\"12\" y2=\"19\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"19 12 12 19 5 12\"/>","arrow-right":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"12 5 19 12 12 19\"/>","plus":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"12\" y1=\"5\" x2=\"12\" y2=\"19\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/>","check":"<polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"20 6 9 17 4 12\"/>","circle-check":"<circle fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"12\" r=\"9\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"8.3 12 11 14.7 16 9.3\"/>","circle-question":"<circle fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"12\" r=\"9\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9.4 9.2a2.6 2.6 0 0 1 5 1c0 1.6-2.4 2-2.4 3.4\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"12\" y1=\"17.2\" x2=\"12.01\" y2=\"17.2\"/>","clock":"<circle fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"12\" r=\"9\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"12 7 12 12 15.5 14\"/>","star":"<polygon fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"12 2.5 14.9 8.4 21.5 9.3 16.7 13.9 17.9 20.4 12 17.3 6.1 20.4 7.3 13.9 2.5 9.3 9.1 8.4\"/>","location-dot":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M20 10.5c0 5.6-8 11.5-8 11.5s-8-5.9-8-11.5a8 8 0 0 1 16 0z\"/><circle fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"10.5\" r=\"2.8\"/>","map-location-dot":"<polygon fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"1 6 8 3 16 6 23 3 23 18 16 21 8 18 1 21\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"8\" y1=\"3\" x2=\"8\" y2=\"18\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"16\" y1=\"6\" x2=\"16\" y2=\"21\"/>","calendar-check":"<rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"3\" y=\"4.5\" width=\"18\" height=\"17\" rx=\"2\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"16\" y1=\"2.5\" x2=\"16\" y2=\"6.5\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"8\" y1=\"2.5\" x2=\"8\" y2=\"6.5\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"9 15 11 17 15 13\"/>","shield":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 2.5 4.5 5.4v5.8c0 4.8 3.3 7.8 7.5 9.8 4.2-2 7.5-5 7.5-9.8V5.4L12 2.5z\"/>","house":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M3.5 11 12 3.5 20.5 11\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5.5 9.8V20h13V9.8\"/>","thumbs-up":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M7 10.5V21H3.5v-10.5zM7 10.5l4-7.5a2 2 0 0 1 2 2v4.2h5.2a2 2 0 0 1 2 2.35l-1.2 6A2 2 0 0 1 19 20H7\"/>","water":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M2 8.5c2-2 4-2 6 0s4 2 6 0 4-2 6 0\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M2 14.5c2-2 4-2 6 0s4 2 6 0 4-2 6 0\"/>","recycle":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4 12a8 8 0 0 1 13.3-6L20 8\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"20 3 20 8 15 8\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M20 12a8 8 0 0 1-13.3 6L4 16\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"4 21 4 16 9 16\"/>","leaf":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M11 20.5A7.5 7.5 0 0 1 3.5 13C3.5 6.5 9 3.5 20.5 3.5c0 8.5-4.5 13.5-9.5 13.5z\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4 20.5c3-4.5 6.5-6.5 11-7.5\"/>","sparkles":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 3l1.7 4.8L18.5 9l-4.8 1.2L12 15l-1.7-4.8L5.5 9l4.8-1.2z\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M18 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z\"/>","heart":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M20.8 6.6a5 5 0 0 0-7.1 0L12 8.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 22l8.8-8.3a5 5 0 0 0 0-7.1z\"/>","list-check":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"10\" y1=\"6.5\" x2=\"21\" y2=\"6.5\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"10\" y1=\"12\" x2=\"21\" y2=\"12\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"10\" y1=\"17.5\" x2=\"21\" y2=\"17.5\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"3 6.5 4.2 7.7 6.4 5.3\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"3 12 4.2 13.2 6.4 10.8\"/>","window-maximize":"<rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"3\" y=\"4.5\" width=\"18\" height=\"15\" rx=\"2\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"3\" y1=\"9\" x2=\"21\" y2=\"9\"/>","diagram-project":"<rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"3\" y=\"4\" width=\"6.5\" height=\"5\" rx=\"1\"/><rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"14.5\" y=\"15\" width=\"6.5\" height=\"5\" rx=\"1\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9.5 6.5h5.5a2 2 0 0 1 2 2V15\"/>","brush":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M15 4.5l4.5 4.5-8 8H7v-4.5z\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"14\" y1=\"5.5\" x2=\"18.5\" y2=\"10\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M7 16.5c-1.5 0-3 1-3 3 2 .5 4-.5 4-2\"/>","wrench":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M21 6.5a4.2 4.2 0 0 1-5.6 4L6.8 19a2.1 2.1 0 0 1-3-3l8.5-8.6A4.2 4.2 0 0 1 17.5 2l-2.6 2.6 2 2L19.5 4c.9.7 1.5 1.6 1.5 2.5z\"/>","cloud":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M17 18.5a4 4 0 0 0 .2-8 6 6 0 0 0-11.6 1.4A3.6 3.6 0 0 0 6 18.5z\"/>","border-all":"<rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"1.5\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"12\" y1=\"3\" x2=\"12\" y2=\"21\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"3\" y1=\"12\" x2=\"21\" y2=\"12\"/>","layer-group":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 2.5 2.5 7 12 11.5 21.5 7 12 2.5z\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M2.5 12 12 16.5 21.5 12\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M2.5 16.5 12 21 21.5 16.5\"/>","award":"<circle fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"9\" r=\"6\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"9 14 8 22 12 20 16 22 15 14\"/>","broom":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M14 3.5l6.5 6.5-3.5 1-4-4z\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M11.5 8 4 15.5c-1 1-1 2.5 0 3.5s2.5 1 3.5 0L15 11.5\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4 19c2 1 4 1 6-.5\"/>","paper-plane":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"22\" y1=\"2\" x2=\"11\" y2=\"13\"/><polygon fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"22 2 15 22 11 13 2 9\"/>","facebook-f":"<path fill=\"currentColor\" d=\"M13.4 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.26-1.55 1.6-1.55h1.7V4.1c-.3-.04-1.3-.13-2.5-.13-2.5 0-4.15 1.5-4.15 4.35v2.25H7.2v3.2h2.85V22z\"/>","instagram":"<rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"/><circle fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"12\" r=\"3.8\"/><circle fill=\"currentColor\" cx=\"17.4\" cy=\"6.6\" r=\"1.2\"/>","google":"<path fill=\"currentColor\" d=\"M21.35 11.1H12v3.25h5.35c-.25 1.5-1.85 4.4-5.35 4.4A5.75 5.75 0 1 1 15.8 8.35l2.3-2.25A9 9 0 1 0 12 21c5.2 0 8.6-3.65 8.6-8.8 0-.6-.07-1.05-.15-1.6z\"/>"},ALIAS={"shield-heart":"shield","shield-halved":"shield","house-chimney":"house","house-flood-water":"house","hand-sparkles":"sparkles","hand-holding-heart":"heart","screwdriver-wrench":"wrench","hand-holding":"heart"};
- function svg(inner){return '<svg viewBox="0 0 24 24" aria-hidden="true">'+inner+'</svg>';}
- document.querySelectorAll('i[class]').forEach(function(el){
-   var m=(el.className||'').match(/fa-([a-z0-9-]+)/);
-   if(!m)return;
-   var key=m[1]; if(ALIAS[key])key=ALIAS[key];
-   var inner=ICONS[key];
-   if(!inner)inner='<circle cx="12" cy="12" r="3" fill="currentColor"/>';
-   el.innerHTML=svg(inner);
- });
+(function(){var ICONS={"droplet":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 2.7s6.5 6.8 6.5 11.3a6.5 6.5 0 0 1-13 0C5.5 9.5 12 2.7 12 2.7z\"/>","phone":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z\"/>","envelope":"<rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"m22 6-10 7L2 6\"/>","bars":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"3\" y1=\"6\" x2=\"21\" y2=\"6\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"3\" y1=\"12\" x2=\"21\" y2=\"12\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"3\" y1=\"18\" x2=\"21\" y2=\"18\"/>","xmark":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"/>","arrow-down":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"12\" y1=\"5\" x2=\"12\" y2=\"19\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"19 12 12 19 5 12\"/>","arrow-right":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"12 5 19 12 12 19\"/>","chevron-right":"<polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"9 6 15 12 9 18\"/>","plus":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"12\" y1=\"5\" x2=\"12\" y2=\"19\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"/>","check":"<polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"20 6 9 17 4 12\"/>","circle-check":"<circle fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"12\" r=\"9\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"8.3 12 11 14.7 16 9.3\"/>","circle-question":"<circle fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"12\" r=\"9\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9.4 9.2a2.6 2.6 0 0 1 5 1c0 1.6-2.4 2-2.4 3.4\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"12\" y1=\"17.2\" x2=\"12.01\" y2=\"17.2\"/>","clock":"<circle fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"12\" r=\"9\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"12 7 12 12 15.5 14\"/>","star":"<polygon fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"12 2.5 14.9 8.4 21.5 9.3 16.7 13.9 17.9 20.4 12 17.3 6.1 20.4 7.3 13.9 2.5 9.3 9.1 8.4\"/>","location-dot":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M20 10.5c0 5.6-8 11.5-8 11.5s-8-5.9-8-11.5a8 8 0 0 1 16 0z\"/><circle fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"10.5\" r=\"2.8\"/>","map-location-dot":"<polygon fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"1 6 8 3 16 6 23 3 23 18 16 21 8 18 1 21\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"8\" y1=\"3\" x2=\"8\" y2=\"18\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"16\" y1=\"6\" x2=\"16\" y2=\"21\"/>","calendar-check":"<rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"3\" y=\"4.5\" width=\"18\" height=\"17\" rx=\"2\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"16\" y1=\"2.5\" x2=\"16\" y2=\"6.5\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"8\" y1=\"2.5\" x2=\"8\" y2=\"6.5\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"9 15 11 17 15 13\"/>","shield":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 2.5 4.5 5.4v5.8c0 4.8 3.3 7.8 7.5 9.8 4.2-2 7.5-5 7.5-9.8V5.4L12 2.5z\"/>","house":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M3.5 11 12 3.5 20.5 11\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5.5 9.8V20h13V9.8\"/>","thumbs-up":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M7 10.5V21H3.5v-10.5zM7 10.5l4-7.5a2 2 0 0 1 2 2v4.2h5.2a2 2 0 0 1 2 2.35l-1.2 6A2 2 0 0 1 19 20H7\"/>","water":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M2 8.5c2-2 4-2 6 0s4 2 6 0 4-2 6 0\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M2 14.5c2-2 4-2 6 0s4 2 6 0 4-2 6 0\"/>","recycle":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4 12a8 8 0 0 1 13.3-6L20 8\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"20 3 20 8 15 8\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M20 12a8 8 0 0 1-13.3 6L4 16\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"4 21 4 16 9 16\"/>","leaf":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M11 20.5A7.5 7.5 0 0 1 3.5 13C3.5 6.5 9 3.5 20.5 3.5c0 8.5-4.5 13.5-9.5 13.5z\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4 20.5c3-4.5 6.5-6.5 11-7.5\"/>","sparkles":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 3l1.7 4.8L18.5 9l-4.8 1.2L12 15l-1.7-4.8L5.5 9l4.8-1.2z\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M18 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z\"/>","heart":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M20.8 6.6a5 5 0 0 0-7.1 0L12 8.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 22l8.8-8.3a5 5 0 0 0 0-7.1z\"/>","list-check":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"10\" y1=\"6.5\" x2=\"21\" y2=\"6.5\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"10\" y1=\"12\" x2=\"21\" y2=\"12\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"10\" y1=\"17.5\" x2=\"21\" y2=\"17.5\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"3 6.5 4.2 7.7 6.4 5.3\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"3 12 4.2 13.2 6.4 10.8\"/>","window-maximize":"<rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"3\" y=\"4.5\" width=\"18\" height=\"15\" rx=\"2\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"3\" y1=\"9\" x2=\"21\" y2=\"9\"/>","diagram-project":"<rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"3\" y=\"4\" width=\"6.5\" height=\"5\" rx=\"1\"/><rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"14.5\" y=\"15\" width=\"6.5\" height=\"5\" rx=\"1\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9.5 6.5h5.5a2 2 0 0 1 2 2V15\"/>","brush":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M15 4.5l4.5 4.5-8 8H7v-4.5z\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"14\" y1=\"5.5\" x2=\"18.5\" y2=\"10\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M7 16.5c-1.5 0-3 1-3 3 2 .5 4-.5 4-2\"/>","wrench":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M21 6.5a4.2 4.2 0 0 1-5.6 4L6.8 19a2.1 2.1 0 0 1-3-3l8.5-8.6A4.2 4.2 0 0 1 17.5 2l-2.6 2.6 2 2L19.5 4c.9.7 1.5 1.6 1.5 2.5z\"/>","cloud":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M17 18.5a4 4 0 0 0 .2-8 6 6 0 0 0-11.6 1.4A3.6 3.6 0 0 0 6 18.5z\"/>","border-all":"<rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"1.5\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"12\" y1=\"3\" x2=\"12\" y2=\"21\"/><line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"3\" y1=\"12\" x2=\"21\" y2=\"12\"/>","layer-group":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 2.5 2.5 7 12 11.5 21.5 7 12 2.5z\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M2.5 12 12 16.5 21.5 12\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M2.5 16.5 12 21 21.5 16.5\"/>","award":"<circle fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"9\" r=\"6\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"9 14 8 22 12 20 16 22 15 14\"/>","broom":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M14 3.5l6.5 6.5-3.5 1-4-4z\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M11.5 8 4 15.5c-1 1-1 2.5 0 3.5s2.5 1 3.5 0L15 11.5\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4 19c2 1 4 1 6-.5\"/>","screwdriver-wrench":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M21 6.5a4.2 4.2 0 0 1-5.6 4L6.8 19a2.1 2.1 0 0 1-3-3l8.5-8.6A4.2 4.2 0 0 1 17.5 2l-2.6 2.6 2 2L19.5 4c.9.7 1.5 1.6 1.5 2.5z\"/>","house-chimney":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M3.5 11 12 3.5 20.5 11\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5.5 9.8V20h13V9.8\"/>","house-flood-water":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M3.5 11 12 3.5 20.5 11\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M5.5 9.8V20h13V9.8\"/>","shield-heart":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 2.5 4.5 5.4v5.8c0 4.8 3.3 7.8 7.5 9.8 4.2-2 7.5-5 7.5-9.8V5.4L12 2.5z\"/>","shield-halved":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 2.5 4.5 5.4v5.8c0 4.8 3.3 7.8 7.5 9.8 4.2-2 7.5-5 7.5-9.8V5.4L12 2.5z\"/>","hand-sparkles":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 3l1.7 4.8L18.5 9l-4.8 1.2L12 15l-1.7-4.8L5.5 9l4.8-1.2z\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M18 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z\"/>","hand-holding-heart":"<path fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M20.8 6.6a5 5 0 0 0-7.1 0L12 8.3l-1.7-1.7a5 5 0 1 0-7.1 7.1L12 22l8.8-8.3a5 5 0 0 0 0-7.1z\"/>","paper-plane":"<line fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x1=\"22\" y1=\"2\" x2=\"11\" y2=\"13\"/><polygon fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" points=\"22 2 15 22 11 13 2 9\"/>","facebook-f":"<path fill=\"currentColor\" d=\"M13.4 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.26-1.55 1.6-1.55h1.7V4.1c-.3-.04-1.3-.13-2.5-.13-2.5 0-4.15 1.5-4.15 4.35v2.25H7.2v3.2h2.85V22z\"/>","instagram":"<rect fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"/><circle fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" cx=\"12\" cy=\"12\" r=\"3.8\"/><circle fill=\"currentColor\" cx=\"17.4\" cy=\"6.6\" r=\"1.2\"/>","google":"<path fill=\"currentColor\" d=\"M21.35 11.1H12v3.25h5.35c-.25 1.5-1.85 4.4-5.35 4.4A5.75 5.75 0 1 1 15.8 8.35l2.3-2.25A9 9 0 1 0 12 21c5.2 0 8.6-3.65 8.6-8.8 0-.6-.07-1.05-.15-1.6z\"/>"},AL={};
+ function svg(i){return '<svg viewBox="0 0 24 24" aria-hidden="true">'+i+'</svg>';}
+ function paint(root){(root||document).querySelectorAll('i[class]').forEach(function(el){
+   if(el.dataset.ic)return; var m=(el.className||'').match(/fa-([a-z0-9-]+)/); if(!m)return;
+   var k=m[1]; var inner=ICONS[k]||'<circle cx="12" cy="12" r="3" fill="currentColor"/>';
+   el.innerHTML=svg(inner); el.dataset.ic='1';});}
+ window.__paintIcons=paint; paint(document);
 })();
-
-/* =========================================================
-   Lumière Window Washing — interactions & i18n
+</script>
+<script>/* =========================================================
+   HD Ultra Exterior — shared interactions & i18n
+   Multi-page: footer injection, EN/FR toggle (persisted),
+   nav, scroll reveals, FAQ, quote form.
    ========================================================= */
 (function () {
     'use strict';
+
+    /* ---------- Business config (edit once, applies to footer) ---------- */
+    var BIZ = {
+        name: 'HD Ultra Exterior',
+        phone: '(514) 000-0000',
+        phoneHref: '+15140000000',
+        email: 'hello@hdultraexterior.ca'
+    };
+
+    /* ---------- Inject shared footer ---------- */
+    var footerHost = document.getElementById('footer');
+    if (footerHost) {
+        footerHost.outerHTML =
+        '<footer class="footer">' +
+          '<div class="container">' +
+            '<div class="footer-grid">' +
+              '<div class="footer-brand">' +
+                '<div class="footer-logo"><span class="logo-mark"><i class="fas fa-droplet"></i></span> ' + BIZ.name + '</div>' +
+                '<p data-i18n="footBrand">Professional window washing and gutter care in Montreal. Streak-free filtered-water cleaning, mess-free gutters, and gutter guard installation. Over 500 homes served.</p>' +
+                '<div class="footer-social">' +
+                  '<a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>' +
+                  '<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>' +
+                  '<a href="#" aria-label="Google"><i class="fab fa-google"></i></a>' +
+                '</div>' +
+              '</div>' +
+              '<div class="footer-col">' +
+                '<h4 data-i18n="footServices">Services</h4>' +
+                '<ul>' +
+                  '<li><a href="services.html#window-washing" data-i18n="footS1">Window washing</a></li>' +
+                  '<li><a href="services.html#gutter-cleaning" data-i18n="footS2">Gutter cleaning</a></li>' +
+                  '<li><a href="gutter-guards.html" data-i18n="footS3">Gutter guards</a></li>' +
+                  '<li><a href="services.html#gutter-whitening" data-i18n="footS4">Gutter whitening</a></li>' +
+                '</ul>' +
+              '</div>' +
+              '<div class="footer-col">' +
+                '<h4 data-i18n="footCompany">Company</h4>' +
+                '<ul>' +
+                  '<li><a href="index.html" data-i18n="footLinkHome">Home</a></li>' +
+                  '<li><a href="about.html" data-i18n="footLinkAbout">About us</a></li>' +
+                  '<li><a href="about.html#reviews" data-i18n="footLinkReviews">Reviews</a></li>' +
+                  '<li><a href="contact.html" data-i18n="footLinkContact">Contact</a></li>' +
+                '</ul>' +
+              '</div>' +
+              '<div class="footer-col">' +
+                '<h4 data-i18n="footContactHead">Contact</h4>' +
+                '<ul>' +
+                  '<li><i class="fas fa-phone"></i> <a href="tel:' + BIZ.phoneHref + '">' + BIZ.phone + '</a></li>' +
+                  '<li><i class="fas fa-envelope"></i> <a href="mailto:' + BIZ.email + '">' + BIZ.email + '</a></li>' +
+                  '<li><i class="fas fa-location-dot"></i> Montreal, QC</li>' +
+                  '<li><i class="fas fa-clock"></i> <span data-i18n="footHours">Mon–Sat, 8am–6pm</span></li>' +
+                '</ul>' +
+              '</div>' +
+            '</div>' +
+            '<div class="footer-bottom">' +
+              '<span>© <span id="year"></span> ' + BIZ.name + '. <span data-i18n="footRights">All rights reserved.</span></span>' +
+              '<span data-i18n="footMade">Proudly serving Montreal &amp; surrounding areas.</span>' +
+            '</div>' +
+          '</div>' +
+        '</footer>';
+    }
 
     /* ---------- Year ---------- */
     var yearEl = document.getElementById('year');
@@ -1257,10 +1604,7 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
     if ('IntersectionObserver' in window) {
         var io = new IntersectionObserver(function (entries) {
             entries.forEach(function (e) {
-                if (e.isIntersecting) {
-                    e.target.classList.add('in');
-                    io.unobserve(e.target);
-                }
+                if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
             });
         }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
         revealEls.forEach(function (el) { io.observe(el); });
@@ -1278,10 +1622,7 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
                 o.classList.remove('open');
                 o.querySelector('.faq-a').style.maxHeight = null;
             });
-            if (!isOpen) {
-                item.classList.add('open');
-                a.style.maxHeight = a.scrollHeight + 'px';
-            }
+            if (!isOpen) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
         });
     });
 
@@ -1306,21 +1647,22 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
     }
 
     /* =========================================================
-       i18n — English / French
+       i18n — English / French (shared across all pages)
        ========================================================= */
     var I18N = {
         fr: {
-            navServices: 'Services', navProcess: 'Notre méthode', navGuards: 'Protège-gouttières',
-            navWhy: 'Pourquoi nous', navFaq: 'FAQ', navQuote: 'Soumission',
+            /* nav */
+            navHome: 'Accueil', navServices: 'Services', navGuards: 'Protège-gouttières',
+            navAbout: 'À propos', navContact: 'Contact',
 
+            /* hero (home) */
             heroPill: '500+ maisons', heroBadge: 'La confiance de Montréal et de l\'Ouest-de-l\'Île',
             heroTitle1: 'Des vitres sans traces.', heroTitle2: 'Des gouttières propres, sans dégât.',
             heroSub: 'Nettoyage à la perche alimentée en eau pure qui décolle toute la saleté du verre, des cadres et des joints — puis rinçage à l\'eau filtrée pour ne laisser aucune trace. Un entretien de gouttières soigné par une équipe locale de Montréal.',
             heroCta1: 'Soumission gratuite', heroCta2: 'Voir nos services',
             heroT1: 'Maisons servies', heroT2b: 'Pure', heroT2: 'Rinçage à l\'eau filtrée',
             heroT3b: 'Entièrement', heroT3: 'Assurés et locaux',
-
-            hcTitle: 'La différence Lumière', hcSub: 'Fait comme il faut, de haut en bas',
+            hcTitle: 'La différence HD Ultra', hcSub: 'Fait comme il faut, de haut en bas',
             hc1: 'Décolle la saleté du verre, des cadres et des joints',
             hc2: 'Rinçage à l\'eau pure filtrée — zéro trace',
             hc3: 'Débris de gouttières ensachés, jamais éparpillés',
@@ -1329,36 +1671,43 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
             floatb1: 'Sans traces', floats1: 'chaque vitre',
             floatb2: 'Aucun dégât', floats2: 'on ensache et on part',
 
+            /* strip */
             strip1: 'Montréal et environs', strip2: 'Perche alimentée en eau',
             strip3: 'Gouttières nettoyées et ensachées', strip4: 'Satisfaction garantie',
 
+            /* services */
             svcEyebrow: 'Nos services', svcTitle: 'Tout ce dont vos vitres et gouttières ont besoin',
             svcSub: 'Une équipe locale de confiance pour les détails extérieurs qui font une maison bien entretenue.',
+            svcPageTitle: 'Tout ce dont vos vitres et gouttières ont besoin',
+            svcPageSub: 'Une équipe locale de confiance pour les détails extérieurs qui font une maison bien entretenue. Voici exactement ce que nous faisons — et comment nous le faisons bien.',
+            svcMore: 'En savoir plus', svcQuote: 'Réserver ce service',
+            svcIncludes: 'Ce qui est inclus', svcOptions: 'Vos options', svc3Cta: 'Voir les 3 options',
             svc1Title: 'Lavage de vitres',
             svc1Desc: 'Notre perche alimentée en eau décolle toute la saleté du verre, des cadres et des joints, puis rince à l\'eau pure filtrée pour un séchage parfaitement clair.',
+            svc1LongDesc: 'Notre perche alimentée en eau décolle toute la saleté du verre, des cadres et des joints, puis rince le tout à l\'eau pure filtrée. Comme l\'eau est sans minéraux, vos vitres sèchent parfaitement claires — sans traces, sans taches et sans échelle appuyée contre la maison.',
             svc1a: 'Saleté décollée du verre, des cadres et des joints',
             svc1b: 'Rinçage à l\'eau filtrée — sans traces ni taches',
             svc1c: 'Atteint les vitres en hauteur en toute sécurité, du sol',
             svc1d: 'Options intérieur et extérieur disponibles',
             svc2Title: 'Nettoyage de gouttières',
             svc2Desc: 'Nous retirons tous les débris et les ensachons — jamais soufflés partout sur votre maison et votre terrain. Puis nous rinçons les gouttières et vérifions que l\'eau s\'écoule bien.',
+            svc2LongDesc: 'Nous retirons tous les débris et les ensachons — jamais soufflés partout sur votre maison et votre terrain. Puis nous rinçons les gouttières et vérifions que les drains et descentes fonctionnent bien. Si une descente est bouchée, nous démontons la pièce, utilisons le bon outil pour déloger ce qui est coincé, puis la remontons pour que l\'eau s\'écoule comme il faut.',
             svc2a: 'Débris retirés à la main et ensachés — aucun dégât',
             svc2b: 'Gouttières rincées à l\'eau',
             svc2c: 'Drains et descentes vérifiés pour un bon écoulement',
             svc2d: 'Descentes bouchées démontées, débouchées et remontées',
             svc3Title: 'Installation de protège-gouttières',
             svc3Desc: 'Arrêtez les bouchons avant qu\'ils commencent. Nous fournissons et installons trois types de protège-gouttières pour garder les feuilles dehors.',
-            svc3a: 'Trois options : mousse, filet PVC et aluminium',
-            svc3b: 'Fourniture et installation professionnelles',
-            svc3c: 'Moins de nettoyages, moins de débordements',
-            svc3d: 'Conseils sur le bon choix pour votre toit',
+            svc3LongDesc: 'Arrêtez les bouchons avant qu\'ils commencent. Nous fournissons et installons trois types de protège-gouttières — mousse, filet PVC et aluminium — pour garder les feuilles et débris dehors et laisser vos gouttières couler avec bien moins de nettoyages.',
             svc4Title: 'Blanchiment extérieur des gouttières',
             svc4Desc: 'Offert séparément — nous nettoyons la face extérieure de vos gouttières pour qu\'elles paraissent propres et éclatantes vues du sol, en enlevant les traces noires.',
+            svc4LongDesc: 'Offert séparément du nettoyage complet, ce service cible la face extérieure de vos gouttières — en enlevant les traces noires (rayures de tigre) pour qu\'elles paraissent claires, blanches et impeccables vues du sol. Un excellent complément à un nettoyage, ou un service autonome pour rehausser l\'apparence de votre maison.',
             svc4a: 'Enlève les traces et la saleté de la face de gouttière',
             svc4b: 'Redonne un aspect propre et éclatant',
             svc4c: 'Excellent complément au nettoyage complet',
             svc4d: 'Disponible comme service autonome',
 
+            /* process */
             prEyebrow: 'Notre méthode', prTitle: 'Soigné, propre et bien fait',
             prSub: 'Une méthode rigoureuse qui protège votre maison et ne laisse que de l\'éclat.',
             step1Title: 'Brosser et décoller', step1Desc: 'La brosse de la perche décolle toute la saleté du verre, des cadres et des joints.',
@@ -1366,6 +1715,7 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
             step3Title: 'Retirer et ensacher', step3Desc: 'Les débris de gouttières sont retirés et ensachés — jamais soufflés sur la maison ou le terrain.',
             step4Title: 'Rincer et déboucher', step4Desc: 'Nous rinçons le tout et vérifions l\'écoulement — les descentes bouchées sont démontées, débouchées à l\'outil et remontées.',
 
+            /* gutter guards */
             gdEyebrow: 'Protège-gouttières', gdTitle: 'Trois options, installées par des pros',
             gdSub: 'Gardez les feuilles et débris dehors pour de bon. On vous aide à choisir selon votre maison et votre budget.',
             gd1Title: 'Mousse', gd1Type: 'Économique',
@@ -1377,8 +1727,16 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
             gd3Title: 'Aluminium', gd3Type: 'Haut de gamme et durable',
             gd3Desc: 'Les protège-gouttières rigides en aluminium sont le choix le plus durable — sans rouille ni affaissement, ils résistent aux hivers de Montréal.',
             gd3a: 'L\'option la plus solide et durable', gd3b: 'Anti-rouille et résistant aux intempéries', gd3c: 'Meilleure protection pour les zones à feuilles',
+            ggWhyEyebrow: 'Pourquoi ajouter des protège-gouttières', ggWhyTitle: 'Moins de nettoyages, moins de bouchons, moins de soucis',
+            ggWhy1Title: 'Gardez les feuilles dehors', ggWhy1Desc: 'Les protège-gouttières bloquent les feuilles et débris qui causent bouchons et débordements.',
+            ggWhy2Title: 'Protégez votre maison', ggWhy2Desc: 'Des gouttières qui coulent bien éloignent l\'eau de votre toit, de vos fondations et du sous-sol.',
+            ggWhy3Title: 'Pose experte', ggWhy3Desc: 'Nous évaluons votre toit et vos feuilles et posons le bon protège-gouttière correctement — sans deviner.',
+            ggPanelTitle: 'Pas certain lequel choisir?', ggPanelSub: 'Parlez-nous de votre maison et des arbres autour — nous recommanderons le meilleur protège-gouttière selon votre budget et l\'installerons.',
+            ggPanelCta: 'Obtenir une recommandation',
 
-            whyEyebrow: 'Pourquoi choisir Lumière', whyTitle: 'Des pros locaux qui traitent votre maison comme la leur',
+            /* why (home + about) */
+            whyEyebrow: 'Pourquoi choisir HD Ultra', whyTitle: 'Des pros locaux qui traitent votre maison comme la leur',
+            whyCta: 'En savoir plus sur nous',
             why1Title: 'Aucun dégât laissé', why1Desc: 'Les débris sont ensachés et emportés — jamais soufflés sur votre toit, vos murs et votre pelouse.',
             why2Title: 'Vraiment sans traces', why2Desc: 'L\'eau pure filtrée ne laisse aucun minéral, les vitres sèchent claires sans essuyage.',
             why3Title: 'On rétablit l\'écoulement', why3Desc: 'Les descentes bouchées sont démontées, débouchées avec le bon outil et remontées correctement.',
@@ -1386,15 +1744,26 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
             whyPanelTitle: '500+ maisons et ça continue', whyPanelSub: 'Les propriétaires de Montréal nous confient leurs vitres claires et leurs gouttières fonctionnelles.',
             whyStat1: 'Maisons nettoyées', whyStat2: 'Rinçage à l\'eau filtrée', whyStat3: 'Options de protège-gouttières', whyStat4: 'Dégât laissé',
 
+            /* about */
+            aboutEyebrow: 'À propos de HD Ultra Exterior', aboutTitle: 'Une équipe locale de Montréal soucieuse des détails',
+            aboutSub: 'Nous sommes une entreprise de nettoyage extérieur bâtie sur un travail soigné et des résultats vraiment sans traces — la confiance de plus de 500 maisons à Montréal.',
+            storyEyebrow: 'Notre histoire', storyTitle: 'Bâtie sur le travail bien fait',
+            storyP1: 'HD Ultra Exterior est né d\'une idée simple : le nettoyage extérieur doit être fait à fond et proprement, avec une vraie fierté du résultat. Trop de propriétaires étaient habitués à des vitres striées et à des équipes qui soufflaient les débris partout dans la cour.',
+            storyP2: 'Nous avons donc investi dans une vraie perche alimentée en eau pour des résultats impeccables à l\'eau filtrée, et nous nettoyons les gouttières avec soin — en retirant et ensachant chaque débris, en vérifiant l\'écoulement des descentes et en les débouchant au besoin. Plus de 500 maisons de Montréal plus tard, cette approche fait toujours notre différence.',
+            aboutPanelTitle: '500+ maisons et ça continue', aboutPanelSub: 'Les chiffres derrière notre travail à Montréal.',
+
+            /* area */
             areaEyebrow: 'Zone de service', areaTitle: 'Au service de Montréal et des environs',
             areaSub: 'Basés à Montréal, nous couvrons l\'île et les communautés voisines. Vous ne savez pas si vous êtes dans notre zone? Demandez-nous, avec plaisir.',
             areaCta: 'Vérifier mon adresse', areaCardTitle: 'Quartiers desservis', areaMore: 'et plus',
 
+            /* reviews */
             revEyebrow: 'Clients satisfaits', revTitle: 'Ce que disent les propriétaires de Montréal',
             rev1: '« Mes vitres n\'ont pas été aussi claires depuis des années — pas une seule trace. Ils ont atteint les fenêtres du deuxième étage facilement et tout était impeccable. »',
             rev2: '« Enfin une équipe qui nettoie les gouttières sans faire de dégât. Ils ont tout ensaché et débouché une descente complètement bloquée. »',
             rev3: '« Ils ont installé des protège-gouttières en aluminium et nettoyé l\'extérieur — elles ont l\'air neuves depuis la rue. Pros, ponctuels et sympathiques. »',
 
+            /* faq */
             faqEyebrow: 'FAQ', faqTitle: 'Vos questions, nos réponses',
             faq1q: 'Comment fonctionne la perche alimentée en eau?',
             faq1a: 'Une brosse au bout d\'une perche télescopique frotte la saleté sur le verre, les cadres et les joints, pendant que l\'eau pure filtrée coule pour rincer. Comme l\'eau est sans minéraux, les vitres sèchent claires d\'elles-mêmes — sans traces, sans taches, et sans échelle contre la maison.',
@@ -1409,8 +1778,10 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
             faq6q: 'Desservez-vous mon secteur?',
             faq6a: 'Nous sommes basés à Montréal et couvrons l\'île ainsi que les communautés voisines, dont l\'Ouest-de-l\'Île et Laval. Envoyez-nous votre adresse dans le formulaire et nous confirmerons rapidement.',
 
+            /* contact / quote */
             qEyebrow: 'Soumission', qTitle: 'Prêt pour des vitres claires et des gouttières propres?',
             qSub: 'Parlez-nous un peu de votre maison et de vos besoins. Nous vous reviendrons avec une estimation gratuite et sans pression.',
+            cInfoTitle: 'Nous joindre', cInfoSub: 'Appelez ou textez pour la réponse la plus rapide, ou envoyez le formulaire et nous répondrons sous peu.',
             qc1: 'Appelez ou textez — réponse rapide', qc2: 'Écrivez-nous en tout temps',
             qc3: 'Au service de l\'île et des environs', qc4b: 'Lun–Sam, 8h–18h', qc4: 'Horaire flexible disponible',
             fName: 'Nom complet', fPhone: 'Téléphone', fEmail: 'Courriel', fAddress: 'Adresse / quartier',
@@ -1421,19 +1792,21 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
             fSubmit: 'Demander ma soumission gratuite', fNote: 'Sans engagement. Vos coordonnées restent confidentielles.',
             fSuccessTitle: 'Merci!', fSuccessMsg: 'Votre demande est reçue. Nous vous contacterons sous peu avec votre soumission gratuite.',
 
+            /* cta */
             ctaTitle: 'Faisons briller votre maison',
-            ctaSub: 'Rejoignez plus de 500 propriétaires de Montréal qui font confiance à Lumière pour des vitres sans traces et des gouttières sans dégât.',
+            ctaSub: 'Rejoignez plus de 500 propriétaires de Montréal qui font confiance à HD Ultra Exterior pour des vitres sans traces et des gouttières sans dégât.',
             ctaBtn1: 'Obtenir ma soumission gratuite',
 
+            /* footer */
             footBrand: 'Lavage de vitres et entretien de gouttières professionnels à Montréal. Nettoyage à l\'eau filtrée sans traces, gouttières sans dégât et installation de protège-gouttières. Plus de 500 maisons servies.',
             footServices: 'Services', footS1: 'Lavage de vitres', footS2: 'Nettoyage de gouttières', footS3: 'Protège-gouttières', footS4: 'Blanchiment de gouttières',
-            footCompany: 'Entreprise', footC1: 'Pourquoi nous', footC2: 'Notre méthode', footC3: 'FAQ', footC4: 'Soumission',
-            footContact: 'Contact', footHours: 'Lun–Sam, 8h–18h',
+            footCompany: 'Entreprise', footLinkHome: 'Accueil', footLinkAbout: 'À propos', footLinkReviews: 'Avis', footLinkContact: 'Contact',
+            footContactHead: 'Contact', footHours: 'Lun–Sam, 8h–18h',
             footRights: 'Tous droits réservés.', footMade: 'Fièrement au service de Montréal et des environs.'
         }
     };
 
-    // Store the original English markup once (Map, since keys are DOM elements)
+    /* Capture English markup (after footer injection) */
     var enMap = new Map();
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
         enMap.set(el, el.innerHTML);
@@ -1443,26 +1816,55 @@ i[class*="fa-"] svg{width:1em;height:1em;display:block;}
         document.documentElement.lang = lang;
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
             var key = el.getAttribute('data-i18n');
-            if (lang === 'fr' && I18N.fr[key]) {
-                el.innerHTML = I18N.fr[key];
-            } else {
-                el.innerHTML = enMap.get(el);
-            }
+            if (lang === 'fr' && I18N.fr[key]) el.innerHTML = I18N.fr[key];
+            else el.innerHTML = enMap.get(el);
         });
-        // Recompute any open FAQ height after text swap
+        document.querySelectorAll('.lang-btn').forEach(function (b) {
+            b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+        });
         document.querySelectorAll('.faq-item.open .faq-a').forEach(function (a) {
             a.style.maxHeight = a.scrollHeight + 'px';
         });
+        try { localStorage.setItem('hdlang', lang); } catch (e) {}
     }
 
     document.querySelectorAll('.lang-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            document.querySelectorAll('.lang-btn').forEach(function (b) { b.classList.remove('active'); });
-            btn.classList.add('active');
-            setLang(btn.getAttribute('data-lang'));
-        });
+        btn.addEventListener('click', function () { setLang(btn.getAttribute('data-lang')); });
     });
 
+    /* Apply saved language on load */
+    var saved = 'en';
+    try { saved = localStorage.getItem('hdlang') || 'en'; } catch (e) {}
+    if (saved === 'fr') setLang('fr');
+
+})();
+</script>
+<script>
+(function(){
+ var order=["index.html","services.html","gutter-guards.html","about.html","contact.html"];
+ function show(name,anchor){
+   var found=false;
+   document.querySelectorAll('.pg').forEach(function(p){
+     var on=p.getAttribute('data-page')===name; p.classList.toggle('active',on); if(on)found=true;});
+   if(!found){document.querySelector('.pg[data-page="index.html"]').classList.add('active');name='index.html';}
+   document.querySelectorAll('.nav-links a').forEach(function(a){
+     var href=(a.getAttribute('href')||'').split('#')[0];
+     a.classList.toggle('active',href===name);});
+   var active=document.querySelector('.pg.active');
+   if(window.__paintIcons)window.__paintIcons(active);
+   active.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+   if(anchor){var t=active.querySelector('#'+anchor); if(t){t.scrollIntoView({behavior:'smooth',block:'start'});return;}}
+   window.scrollTo({top:0,left:0,behavior:'auto'});
+ }
+ document.addEventListener('click',function(e){
+   var a=e.target.closest&&e.target.closest('a[href]'); if(!a)return;
+   var href=a.getAttribute('href')||''; var m=href.match(/^([a-z-]+\.html)(?:#(.+))?$/);
+   if(!m)return; e.preventDefault();
+   var nl=document.getElementById('navLinks'); if(nl)nl.classList.remove('open');
+   show(m[1],m[2]);
+ });
+ window.__show=show;
 })();
 
+if(window.__paintIcons)window.__paintIcons(document);
 </script>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Free Quote — HD Ultra Exterior | Montreal</title>
+    <meta name="description" content="Get a free, no-pressure quote from HD Ultra Exterior for window washing, gutter cleaning and gutter guards in Montreal. Call, text or send the form.">
+    <meta name="theme-color" content="#7c3aed">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+        <a href="index.html" class="nav-logo">
+            <span class="logo-mark"><i class="fas fa-droplet"></i></span>
+            <span>HD Ultra Exterior<small>Window &amp; Gutter Care</small></span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" data-i18n="navHome">Home</a></li>
+            <li><a href="services.html" data-i18n="navServices">Services</a></li>
+            <li><a href="gutter-guards.html" data-i18n="navGuards">Gutter Guards</a></li>
+            <li><a href="about.html" data-i18n="navAbout">About</a></li>
+            <li><a href="contact.html" class="active" data-i18n="navContact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div class="lang-toggle">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
+            </div>
+            <a href="tel:+15140000000" class="nav-phone"><i class="fas fa-phone"></i> (514) 000-0000</a>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</nav>
+
+<!-- ============ PAGE HEADER ============ -->
+<header class="page-header">
+    <div class="container">
+        <div class="crumb reveal"><a href="index.html" data-i18n="navHome">Home</a> <i class="fas fa-chevron-right"></i> <span data-i18n="navContact">Contact</span></div>
+        <span class="eyebrow reveal"><i class="fas fa-paper-plane"></i> <span data-i18n="qEyebrow">Get a Quote</span></span>
+        <h1 class="reveal" data-i18n="qTitle">Ready for clearer windows &amp; cleaner gutters?</h1>
+        <p class="reveal" data-i18n="qSub">Tell us a little about your home and what you need. We'll get back to you with a free, no-pressure estimate.</p>
+    </div>
+</header>
+
+<!-- ============ QUOTE ============ -->
+<section class="quote" style="padding-top:20px">
+    <div class="container quote-grid">
+        <div class="quote-info reveal">
+            <h2 style="font-size:clamp(1.6rem,3vw,2.1rem);margin-bottom:18px" data-i18n="cInfoTitle">Get in touch</h2>
+            <p style="color:var(--ink-soft);margin-bottom:28px" data-i18n="cInfoSub">Call or text for the fastest response, or send the form and we'll reply shortly.</p>
+            <div class="quote-contacts">
+                <a class="qc-item" href="tel:+15140000000" style="color:inherit"><div class="qc-ico"><i class="fas fa-phone"></i></div><div><b>(514) 000-0000</b><span data-i18n="qc1">Call or text — we answer fast</span></div></a>
+                <a class="qc-item" href="mailto:hello@hdultraexterior.ca" style="color:inherit"><div class="qc-ico"><i class="fas fa-envelope"></i></div><div><b>hello@hdultraexterior.ca</b><span data-i18n="qc2">Email us anytime</span></div></a>
+                <div class="qc-item"><div class="qc-ico"><i class="fas fa-location-dot"></i></div><div><b>Montreal, QC</b><span data-i18n="qc3">Serving the island &amp; surrounding areas</span></div></div>
+                <div class="qc-item"><div class="qc-ico"><i class="fas fa-clock"></i></div><div><b data-i18n="qc4b">Mon–Sat, 8am–6pm</b><span data-i18n="qc4">Flexible scheduling available</span></div></div>
+            </div>
+        </div>
+
+        <div class="quote-form reveal">
+            <form id="quoteForm" novalidate>
+                <div class="form-row">
+                    <div class="field">
+                        <label for="name" data-i18n="fName">Full name</label>
+                        <input type="text" id="name" name="name" required placeholder="Jane Tremblay">
+                    </div>
+                    <div class="field">
+                        <label for="phone" data-i18n="fPhone">Phone</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(514) 123-4567">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="email" data-i18n="fEmail">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="you@email.com">
+                </div>
+                <div class="field">
+                    <label for="address" data-i18n="fAddress">Address / neighbourhood</label>
+                    <input type="text" id="address" name="address" placeholder="NDG, Montreal">
+                </div>
+                <div class="field">
+                    <label for="service" data-i18n="fService">What do you need?</label>
+                    <select id="service" name="service">
+                        <option value="" data-i18n="fServiceOpt0">Select a service…</option>
+                        <option data-i18n="fServiceOpt1">Window washing</option>
+                        <option data-i18n="fServiceOpt2">Gutter cleaning</option>
+                        <option data-i18n="fServiceOpt3">Gutter guard installation</option>
+                        <option data-i18n="fServiceOpt4">Exterior gutter whitening</option>
+                        <option data-i18n="fServiceOpt5">A combination / not sure</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="message" data-i18n="fMessage">Anything else? (optional)</label>
+                    <textarea id="message" name="message" placeholder="Number of floors, how many windows, gutter length…"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> <span data-i18n="fSubmit">Request My Free Quote</span></button>
+                <p class="form-note" data-i18n="fNote">No obligation. We'll never share your details.</p>
+            </form>
+            <div class="form-success" id="formSuccess">
+                <i class="fas fa-circle-check"></i>
+                <h3 data-i18n="fSuccessTitle">Thank you!</h3>
+                <p data-i18n="fSuccessMsg">Your request is in. We'll be in touch shortly with your free quote.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow"><i class="fas fa-circle-question"></i> <span data-i18n="faqEyebrow">FAQ</span></span>
+            <h2 data-i18n="faqTitle">Questions, answered</h2>
+        </div>
+        <div class="faq-wrap">
+            <div class="faq-item reveal">
+                <button class="faq-q"><span data-i18n="faq1q">How does the water-fed pole system work?</span> <i class="fas fa-plus"></i></button>
+                <div class="faq-a"><p data-i18n="faq1a">A brush on the end of an extending pole scrubs the build-up off your glass, frames and seals, while purified filtered water flows through to rinse. Because the water is mineral-free, the windows dry clear on their own — no streaks, no spotting, and no ladders against the house.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q"><span data-i18n="faq2q">Will you make a mess cleaning my gutters?</span> <i class="fas fa-plus"></i></button>
+                <div class="faq-a"><p data-i18n="faq2a">Never. We scoop the debris out by hand and bag it up rather than blowing it all over your house and yard. After that we hose the gutters down and confirm the drains and downspouts are flowing properly.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q"><span data-i18n="faq3q">What if a downspout is clogged?</span> <i class="fas fa-plus"></i></button>
+                <div class="faq-a"><p data-i18n="faq3a">If a downspout is blocked, we disassemble the pole, use the proper tool to make sure nothing is stuck inside, then reassemble it so water drains the way it should.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q"><span data-i18n="faq4q">Which gutter guard should I choose?</span> <i class="fas fa-plus"></i></button>
+                <div class="faq-a"><p data-i18n="faq4a">We offer three: foam (the most budget-friendly), PVC mesh (a durable net-style screen and our most popular pick), and aluminum (the strongest, longest-lasting option). We'll look at your roof and leaf situation and recommend the best fit.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q"><span data-i18n="faq5q">Can you just clean the outside of my gutters?</span> <i class="fas fa-plus"></i></button>
+                <div class="faq-a"><p data-i18n="faq5a">Yes. We offer exterior gutter whitening as a separate service — we clean the outer face so your gutters look bright and spotless from the ground, even if the inside doesn't need work.</p></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q"><span data-i18n="faq6q">Do you serve my area?</span> <i class="fas fa-plus"></i></button>
+                <div class="faq-a"><p data-i18n="faq6a">We're based in Montreal and cover the island plus surrounding communities including the West Island and Laval. Send us your address in the quote form and we'll confirm right away.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="footer"></div>
+<script src="script.js"></script>
+</body>
+</html>
