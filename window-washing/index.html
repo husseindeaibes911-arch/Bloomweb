@@ -1,224 +1,304 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HD Ultra Exterior — Streak-Free Windows & Gutter Care in Montreal</title>
-    <meta name="description" content="HD Ultra Exterior: professional water-fed pole window washing and mess-free gutter cleaning in Montreal. Streak-free filtered rinse and gutter guard installation. Over 500 homes served.">
-    <meta name="theme-color" content="#7c3aed">
-    <meta property="og:title" content="HD Ultra Exterior — Montreal">
-    <meta property="og:description" content="Streak-free windows & mess-free gutter care. Over 500 Montreal homes served.">
-    <meta property="og:type" content="website">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HD Ultra Exterior — Lavage de vitres &amp; gouttières · Montréal</title>
+<meta name="description" content="Lavage de vitres sans traces, nettoyage de gouttières et installation de protège-gouttières pour le résidentiel à Montréal et environs. Soumission gratuite.">
+<meta property="og:title" content="HD Ultra Exterior — Vitres &amp; gouttières · Montréal">
+<meta property="og:description" content="Lavage de vitres sans traces à l'eau pure, nettoyage de gouttières et protège-gouttières. Travail soigné, garanti.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ============ NAVBAR ============ -->
-<nav class="navbar" id="navbar">
-    <div class="container nav-inner">
-        <a href="index.html" class="nav-logo">
-            <span class="logo-mark"><i class="fas fa-droplet"></i></span>
-            <span>HD Ultra Exterior<small>Window &amp; Gutter Care</small></span>
-        </a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html" class="active" data-i18n="navHome">Home</a></li>
-            <li><a href="services.html" data-i18n="navServices">Services</a></li>
-            <li><a href="gutter-guards.html" data-i18n="navGuards">Gutter Guards</a></li>
-            <li><a href="about.html" data-i18n="navAbout">About</a></li>
-            <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
-        </ul>
-        <div class="nav-actions">
-            <div class="lang-toggle">
-                <button class="lang-btn active" data-lang="en">EN</button>
-                <button class="lang-btn" data-lang="fr">FR</button>
-            </div>
-            <a href="tel:+15140000000" class="nav-phone"><i class="fas fa-phone"></i> (514) 000-0000</a>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
-        </div>
-    </div>
+<nav class="nav">
+  <a href="index.html" class="nav-logo"><img class="nav-mark" src="assets/logo-mark.svg" alt="">HD Ultra<span class="dot">.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active" data-i18n="nav.home">Accueil</a></li>
+    <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+    <li><a href="gallery.html" data-i18n="nav.gallery">Réalisations</a></li>
+    <li><a href="reviews.html" data-i18n="nav.reviews">Avis</a></li>
+    <li><a href="contact.html" data-i18n="nav.contact">Soumission</a></li>
+  </ul>
+  <a href="contact.html" class="btn btn-primary nav-cta" data-i18n="nav.cta">Soumission gratuite</a>
+  <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- ============ HERO ============ -->
-<section class="hero">
-    <div class="container hero-grid">
-        <div class="hero-text reveal">
-            <div class="hero-badge">
-                <span class="pill" data-i18n="heroPill">500+ homes</span>
-                <span data-i18n="heroBadge">Trusted across Montreal &amp; the West Island</span>
-            </div>
-            <h1><span data-i18n="heroTitle1">Streak-free windows.</span> <span class="text-grad" data-i18n="heroTitle2">Spotless, mess-free gutters.</span></h1>
-            <p class="hero-sub" data-i18n="heroSub">Purified water-fed pole cleaning that lifts every bit of build-up from your glass, frames and seals — then rinses clean with filtered water so nothing streaky is left behind. Careful, tidy gutter care from a local Montreal crew.</p>
-            <div class="hero-cta">
-                <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-calendar-check"></i> <span data-i18n="heroCta1">Get a Free Quote</span></a>
-                <a href="services.html" class="btn btn-ghost btn-lg"><span data-i18n="heroCta2">See What We Do</span> <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="hero-trust">
-                <div class="t-item"><i class="fas fa-house-chimney"></i><div><b>500+</b><span data-i18n="heroT1">Homes served</span></div></div>
-                <div class="t-item"><i class="fas fa-droplet"></i><div><b data-i18n="heroT2b">Pure</b><span data-i18n="heroT2">Filtered-water rinse</span></div></div>
-                <div class="t-item"><i class="fas fa-shield-heart"></i><div><b data-i18n="heroT3b">Fully</b><span data-i18n="heroT3">Insured &amp; local</span></div></div>
-            </div>
-        </div>
-
-        <div class="hero-visual reveal">
-            <div class="hero-card">
-                <div class="hc-top">
-                    <div class="hc-icon"><i class="fas fa-hand-sparkles"></i></div>
-                    <div>
-                        <h3 data-i18n="hcTitle">The HD Ultra difference</h3>
-                        <p data-i18n="hcSub">Done properly, top to bottom</p>
-                    </div>
-                </div>
-                <ul>
-                    <li><i class="fas fa-check"></i> <span data-i18n="hc1">Brush off build-up on glass, frames &amp; seals</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="hc2">Pure filtered-water rinse — zero streaks</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="hc3">Gutter debris bagged, never blown around</span></li>
-                    <li><i class="fas fa-check"></i> <span data-i18n="hc4">Downspouts checked &amp; cleared for flow</span></li>
-                </ul>
-                <a href="contact.html" class="hc-foot" style="color:#fff">
-                    <div><div class="p" data-i18n="hcFoot">Free, no-pressure estimate</div><div class="v" data-i18n="hcFootV">Book today</div></div>
-                    <i class="fas fa-arrow-right" style="font-size:1.3rem"></i>
-                </a>
-            </div>
-            <div class="hero-float f1"><i class="fas fa-star"></i><div><b data-i18n="floatb1">Streak-free</b><span data-i18n="floats1">every single pane</span></div></div>
-            <div class="hero-float f2"><i class="fas fa-leaf"></i><div><b data-i18n="floatb2">No mess left</b><span data-i18n="floats2">we bag it &amp; go</span></div></div>
-        </div>
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  </div>
+  <div class="hero-spotlight" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="hero-eyebrow"><span class="pulse"></span><span class="eyebrow" data-i18n="hero.eyebrow">Montréal &amp; environs · Résidentiel</span></span>
+      <h1 data-stagger-text>
+        <span class="line" data-i18n="hero.line1">Des vitres</span>
+        <span class="line gtext" data-i18n="hero.line2">ultra claires.</span>
+      </h1>
+      <p class="lead" data-i18n="hero.lead">Lavage de vitres, nettoyage de gouttières et installation de protège-gouttières. Sans traces, sans dégât — du travail soigné, garanti.</p>
+      <div class="hero-cta">
+        <a href="contact.html" class="btn btn-primary"><span data-i18n="hero.cta1">Obtenir une soumission</span><span class="arr">→</span></a>
+        <a href="services.html" class="btn btn-ghost" data-i18n="hero.cta2">Nos services</a>
+      </div>
+      <div class="hero-trust">
+        <div class="ht"><b data-i18n="hero.t1.n">500+</b><span data-i18n="hero.t1.l">Maisons nettoyées</span></div>
+        <div class="sep"></div>
+        <div class="ht"><b data-i18n="hero.t2.n">100%</b><span data-i18n="hero.t2.l">Sans traces</span></div>
+        <div class="sep"></div>
+        <div class="ht"><b data-i18n="hero.t3.n">Eau pure</b><span data-i18n="hero.t3.l">Système de filtration</span></div>
+      </div>
     </div>
+
+    <div class="glass-stage">
+      <div class="glass-card reveal">
+        <img class="glass-photo" src="assets/photo-hero.jpg" alt="Maison résidentielle aux fenêtres impeccables, nettoyées par HD Ultra Exterior">
+        <div class="glass-reflect" aria-hidden="true"></div>
+        <div class="glass-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 7.7 8 10 4.6-2.3 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <div>
+            <div class="gb-t" data-i18n="glass.badge.t">Fini sans traces</div>
+            <div class="gb-s" data-i18n="glass.badge.s">Rinçage à l'eau filtrée pure</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue" aria-hidden="true"><span class="mouse"></span><span data-i18n="hero.scroll">Défiler</span></div>
+</header>
+
+<!-- ============ SERVICES TRIO ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" data-i18n="svc.eyebrow">— Nos services —</span>
+      <h2 data-i18n="svc.title">Tout l'extérieur, <span class="gtext">impeccable</span></h2>
+      <p data-i18n="svc.sub">Trois spécialités, une seule équipe minutieuse. Du sol au toit, on s'occupe de tout.</p>
+    </div>
+    <div class="svc-grid reveal-stagger">
+      <article class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/><path d="m15 8 1.5-1.5M16 11l2.5-2.5" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="svc.w.name">Lavage de vitres</h3>
+        <p data-i18n="svc.w.desc">Perche à eau pure et brosse douce pour décoller toute la saleté, puis rinçage à l'eau filtrée. Résultat éclatant, sans traces.</p>
+        <ul>
+          <li data-i18n="svc.w.f1">Intérieur &amp; extérieur</li>
+          <li data-i18n="svc.w.f2">Eau filtrée, zéro savon</li>
+          <li data-i18n="svc.w.f3">Cadres et rebords inclus</li>
+        </ul>
+        <a href="services.html#windows" class="svc-link"><span data-i18n="svc.link">En savoir plus</span><span class="arr">→</span></a>
+      </article>
+      <article class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h18l-1 5a3 3 0 0 1-3 2.5H7A3 3 0 0 1 4 12L3 7Z"/><path d="M3 7 4 4h16l1 3" stroke-linecap="round"/><path d="M9 17v2M15 17v3" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="svc.g.name">Nettoyage de gouttières</h3>
+        <p data-i18n="svc.g.desc">On ramasse à la main tous les débris, on inspecte, on vérifie les descentes et on rince. Tout coule comme il faut.</p>
+        <ul>
+          <li data-i18n="svc.g.f1">Débris ramassés à la main</li>
+          <li data-i18n="svc.g.f2">Descentes pluviales vérifiées</li>
+          <li data-i18n="svc.g.f3">Inspection complète incluse</li>
+        </ul>
+        <a href="services.html#gutters" class="svc-link"><span data-i18n="svc.link">En savoir plus</span><span class="arr">→</span></a>
+      </article>
+      <article class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 8h18l-1.5 4H4.5L3 8Z"/><path d="M5 12v6M19 12v6M5 18h14" stroke-linecap="round"/><path d="M4 8 7 4M9 8l2-4M14 8l2-4M19 8l1-3" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="svc.p.name">Protège-gouttières</h3>
+        <p data-i18n="svc.p.desc">Installation de protège-gouttières de qualité pour empêcher feuilles et débris de s'accumuler — moins d'entretien.</p>
+        <ul>
+          <li data-i18n="svc.p.f1">Fourniture &amp; installation</li>
+          <li data-i18n="svc.p.f2">Moins de nettoyages</li>
+          <li data-i18n="svc.p.f3">Protège du gel et des blocages</li>
+        </ul>
+        <a href="services.html#guards" class="svc-link"><span data-i18n="svc.link">En savoir plus</span><span class="arr">→</span></a>
+      </article>
+    </div>
+  </div>
 </section>
 
-<!-- ============ TRUST STRIP ============ -->
-<div class="strip">
-    <div class="container strip-inner">
-        <div class="strip-item"><i class="fas fa-location-dot"></i> <span data-i18n="strip1">Montreal &amp; surrounding areas</span></div>
-        <div class="strip-item"><i class="fas fa-water"></i> <span data-i18n="strip2">Water-fed pole system</span></div>
-        <div class="strip-item"><i class="fas fa-recycle"></i> <span data-i18n="strip3">Tidy, debris-bagged gutter care</span></div>
-        <div class="strip-item"><i class="fas fa-thumbs-up"></i> <span data-i18n="strip4">Satisfaction guaranteed</span></div>
+<!-- ============ FEATURE: WINDOWS ============ -->
+<section>
+  <div class="wrap">
+    <div class="feature reveal">
+      <div class="feature-media img-windows"></div>
+      <div class="feature-copy">
+        <span class="eyebrow" data-i18n="f1.eyebrow">— Lavage de vitres —</span>
+        <h2 data-i18n="f1.h2" style="margin-top:1rem">La perche à eau pure, <span class="gtext">le fini sans traces</span></h2>
+        <p data-i18n="f1.p">On brosse chaque vitre pour décoller la pollution, la poussière et les dépôts, puis on rince à l'eau passée dans notre système de filtration.</p>
+        <ul style="display:flex;flex-direction:column;gap:.7rem;list-style:none">
+          <li data-i18n="f1.li1">Aucune échelle contre vos murs — on atteint les étages depuis le sol.</li>
+          <li data-i18n="f1.li2">Aucun produit chimique : meilleur pour vos plantes et votre famille.</li>
+          <li data-i18n="f1.li3">Moustiquaires, cadres et rebords essuyés au passage.</li>
+        </ul>
+      </div>
     </div>
-</div>
-
-<!-- ============ SERVICES OVERVIEW ============ -->
-<section class="services">
-    <div class="container">
-        <div class="section-head reveal">
-            <span class="eyebrow"><i class="fas fa-list-check"></i> <span data-i18n="svcEyebrow">Our Services</span></span>
-            <h2 data-i18n="svcTitle">Everything your windows &amp; gutters need</h2>
-            <p data-i18n="svcSub">One trusted local crew for the exterior details that make a home look cared for.</p>
-        </div>
-
-        <div class="services-grid">
-            <div class="svc-card reveal">
-                <div class="svc-icon"><i class="fas fa-window-maximize"></i></div>
-                <h3 data-i18n="svc1Title">Window Washing</h3>
-                <p data-i18n="svc1Desc">Our water-fed pole system brushes away every bit of build-up on the glass, frames and seals, then rinses with pure filtered water so the panes dry perfectly clear.</p>
-                <a href="services.html#window-washing" class="svc-link" data-i18n="svcMore">Learn more <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="svc-card reveal">
-                <div class="svc-icon"><i class="fas fa-house-flood-water"></i></div>
-                <h3 data-i18n="svc2Title">Gutter Cleaning</h3>
-                <p data-i18n="svc2Desc">We scoop out every bit of debris and bag it up — we never blow it all over your house and yard. Then we hose the gutters clean and make sure water flows freely.</p>
-                <a href="services.html#gutter-cleaning" class="svc-link" data-i18n="svcMore">Learn more <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="svc-card reveal">
-                <div class="svc-icon"><i class="fas fa-shield-halved"></i></div>
-                <h3 data-i18n="svc3Title">Gutter Guard Installation</h3>
-                <p data-i18n="svc3Desc">Stop the clogs before they start. We supply and install three types of gutter guards so leaves and debris stay out and your gutters keep flowing.</p>
-                <a href="gutter-guards.html" class="svc-link" data-i18n="svcMore">Learn more <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="svc-card reveal">
-                <div class="svc-icon"><i class="fas fa-hand-sparkles"></i></div>
-                <h3 data-i18n="svc4Title">Exterior Gutter Whitening</h3>
-                <p data-i18n="svc4Desc">Offered separately — we clean the outside face of your gutters so they look bright and spotless from the ground, removing those grimy black tiger stripes.</p>
-                <a href="services.html#gutter-whitening" class="svc-link" data-i18n="svcMore">Learn more <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
 
-<!-- ============ WHY TEASER ============ -->
-<section class="why">
-    <div class="container why-grid">
-        <div class="reveal">
-            <div class="section-head left" style="margin-bottom:34px">
-                <span class="eyebrow"><i class="fas fa-award"></i> <span data-i18n="whyEyebrow">Why Choose HD Ultra</span></span>
-                <h2 data-i18n="whyTitle">Local pros who treat your home like ours</h2>
-            </div>
-            <div class="why-list">
-                <div class="why-item">
-                    <div class="wi-ico"><i class="fas fa-broom"></i></div>
-                    <div><h4 data-i18n="why1Title">We leave no mess</h4><p data-i18n="why1Desc">Debris gets bagged and hauled away — we never blow it across your roof, siding and lawn.</p></div>
-                </div>
-                <div class="why-item">
-                    <div class="wi-ico"><i class="fas fa-droplet"></i></div>
-                    <div><h4 data-i18n="why2Title">Truly streak-free</h4><p data-i18n="why2Desc">Pure filtered water leaves no minerals behind, so windows dry crystal clear with no wiping.</p></div>
-                </div>
-                <div class="why-item">
-                    <div class="wi-ico"><i class="fas fa-screwdriver-wrench"></i></div>
-                    <div><h4 data-i18n="why3Title">We fix the flow</h4><p data-i18n="why3Desc">Clogged downspouts get dismantled, cleared with the right tool and put back together properly.</p></div>
-                </div>
-            </div>
-            <a href="about.html" class="btn btn-ghost" style="margin-top:30px"><span data-i18n="whyCta">More about us</span> <i class="fas fa-arrow-right"></i></a>
-        </div>
-
-        <div class="why-panel reveal">
-            <h3 data-i18n="whyPanelTitle">500+ homes and counting</h3>
-            <p data-i18n="whyPanelSub">Homeowners across Montreal trust us to keep their windows clear and their gutters flowing.</p>
-            <div class="why-stats">
-                <div class="why-stat"><b>500+</b><span data-i18n="whyStat1">Homes cleaned</span></div>
-                <div class="why-stat"><b>100%</b><span data-i18n="whyStat2">Filtered-water rinse</span></div>
-                <div class="why-stat"><b>3</b><span data-i18n="whyStat3">Gutter guard options</span></div>
-                <div class="why-stat"><b>0</b><span data-i18n="whyStat4">Mess left behind</span></div>
-            </div>
-        </div>
+<!-- ============ FEATURE: GUTTERS ============ -->
+<section>
+  <div class="wrap">
+    <div class="feature rev reveal">
+      <div class="feature-media img-gutters"></div>
+      <div class="feature-copy">
+        <span class="eyebrow" data-i18n="f2.eyebrow">— Gouttières —</span>
+        <h2 data-i18n="f2.h2" style="margin-top:1rem">On ramasse, on inspecte, <span class="gtext">on rince</span></h2>
+        <p data-i18n="f2.p">Pas de soufflage qui projette la boue sur vos murs. On retire les débris à la main, on les ensache, puis on confirme que chaque descente coule librement.</p>
+        <ul style="display:flex;flex-direction:column;gap:.7rem;list-style:none">
+          <li data-i18n="f2.li1">Débris ensachés et retirés — votre terrain reste propre.</li>
+          <li data-i18n="f2.li2">Descentes débouchées et testées à l'eau.</li>
+          <li data-i18n="f2.li3">On signale tout problème avant qu'il coûte cher.</li>
+        </ul>
+      </div>
     </div>
+  </div>
 </section>
 
-<!-- ============ REVIEWS ============ -->
-<section class="reviews">
-    <div class="container">
-        <div class="section-head reveal">
-            <span class="eyebrow"><i class="fas fa-star"></i> <span data-i18n="revEyebrow">Happy Homeowners</span></span>
-            <h2 data-i18n="revTitle">What Montreal homeowners say</h2>
-        </div>
-        <div class="reviews-grid">
-            <div class="review reveal">
-                <div class="review-stars">★★★★★</div>
-                <p data-i18n="rev1">"My windows haven't looked this clear in years — not a single streak. They reached the second-floor panes easily and left everything spotless."</p>
-                <div class="review-by"><div class="review-avatar">S</div><div><b>Sophie L.</b><span>NDG</span></div></div>
-            </div>
-            <div class="review reveal">
-                <div class="review-stars">★★★★★</div>
-                <p data-i18n="rev2">"Finally a crew that cleans the gutters without making a mess. They bagged everything and even cleared a downspout that was totally blocked."</p>
-                <div class="review-by"><div class="review-avatar">M</div><div><b>Marc T.</b><span>Pointe-Claire</span></div></div>
-            </div>
-            <div class="review reveal">
-                <div class="review-stars">★★★★★</div>
-                <p data-i18n="rev3">"Installed aluminum guards and cleaned the outside of my gutters — they look brand new from the street. Professional, on time, and friendly."</p>
-                <div class="review-by"><div class="review-avatar">A</div><div><b>Amira K.</b><span>Laval</span></div></div>
-            </div>
-        </div>
+<!-- ============ PROCESS ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" data-i18n="proc.eyebrow">— Notre méthode —</span>
+      <h2 data-i18n="proc.title">Comment on <span class="gtext">travaille</span></h2>
     </div>
+    <div class="steps reveal-stagger">
+      <div class="step"><h4 data-i18n="proc.s1.t">Soumission gratuite</h4><p data-i18n="proc.s1.p">Décrivez votre maison — on revient avec un prix clair, sans surprise.</p></div>
+      <div class="step"><h4 data-i18n="proc.s2.t">On se prépare</h4><p data-i18n="proc.s2.p">Protection des lieux, eau filtrée prête, équipement vérifié.</p></div>
+      <div class="step"><h4 data-i18n="proc.s3.t">Le nettoyage</h4><p data-i18n="proc.s3.p">Vitres brossées et rincées; gouttières vidées et inspectées.</p></div>
+      <div class="step"><h4 data-i18n="proc.s4.t">Inspection finale</h4><p data-i18n="proc.s4.p">On vérifie chaque détail avec vous — satisfaction garantie.</p></div>
+    </div>
+  </div>
 </section>
 
-<!-- ============ CTA ============ -->
-<section class="cta">
-    <div class="container">
-        <div class="cta-box reveal">
-            <h2 data-i18n="ctaTitle">Let's make your home shine</h2>
-            <p data-i18n="ctaSub">Join 500+ Montreal homeowners who trust HD Ultra Exterior for streak-free windows and mess-free gutter care.</p>
-            <div class="cta-actions">
-                <a href="contact.html" class="btn btn-white btn-lg"><i class="fas fa-calendar-check"></i> <span data-i18n="ctaBtn1">Get My Free Quote</span></a>
-                <a href="tel:+15140000000" class="btn btn-ghost btn-lg" style="background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.35)"><i class="fas fa-phone"></i> (514) 000-0000</a>
-            </div>
-        </div>
+<!-- ============ STATS ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" data-i18n="stats.eyebrow">— Pourquoi HD Ultra —</span>
+      <h2 data-i18n="stats.title">Du soin, pas des raccourcis</h2>
     </div>
+    <div class="stats reveal-stagger">
+      <div class="stat"><b><span class="gtext" data-count="500" data-suffix="+">500+</span></b><span data-i18n="stats.1.l">Clients résidentiels</span></div>
+      <div class="stat"><b><span class="gtext" data-count="100" data-suffix="%">100%</span></b><span data-i18n="stats.2.l">Fini sans traces</span></div>
+      <div class="stat"><b class="gtext" data-i18n="stats.3.n">Eau pure</b><span data-i18n="stats.3.l">Système de filtration</span></div>
+      <div class="stat"><b class="gtext" data-i18n="stats.4.n">Assuré</b><span data-i18n="stats.4.l">Travail garanti</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEE BANNER ============ -->
+<section>
+  <div class="wrap">
+    <div class="banner reveal">
+      <h2 data-i18n="ban.h2">Pas satisfait ? <span class="gtext">On revient.</span></h2>
+      <p data-i18n="ban.p">Si une vitre ou une gouttière n'est pas à la hauteur, dites-le-nous et on corrige le tir, sans frais. C'est notre garantie.</p>
+      <a href="contact.html" class="btn btn-primary"><span data-i18n="ban.cta">Demander ma soumission</span><span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREA ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" data-i18n="area.eyebrow">— Zone desservie —</span>
+      <h2 data-i18n="area.title">On dessert le <span class="gtext">Grand Montréal</span></h2>
+      <p data-i18n="area.sub">Montréal et les environs. Vous ne voyez pas votre secteur ? Écrivez-nous.</p>
+    </div>
+    <div class="area-grid reveal-stagger">
+      <div class="area-chip"><span class="dot"></span>Montréal</div>
+      <div class="area-chip"><span class="dot"></span>Laval</div>
+      <div class="area-chip"><span class="dot"></span>West Island</div>
+      <div class="area-chip"><span class="dot"></span>Rive-Sud</div>
+      <div class="area-chip"><span class="dot"></span>Longueuil</div>
+      <div class="area-chip"><span class="dot"></span>Brossard</div>
+      <div class="area-chip"><span class="dot"></span>Saint-Léonard</div>
+      <div class="area-chip"><span class="dot"></span>Anjou</div>
+      <div class="area-chip"><span class="dot"></span>Pointe-Claire</div>
+      <div class="area-chip"><span class="dot"></span>Dollard-des-Ormeaux</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS TEASER ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" data-i18n="rev.eyebrow">— Avis clients —</span>
+      <h2 data-i18n="rev.title">Ce que disent <span class="gtext">nos clients</span></h2>
+      <p data-i18n="rev.sub">Quelques mots de propriétaires de la région. (Avis Google à venir.)</p>
+    </div>
+    <div class="rev-grid reveal-stagger">
+      <article class="rev-card"><div class="rev-stars">★★★★★</div><p data-i18n="rev.1.t">« Mes vitres n'ont jamais été aussi claires. »</p><div class="rev-who"><div class="rev-av">M</div><div><b data-i18n="rev.1.n">Client · Montréal</b><span data-i18n="rev.1.w">Lavage de vitres</span></div></div></article>
+      <article class="rev-card"><div class="rev-stars">★★★★★</div><p data-i18n="rev.2.t">« Ils ont nettoyé mes gouttières sans rien salir. »</p><div class="rev-who"><div class="rev-av">L</div><div><b data-i18n="rev.2.n">Cliente · Laval</b><span data-i18n="rev.2.w">Nettoyage de gouttières</span></div></div></article>
+      <article class="rev-card"><div class="rev-stars">★★★★★</div><p data-i18n="rev.3.t">« Service rapide, prix honnête et résultat impeccable. »</p><div class="rev-who"><div class="rev-av">R</div><div><b data-i18n="rev.3.n">Client · Rive-Sud</b><span data-i18n="rev.3.w">Vitres + gouttières</span></div></div></article>
+    </div>
+    <div style="text-align:center;margin-top:2rem"><a href="reviews.html" class="btn btn-ghost"><span data-i18n="nav.reviews">Avis</span><span class="arr">→</span></a></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head center">
+      <span class="eyebrow" data-i18n="faq.eyebrow">— Questions fréquentes —</span>
+      <h2 data-i18n="faq.title">Bon à <span class="gtext">savoir</span></h2>
+    </div>
+    <div class="faq reveal">
+      <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q1">Pourquoi l'eau pure ne laisse-t-elle aucune trace ?</span><span class="ic"></span></button><div class="faq-a"><p data-i18n="faq.a1">L'eau du robinet contient des minéraux qui sèchent en laissant des cernes. Notre système de filtration retire ces minéraux.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q2">Allez-vous salir mon terrain ?</span><span class="ic"></span></button><div class="faq-a"><p data-i18n="faq.a2">Non. On ne souffle rien. Les débris sont ramassés à la main et ensachés.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q3">À quelle fréquence faut-il nettoyer ?</span><span class="ic"></span></button><div class="faq-a"><p data-i18n="faq.a3">En général, les vitres deux fois par an et les gouttières au printemps et à l'automne.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span data-i18n="faq.q4">Offrez-vous des soumissions gratuites ?</span><span class="ic"></span></button><div class="faq-a"><p data-i18n="faq.a4">Oui, toujours. Remplissez le formulaire ou appelez-nous.</p></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
-<div id="footer"></div>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-logo"><img class="foot-mark" src="assets/logo-mark.svg" alt="">HD Ultra Exterior<span class="dot">.</span></div>
+        <p data-i18n="ft.about">Lavage de vitres, nettoyage de gouttières et protège-gouttières pour le résidentiel, à Montréal et environs.</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="ft.nav">Navigation</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+          <li><a href="services.html" data-i18n="nav.services">Services</a></li>
+          <li><a href="gallery.html" data-i18n="nav.gallery">Réalisations</a></li>
+          <li><a href="reviews.html" data-i18n="nav.reviews">Avis</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="ft.services">Services</h4>
+        <ul>
+          <li><a href="services.html" data-i18n="svc.w.name">Lavage de vitres</a></li>
+          <li><a href="services.html" data-i18n="svc.g.name">Nettoyage de gouttières</a></li>
+          <li><a href="services.html" data-i18n="svc.p.name">Protège-gouttières</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4 data-i18n="ft.contact">Contact</h4>
+        <ul>
+          <li><a href="tel:+15149499111">514-949-9111</a></li>
+          <li><a href="mailto:hdultraexterior@gmail.com">hdultraexterior@gmail.com</a></li>
+          <li><a href="contact.html" data-i18n="nav.cta">Soumission gratuite</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span data-i18n="ft.copy">© 2026 HD Ultra Exterior</span>
+      <span data-i18n="ft.by">Soumission gratuite, sans engagement</span>
+    </div>
+  </div>
+</footer>
 
-<script src="script.js"></script>
+<a href="contact.html" class="sticky-pill" data-i18n="nav.cta">Soumission gratuite</a>
+<script src="js/i18n.js"></script>
+<script src="js/anim.js"></script>
 </body>
 </html>
