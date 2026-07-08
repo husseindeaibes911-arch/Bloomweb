@@ -27,6 +27,35 @@
         });
     }
 
+    /* ---- Scroll progress bar ---- */
+    var bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    document.body.appendChild(bar);
+    function progress() {
+        var h = document.documentElement;
+        var max = (h.scrollHeight - h.clientHeight) || 1;
+        bar.style.width = (window.scrollY / max * 100) + '%';
+    }
+    window.addEventListener('scroll', progress, { passive: true });
+    progress();
+
+    /* ---- Interactive tilt + pointer glow on cards ---- */
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) {
+        document.querySelectorAll('.svc-card, .glass-card').forEach(function (card) {
+            card.addEventListener('pointermove', function (e) {
+                var r = card.getBoundingClientRect();
+                var px = (e.clientX - r.left) / r.width;
+                var py = (e.clientY - r.top) / r.height;
+                var rx = (0.5 - py) * 6, ry = (px - 0.5) * 6;
+                card.style.transform = 'perspective(800px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-6px)';
+                card.style.setProperty('--mx', (px * 100) + '%');
+                card.style.setProperty('--my', (py * 100) + '%');
+            });
+            card.addEventListener('pointerleave', function () { card.style.transform = ''; });
+        });
+    }
+
     /* ---- Stagger children: set --i index ---- */
     document.querySelectorAll('.reveal-stagger').forEach(function (group) {
         Array.prototype.forEach.call(group.children, function (child, i) {

@@ -13,7 +13,8 @@
         /* hero */
         'hero.eyebrow':'Montreal &amp; surrounding areas · Residential',
         'hero.line1':'Ultra-clear','hero.line2':'windows.',
-        'hero.lead':'Window washing, gutter cleaning and gutter guard installation. Streak-free, mess-free — careful work, guaranteed.',
+        'hero.lead':'Pure-water window washing, gutter cleaning and gutter guards. 100% filtered water, a streak-free finish and zero mess left behind — careful work, guaranteed.',
+        'wv.badge':'Streak-free',
         'hero.cta1':'Get a quote','hero.cta2':'Our services',
         'hero.t1.n':'500+','hero.t1.l':'Homes cleaned',
         'hero.t2.n':'100%','hero.t2.l':'Streak-free',
@@ -24,24 +25,24 @@
         /* services trio */
         'svc.eyebrow':'— Our services —','svc.title':'Your whole exterior, <span class="gtext">spotless</span>',
         'svc.sub':'Three specialties, one meticulous crew. From the ground to the roofline, we handle it all.',
-        'svc.w.name':'Window Washing','svc.w.desc':'Pure-water pole and soft brush to lift every bit of grime, then a filtered-water rinse. Brilliant, streak-free results.',
+        'svc.w.name':'Window Washing','svc.w.desc':'A pure-water pole and soft brush lift the ground-in grime, then a filtered-water rinse. The glass dries on its own — brilliant and completely streak-free.',
         'svc.w.f1':'Interior &amp; exterior','svc.w.f2':'Filtered water, zero soap','svc.w.f3':'Frames &amp; sills included',
-        'svc.g.name':'Gutter Cleaning','svc.g.desc':'We hand-scoop every bit of debris, inspect, check the downspouts and rinse. Everything flows the way it should.',
+        'svc.g.name':'Gutter Cleaning','svc.g.desc':'We empty the gutters by hand, bag the debris, check every downspout and rinse. Water flows the way it should — with no mess left on your property.',
         'svc.g.f1':'Debris removed by hand','svc.g.f2':'Downspouts checked','svc.g.f3':'Full inspection included',
-        'svc.p.name':'Gutter Guards','svc.p.desc':'Quality gutter guard installation to keep leaves and debris out — far less maintenance for you.',
+        'svc.p.name':'Gutter Guards','svc.p.desc':'Quality gutter guards, precisely installed, to block leaves and debris. Far less maintenance, and no winter blockages.',
         'svc.p.f1':'Supply &amp; installation','svc.p.f2':'Fewer cleanings','svc.p.f3':'Guards against ice &amp; blockages',
         'svc.link':'Learn more',
 
         /* feature: windows */
         'f1.eyebrow':'— Window washing —','f1.h2':'The pure-water pole, <span class="gtext">the streak-free finish</span>',
-        'f1.p':'We brush every pane to lift pollution, dust and deposits, then rinse with water passed through our filtration system.',
+        'f1.p':'Our filtration system strips the minerals out of the water. The result: no drying spots, no residue — just perfectly clear glass, upper floors included, with no ladders against your walls.',
         'f1.li1':'No ladders against your walls — we reach upper floors from the ground.',
         'f1.li2':'No chemicals: better for your plants and your family.',
         'f1.li3':'Screens, frames and sills wiped along the way.',
 
         /* feature: gutters */
         'f2.eyebrow':'— Gutters —','f2.h2':'We scoop, we inspect, <span class="gtext">we rinse</span>',
-        'f2.p':'No blowers flinging mud across your walls. We remove debris by hand, bag it, then confirm every downspout runs freely.',
+        'f2.p':'No blower flinging mud everywhere. We remove debris by hand, bag it, then water-test every downspout to confirm it runs free.',
         'f2.li1':'Debris bagged and removed — your yard stays clean.',
         'f2.li2':'Downspouts cleared and water-tested.',
         'f2.li3':'We flag any issue before it gets expensive.',
