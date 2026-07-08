@@ -33,6 +33,16 @@
         'svc.p.f1':'Supply &amp; installation','svc.p.f2':'Fewer cleanings','svc.p.f3':'Guards against ice &amp; blockages',
         'svc.link':'Learn more',
 
+        /* gutter guard options */
+        'gg.eyebrow':'— Gutter guards —','gg.title':'Three options, <span class="gtext">to fit your budget</span>',
+        'gg.sub':'We recommend the best one for your roof and the trees around it. Here are the three we install — and how long each one lasts.',
+        'gg.foam.name':'Foam','gg.foam.tier':'Budget-friendly','gg.foam.life':'3–5 years',
+        'gg.foam.desc':'A porous foam insert that sits inside the gutter. It blocks leaves and debris while water passes through. The most affordable option.',
+        'gg.pvc.tag':'Best value','gg.pvc.name':'PVC Mesh','gg.pvc.tier':'Net-style · balanced','gg.pvc.life':'5–7 years',
+        'gg.pvc.desc':'A net-style mesh screen that clips over the gutter. It keeps out even small debris while water flows freely. The best value for money.',
+        'gg.alu.name':'Aluminum','gg.alu.tier':'Premium · longest-lasting','gg.alu.life':'8–10 years',
+        'gg.alu.desc':'A rigid aluminum guard. It won\'t rust or sag and stands up to Quebec winters year after year. The most durable option.',
+
         /* feature: windows */
         'f1.eyebrow':'— Window washing —','f1.h2':'The pure-water pole, <span class="gtext">the streak-free finish</span>',
         'f1.p':'Our filtration system strips the minerals out of the water. The result: no drying spots, no residue — just perfectly clear glass, upper floors included, with no ladders against your walls.',
@@ -94,6 +104,7 @@
 
         /* page heroes */
         'pg.gal.crumb':'— Our work —','pg.gal.h1':'Before / <span class="gtext">after</span>','pg.gal.p':'A few examples of our work. (Your photos will be added here.)',
+        'gal.upload':'Your photo here',
         'pg.rev.crumb':'— Reviews —','pg.rev.h1':'Your <span class="gtext">testimonials</span>','pg.rev.p':'What homeowners in the region think of our work.',
         'pg.ct.crumb':'— Quote —','pg.ct.h1':'Get your <span class="gtext">free quote</span>','pg.ct.p':'Fill out the form — we\'ll get back to you quickly with a clear price.',
         'pg.sv.crumb':'— Services —','pg.sv.h1':'Everything your <span class="gtext">exterior</span> needs','pg.sv.p':'Window washing, gutter cleaning and gutter guards — done carefully, done right.',

@@ -414,3 +414,28 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;op
   .gtext,.blob.b1,.blob.b2,.blob.b3,.glass-card::after,.wv-shine,.wv-sparkle{animation:none}
   .glass-card::after,.wv-shine{display:none}
 }
+
+/* ============ GUTTER GUARD OPTIONS (with lifespans) ============ */
+.guard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.guard-card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:2rem;transition:transform .3s,box-shadow .3s,border-color .3s}
+.guard-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:transparent}
+.guard-card.featured{border-color:var(--lav-400);box-shadow:var(--sh)}
+.guard-tag{position:absolute;top:16px;right:16px;background:var(--grad);color:#fff;font-size:.64rem;
+  font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .7rem;border-radius:100px}
+.guard-visual{width:60px;height:60px;border-radius:15px;display:grid;place-items:center;margin-bottom:1.1rem}
+.guard-visual svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.guard-card:nth-child(1) .guard-visual{background:linear-gradient(135deg,#c4b5fd,#a78bfa)}
+.guard-card:nth-child(2) .guard-visual{background:linear-gradient(135deg,#a78bfa,#7c3aed)}
+.guard-card:nth-child(3) .guard-visual{background:linear-gradient(135deg,#7c3aed,#4c1d95)}
+.guard-life{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--font-d);font-weight:700;
+  font-size:1.05rem;color:var(--lav-700);background:var(--lav-100);padding:.35rem .85rem;border-radius:100px;margin-bottom:.9rem}
+.guard-life svg{width:16px;height:16px;stroke:var(--lav-600);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.guard-card h3{font-size:1.4rem;margin-bottom:.15rem}
+.guard-tier{font-size:.78rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--lav-500);margin-bottom:.8rem}
+.guard-card .gd{color:var(--muted);font-size:.96rem}
+@media(max-width:900px){.guard-grid{grid-template-columns:1fr}}
+
+/* Gallery placeholder tile that invites a real photo */
+.gal-tile .ph.upload{background:var(--grad-soft);color:var(--lav-400)}
+.gal-tile .ph.upload span{color:var(--lav-600);font-weight:600}
