@@ -41,8 +41,13 @@
       <div class="quote-form reveal">
         <h2 style="font-size:1.5rem;margin-bottom:.4rem" data-i18n="q.title">Demande de soumission</h2>
         <p style="color:var(--muted);font-size:.92rem;margin-bottom:1.6rem" data-i18n="q.sub">Dites-nous ce dont vous avez besoin. Réponse sous 24 h.</p>
-        <!-- ⚠ Replace YOUR_FORM_ID with the Formspree endpoint you'll create at formspree.io -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <!-- Submissions are emailed to hdultraexterior@gmail.com via FormSubmit.co (no account needed).
+             The FIRST submission triggers a one-time activation email — click the link in it once. -->
+        <form id="quoteForm" action="https://formsubmit.co/hdultraexterior@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nouvelle demande de soumission — HD Ultra Exterior">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
           <div class="fld">
             <label for="name" data-i18n="q.name">Nom complet</label>
             <input type="text" id="name" name="name" required>

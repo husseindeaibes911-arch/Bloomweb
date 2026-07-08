@@ -793,8 +793,13 @@ footer{background:var(--ink);color:#cfc7e6;padding:60px 0 28px}
       <div class="quote-form reveal">
         <h2 style="font-size:1.5rem;margin-bottom:.4rem" data-i18n="q.title">Demande de soumission</h2>
         <p style="color:var(--muted);font-size:.92rem;margin-bottom:1.6rem" data-i18n="q.sub">Dites-nous ce dont vous avez besoin. Réponse sous 24 h.</p>
-        <!-- ⚠ Replace YOUR_FORM_ID with the Formspree endpoint you'll create at formspree.io -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <!-- Submissions are emailed to hdultraexterior@gmail.com via FormSubmit.co (no account needed).
+             The FIRST submission triggers a one-time activation email — click the link in it once. -->
+        <form id="quoteForm" action="https://formsubmit.co/hdultraexterior@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="Nouvelle demande de soumission — HD Ultra Exterior">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
           <div class="fld">
             <label for="name" data-i18n="q.name">Nom complet</label>
             <input type="text" id="name" name="name" required>
@@ -1138,24 +1143,51 @@ footer{background:var(--ink);color:#cfc7e6;padding:60px 0 28px}
         });
     });
 
-    /* ---- Quote form (front-end only) ---- */
+    /* ---- Quote form → FormSubmit.co (emails hdultraexterior@gmail.com) ---- */
     var form = document.querySelector('.quote-form form');
-    if (form && form.getAttribute('action') && form.getAttribute('action').indexOf('YOUR_FORM_ID') !== -1) {
-        // Formspree not configured yet — show a friendly confirmation instead of 404.
+    var action = form && form.getAttribute('action');
+    if (form && action && /formsubmit\.co/.test(action)) {
+        var EMAIL = action.split('/').pop();               // hdultraexterior@gmail.com
+        var AJAX = 'https://formsubmit.co/ajax/' + EMAIL;
+
+        function thanks() {
+            var en = document.documentElement.lang === 'en';
+            var wrap = form.parentNode;
+            wrap.innerHTML = '<div style="text-align:center;padding:2.5rem 1rem">' +
+                '<div style="font-size:2.8rem;margin-bottom:.6rem">✅</div>' +
+                '<h3 style="font-size:1.5rem;margin-bottom:.5rem">' + (en ? 'Thank you!' : 'Merci !') + '</h3>' +
+                '<p style="color:var(--muted)">' + (en
+                    ? 'Your request has been received. We\'ll get back to you shortly with your quote.'
+                    : 'Votre demande est bien reçue. On vous revient rapidement avec votre soumission.') +
+                '</p></div>';
+        }
+
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            var req = form.querySelectorAll('[required]');
             var ok = true;
-            req.forEach(function (f) {
+            form.querySelectorAll('[required]').forEach(function (f) {
                 if (!f.value.trim()) { f.style.borderColor = '#ef4444'; ok = false; }
                 else f.style.borderColor = '';
             });
             if (!ok) return;
-            var wrap = form.parentNode;
-            wrap.innerHTML = '<div style="text-align:center;padding:2rem 1rem">' +
-                '<div style="font-size:2.6rem;margin-bottom:.6rem">✅</div>' +
-                '<h3 style="font-size:1.4rem;margin-bottom:.4rem">Merci !</h3>' +
-                '<p style="color:var(--muted)">Votre demande est bien reçue. On vous revient rapidement avec votre soumission.</p></div>';
+
+            var btn = form.querySelector('button[type="submit"]');
+            if (btn) { btn.disabled = true; btn.style.opacity = '.65'; btn.style.cursor = 'wait'; }
+
+            var data = {};
+            new FormData(form).forEach(function (v, k) { data[k] = v; });
+
+            fetch(AJAX, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(function (r) { return r.json(); })
+            .then(function (res) {
+                if (res && (res.success === 'true' || res.success === true)) thanks();
+                else form.submit();          // e.g. needs one-time activation → normal POST
+            })
+            .catch(function () { form.submit(); });   // network/CSP fallback → normal POST
         });
     }
 })();
