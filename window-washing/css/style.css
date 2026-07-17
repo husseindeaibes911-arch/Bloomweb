@@ -439,3 +439,42 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;op
 /* Gallery placeholder tile that invites a real photo */
 .gal-tile .ph.upload{background:var(--grad-soft);color:var(--lav-400)}
 .gal-tile .ph.upload span{color:var(--lav-600);font-weight:600}
+
+/* ============ GALLERY VIDEO + MOBILE-FIRST POLISH ============ */
+.gal-tile video{width:100%;height:100%;object-fit:cover;display:block;background:#0b0614}
+
+/* On phones: lead the hero with a photo, then the message */
+@media(max-width:760px){
+  .wrap{padding:0 18px}
+  .hero{padding-top:90px;padding-bottom:46px}
+  .hero .wrap{display:flex;flex-direction:column;gap:26px}
+  .glass-stage{order:-1;width:100%}
+  .glass-card{aspect-ratio:16/11}
+  .glass-badge{left:14px;right:14px;bottom:14px;padding:.7rem .85rem}
+  .hero h1{font-size:clamp(2.05rem,9.5vw,2.8rem);margin-bottom:1rem}
+  .lead{font-size:1.04rem;margin-bottom:1.4rem}
+  .hero-cta{gap:.6rem;margin-bottom:1.6rem}
+  .hero-cta .btn{flex:1 1 100%;justify-content:center}
+  .hero-trust{gap:.9rem;width:100%;justify-content:space-between}
+  .hero-trust .sep{display:none}
+  .ht b{font-size:1.25rem}
+  .scroll-cue{display:none}
+
+  .page-hero{padding-top:104px;padding-bottom:14px}
+  .section-head{margin-bottom:32px}
+  .feature{gap:1.6rem}
+  .feature-media,.window-viz{height:260px}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-auto-rows:150px;gap:.7rem}
+  .gal-tile.tall{grid-row:span 2}
+  .gal-badge{font-size:.66rem;padding:.25rem .55rem;top:8px;left:8px}
+  .banner{padding:2.2rem 1.3rem}
+  .quote-form{padding:1.5rem}
+  .contact-list{margin-bottom:1.4rem}
+  .stat b{font-size:2rem}
+  .btn{padding:.8rem 1.4rem}
+  .sticky-pill{left:14px;right:14px;bottom:14px;text-align:center}
+}
+@media(max-width:400px){
+  .hero h1{font-size:2rem}
+  .gal-grid{grid-auto-rows:135px}
+}

@@ -104,7 +104,7 @@
 
         /* page heroes */
         'pg.gal.crumb':'— Our work —','pg.gal.h1':'Before / <span class="gtext">after</span>','pg.gal.p':'A few examples of our work. (Your photos will be added here.)',
-        'gal.upload':'Your photo here',
+        'gal.upload':'Your photo here','gal.video':'In action','gal.full':'Full exterior',
         'pg.rev.crumb':'— Reviews —','pg.rev.h1':'Your <span class="gtext">testimonials</span>','pg.rev.p':'What homeowners in the region think of our work.',
         'pg.ct.crumb':'— Quote —','pg.ct.h1':'Get your <span class="gtext">free quote</span>','pg.ct.p':'Fill out the form — we\'ll get back to you quickly with a clear price.',
         'pg.sv.crumb':'— Services —','pg.sv.h1':'Everything your <span class="gtext">exterior</span> needs','pg.sv.p':'Window washing, gutter cleaning and gutter guards — done carefully, done right.',
