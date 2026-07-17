@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace with your real domain once it's live:
+Sitemap: https://hdultraexterior.ca/sitemap.xml
