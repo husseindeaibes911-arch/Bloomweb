@@ -18,6 +18,7 @@
 
         /* trust bar */
         'tb.rating':'happy clients','tb.homes':'homes cleaned','tb.insured':'Fully insured','tb.local':'Local · Montreal',
+        'top.hours':'Mon–Sat · 8am to 6pm','top.area':'Montreal &amp; surrounding areas',
 
         /* advantages */
         'adv.eyebrow':'— Our advantages —','adv.title':'Why people choose <span class="gtext">HD Ultra</span>',
@@ -131,6 +132,18 @@
         'ct.call.label':'Phone','ct.mail.label':'Email','ct.area.label':'Service area','ct.area.val':'Montreal &amp; surrounding areas',
         'ct.hours.label':'Availability','ct.hours.val':'Mon – Sat · 8am to 6pm'
     };
+
+    /* Inject the franchise top utility bar (before capturing text) */
+    var topbar = document.createElement('div');
+    topbar.className = 'topbar';
+    topbar.innerHTML =
+      '<span class="ti"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2.1z"/></svg><a href="tel:+15149499111">514-949-9111</a></span>' +
+      '<span class="dot-sep ti-hide">·</span>' +
+      '<span class="ti ti-hide"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="top.hours">Lun–Sam · 8h à 18h</span></span>' +
+      '<span class="dot-sep ti-hide">·</span>' +
+      '<span class="ti"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.6"/></svg><span data-i18n="top.area">Montréal &amp; environs</span></span>';
+    document.body.insertBefore(topbar, document.body.firstChild);
+    document.body.classList.add('has-topbar');
 
     var nodes = document.querySelectorAll('[data-i18n]');
     var fr = new Map();
