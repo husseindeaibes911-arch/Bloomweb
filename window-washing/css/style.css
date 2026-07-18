@@ -28,7 +28,7 @@
     --r:18px; --r-lg:26px;
     --wrap:1180px;
     --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    --font-d:'Space Grotesk',var(--font);
+    --font-d:'Bricolage Grotesque','Space Grotesk',var(--font);
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -487,3 +487,65 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;op
   width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.92);pointer-events:none;box-shadow:0 10px 26px rgba(0,0,0,.35)}
 .gal-tile.video-tile .playtri{position:absolute;top:50%;left:50%;z-index:3;transform:translate(-42%,-50%);
   width:0;height:0;border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent var(--lav-600);pointer-events:none}
+
+/* =========================================================
+   TYPOGRAPHY REFINEMENT — tuned per text type
+   ========================================================= */
+h1,h2,h3,h4{text-wrap:balance}
+p{text-wrap:pretty}
+
+/* Hero headline — larger, tighter, more dramatic */
+.hero h1{font-size:clamp(2.6rem,6vw,4.7rem);line-height:1.0;letter-spacing:-.038em;font-weight:800}
+.lead{font-size:clamp(1.08rem,1.35vw,1.24rem);line-height:1.58;color:var(--ink-soft);max-width:31rem;font-weight:400}
+
+/* Eyebrows / kickers — airier tracking */
+.eyebrow{font-size:.76rem;letter-spacing:.24em;font-weight:600}
+
+/* Section headings + supporting copy */
+.section-head h2{font-size:clamp(2rem,4.3vw,3rem);line-height:1.05;letter-spacing:-.03em;font-weight:800}
+.section-head p{font-size:1.09rem;line-height:1.7;color:var(--ink-soft);max-width:46ch;margin-left:auto;margin-right:auto}
+.section-head.left p,.section-head.left{margin-left:0}
+
+/* Sub-page hero */
+.page-hero h1{font-size:clamp(2.3rem,5.6vw,3.7rem);line-height:1.03;letter-spacing:-.035em;font-weight:800}
+.page-hero p{font-size:1.13rem;line-height:1.64;max-width:40rem}
+
+/* Feature blocks */
+.feature-copy h2{font-size:clamp(1.75rem,3.3vw,2.5rem);line-height:1.06;letter-spacing:-.025em;font-weight:800}
+.feature-copy>p{font-size:1.06rem;line-height:1.7;max-width:34rem}
+.feature-copy ul li{line-height:1.55}
+
+/* Cards */
+.svc-card h3,.guard-card h3{font-size:1.36rem;letter-spacing:-.018em;font-weight:700}
+.svc-card p,.guard-card .gd{line-height:1.68}
+.svc-card ul li{line-height:1.5}
+
+/* Numbers — tabular, tight, confident */
+.ht b,.stat b,.rating-big .num,.guard-life{font-variant-numeric:tabular-nums;letter-spacing:-.025em}
+.stat b{font-weight:800}
+.ht b{font-weight:700}
+.rating-big .num{font-weight:800}
+
+/* Buttons + nav */
+.btn{font-weight:600;letter-spacing:.005em}
+.nav-logo{letter-spacing:-.015em}
+.nav-links a{letter-spacing:.004em}
+
+/* Reviews */
+.rev-card p{font-size:1.03rem;line-height:1.62}
+.rev-who b{letter-spacing:-.005em}
+
+/* FAQ */
+.faq-q{font-size:1.09rem;font-weight:600;letter-spacing:-.008em}
+.faq-a p{line-height:1.68}
+
+/* Form labels — small-caps style for a refined feel */
+.fld label{font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* Footer headings — tracked uppercase */
+.foot-col h4{font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.foot-col p{line-height:1.72}
+
+/* Badges / chips */
+.gal-badge,.guard-tag,.wv-badge{letter-spacing:.01em}
+.area-chip{letter-spacing:.005em}
