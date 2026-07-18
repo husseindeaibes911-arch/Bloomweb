@@ -656,3 +656,45 @@ html{scroll-padding-top:130px}
   body.has-topbar .nav{top:34px}
   .topbar{min-height:34px}
 }
+
+/* =========================================================
+   TYPE ROLES — distinct font/size/weight per element type
+   ========================================================= */
+/* Big section moments → characterful display font */
+.hero h1,.page-hero h1,.section-head h2,.feature-copy h2,.banner h2,.cta-box h2{font-family:var(--font-d)}
+
+/* Card / tile TITLES → Inter, heavy & tight (different from section headings) */
+.svc-card h3,.adv-card h4,.guard-card h3,.step h4,.info-card h4{
+  font-family:var(--font);font-weight:800;letter-spacing:-.015em;color:var(--ink)}
+.svc-card h3{font-size:1.32rem}
+.adv-card h4{font-size:1.14rem}
+.guard-card h3{font-size:1.34rem}
+.step h4{font-size:1.08rem;font-weight:700}
+
+/* DESCRIPTIONS → Inter, regular weight, muted, roomy line-height */
+.svc-card p,.adv-card p,.guard-card .gd,.step p,.rev-card p,.faq-a p,.feature-copy>p,.section-head p,.lead{
+  font-family:var(--font);font-weight:400;line-height:1.72;color:var(--ink-soft)}
+.svc-card p,.adv-card p,.guard-card .gd,.step p{font-size:.97rem;color:var(--muted)}
+
+/* Feature bullet lists → medium weight, distinct */
+.svc-card ul li,.feature-copy ul li{font-family:var(--font);font-weight:500;font-size:.96rem;color:var(--ink-soft)}
+
+/* Small UPPERCASE labels → tracked, tiny, accent (eyebrows, form labels, footer heads) */
+.eyebrow{font-family:var(--font-d);font-weight:600;font-size:.76rem;letter-spacing:.22em}
+.fld label,.foot-col h4{font-family:var(--font);text-transform:uppercase;letter-spacing:.1em}
+.fld label{font-size:.74rem;font-weight:600}
+.foot-col h4{font-size:.8rem;font-weight:700}
+
+/* Numbers / stats → display, tabular, tight */
+.ht b,.stat b,.rating-big .num,.trustbar b,.guard-life{font-family:var(--font-d);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+
+/* Card meta (names, tiers) → small caps-ish */
+.rev-who b{font-family:var(--font);font-weight:700;font-size:.98rem}
+.rev-who span{font-size:.82rem;color:var(--muted)}
+.guard-tier{font-family:var(--font);text-transform:uppercase;letter-spacing:.09em;font-weight:600;font-size:.76rem}
+
+/* Buttons → Inter semibold */
+.btn{font-family:var(--font);font-weight:600}
+
+/* FAQ question → display, medium */
+.faq-q{font-family:var(--font-d);font-weight:600;font-size:1.08rem}

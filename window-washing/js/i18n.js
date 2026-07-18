@@ -8,7 +8,23 @@
     var EN = {
         /* nav */
         'nav.home':'Home','nav.services':'Services','nav.gallery':'Our Work',
-        'nav.reviews':'Reviews','nav.contact':'Quote','nav.cta':'Free Quote',
+        'nav.reviews':'Reviews','nav.contact':'Quote','nav.cta':'Free Quote','nav.about':'About',
+
+        /* about page */
+        'ab.crumb':'— About —','ab.h1':'Who we <span class="gtext">are</span>',
+        'ab.sub':'A local Montreal crew, meticulous and passionate about work done right — and about a cleaner, greener way to clean your home.',
+        'ab.story.eyebrow':'— Our story —','ab.story.h2':'Built on <span class="gtext">attention to detail</span>',
+        'ab.story.p1':'HD Ultra Exterior started with a simple idea: exterior cleaning should be done thoroughly, tidily, and with real pride in the result. Too many homeowners were used to streaky windows and crews that left a mess behind.',
+        'ab.story.p2':'So we invested in a proper pure filtered-water system and we clean gutters by hand — scooping and bagging every bit of debris. More than 500 Montreal homes later, that care is still what sets us apart.',
+        'ab.green.eyebrow':'— Our green commitment —','ab.green.h2':'We keep it <span class="gtext">eco-friendly</span>',
+        'ab.green.sub':'Our method is better for your home — and for the planet. We rely on pure water instead of chemicals.',
+        'ab.g1.t':'Pure water, zero chemicals','ab.g1.p':'We wash with pure filtered water — no soap or detergent running off onto your plants, your lawn or into the storm drains.',
+        'ab.g2.t':'Safe for family &amp; pets','ab.g2.p':'No toxic residue on your sills or frames — better for your kids, your pets and your garden.',
+        'ab.g3.t':'We bag it, we don\'t blow it','ab.g3.p':'Gutter debris is scooped and bagged — never blown into the bushes or waterways. Your property stays clean.',
+        'ab.g4.t':'Less waste','ab.g4.p':'Efficient filtration and careful work: we use what\'s needed, without over-using water or products.',
+        'ab.val.eyebrow':'— Our values —','ab.val.h2':'What matters to us',
+        'ab.val.local.n':'Local','ab.val.local.l':'Proudly from Montreal',
+        'ab.cta.h2':'A local crew you can <span class="gtext">trust</span>','ab.cta.p':'Ready to see the difference? Request your free quote today.',
 
         /* hero */
         'hero.eyebrow':'Montreal &amp; surrounding areas · Residential',
@@ -137,7 +153,7 @@
     var topbar = document.createElement('div');
     topbar.className = 'topbar';
     topbar.innerHTML =
-      '<span class="ti"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2.1z"/></svg><a href="tel:+15149499111">514-949-9111</a></span>' +
+      '<span class="ti"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2.1z"/></svg><a href="tel:+14388748757">(438) 874-8757</a></span>' +
       '<span class="dot-sep ti-hide">·</span>' +
       '<span class="ti ti-hide"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="top.hours">Lun–Sam · 8h à 18h</span></span>' +
       '<span class="dot-sep ti-hide">·</span>' +
