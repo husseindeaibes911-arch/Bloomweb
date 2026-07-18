@@ -30,11 +30,9 @@
 </nav>
 
 <!-- ============ HERO ============ -->
-<header class="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
-  </div>
-  <div class="hero-spotlight" aria-hidden="true"></div>
+<header class="hero hero-full">
+  <div class="hero-photo" aria-hidden="true" style="background-image:url('assets/job-house-pool.jpg')"></div>
+  <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-copy">
       <span class="hero-eyebrow"><span class="pulse"></span><span class="eyebrow" data-i18n="hero.eyebrow">Montréal &amp; environs · Résidentiel</span></span>
@@ -55,23 +53,24 @@
         <div class="ht"><b data-i18n="hero.t3.n">Eau pure</b><span data-i18n="hero.t3.l">Système de filtration</span></div>
       </div>
     </div>
-
-    <div class="glass-stage">
-      <div class="glass-card reveal">
-        <img class="glass-photo" src="assets/job-house-pool.jpg" alt="Maison résidentielle aux fenêtres impeccables, nettoyées par HD Ultra Exterior">
-        <div class="glass-reflect" aria-hidden="true"></div>
-        <div class="glass-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 7.7 8 10 4.6-2.3 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <div>
-            <div class="gb-t" data-i18n="glass.badge.t">Fini sans traces</div>
-            <div class="gb-s" data-i18n="glass.badge.s">Rinçage à l'eau filtrée pure</div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
   <div class="scroll-cue" aria-hidden="true"><span class="mouse"></span><span data-i18n="hero.scroll">Défiler</span></div>
 </header>
+
+<!-- ============ TRUST BAR ============ -->
+<div class="trust-wrap">
+  <div class="wrap">
+    <div class="trustbar reveal">
+      <div class="tb"><span class="stars">★★★★★</span> <b>5.0</b> <span data-i18n="tb.rating">clients satisfaits</span></div>
+      <div class="trustbar-sep"></div>
+      <div class="tb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 7.7 8 10 4.6-2.3 8-5 8-10V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg> <b>500+</b> <span data-i18n="tb.homes">maisons nettoyées</span></div>
+      <div class="trustbar-sep"></div>
+      <div class="tb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <span data-i18n="tb.insured">Entièrement assuré</span></div>
+      <div class="trustbar-sep"></div>
+      <div class="tb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 2 4 5v6c0 5 3.4 7.7 8 10 4.6-2.3 8-5 8-10V5z"/></svg> <span data-i18n="tb.local">Local · Montréal</span></div>
+    </div>
+  </div>
+</div>
 
 <!-- ============ SERVICES TRIO ============ -->
 <section id="services">
@@ -83,6 +82,7 @@
     </div>
     <div class="svc-grid reveal-stagger">
       <article class="svc-card">
+        <div class="svc-photo" style="background-image:url('assets/job-window-action.jpg')"></div>
         <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/><path d="m15 8 1.5-1.5M16 11l2.5-2.5" stroke-linecap="round"/></svg></div>
         <h3 data-i18n="svc.w.name">Lavage de vitres</h3>
         <p data-i18n="svc.w.desc">Perche télescopique à eau pure et brosse douce : on décolle la saleté incrustée, puis on rince à l'eau filtrée. Les vitres sèchent seules, éclatantes et sans une seule trace.</p>
@@ -94,6 +94,7 @@
         <a href="services.html#windows" class="svc-link"><span data-i18n="svc.link">En savoir plus</span><span class="arr">→</span></a>
       </article>
       <article class="svc-card">
+        <div class="svc-photo" style="background-image:url('assets/photo-gutters.jpg')"></div>
         <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h18l-1 5a3 3 0 0 1-3 2.5H7A3 3 0 0 1 4 12L3 7Z"/><path d="M3 7 4 4h16l1 3" stroke-linecap="round"/><path d="M9 17v2M15 17v3" stroke-linecap="round"/></svg></div>
         <h3 data-i18n="svc.g.name">Nettoyage de gouttières</h3>
         <p data-i18n="svc.g.desc">On vide les gouttières à la main, on ensache les débris, on vérifie chaque descente et on rince. L'eau recommence à couler comme il faut — sans dégât sur votre terrain.</p>
@@ -105,6 +106,7 @@
         <a href="services.html#gutters" class="svc-link"><span data-i18n="svc.link">En savoir plus</span><span class="arr">→</span></a>
       </article>
       <article class="svc-card">
+        <div class="svc-photo" style="background-image:url('assets/job-guard-closeup.jpg')"></div>
         <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 8h18l-1.5 4H4.5L3 8Z"/><path d="M5 12v6M19 12v6M5 18h14" stroke-linecap="round"/><path d="M4 8 7 4M9 8l2-4M14 8l2-4M19 8l1-3" stroke-linecap="round"/></svg></div>
         <h3 data-i18n="svc.p.name">Protège-gouttières</h3>
         <p data-i18n="svc.p.desc">Protège-gouttières de qualité, installés avec précision, pour bloquer feuilles et débris. Beaucoup moins d'entretien et aucun blocage l'hiver.</p>
@@ -115,6 +117,43 @@
         </ul>
         <a href="services.html#guard-options" class="svc-link"><span data-i18n="svc.link">En savoir plus</span><span class="arr">→</span></a>
       </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ADVANTAGES ============ -->
+<section id="advantages">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="adv.eyebrow">— Nos avantages —</span>
+      <h2 data-i18n="adv.title">Pourquoi les gens choisissent <span class="gtext">HD Ultra</span></h2>
+      <p data-i18n="adv.sub">Du travail soigné, une équipe locale et une garantie de satisfaction — voilà ce qui nous distingue.</p>
+    </div>
+    <div class="adv-grid reveal-stagger">
+      <div class="adv-card">
+        <div class="adv-ico"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 7.7 8 10 4.6-2.3 8-5 8-10V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><h4 data-i18n="adv1.t">Entièrement assuré</h4><p data-i18n="adv1.p">Une équipe assurée et professionnelle en qui vous pouvez avoir confiance, du début à la fin.</p></div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico"><svg viewBox="0 0 24 24"><path d="M12 2.7s6.5 6.8 6.5 11.3a6.5 6.5 0 0 1-13 0C5.5 9.5 12 2.7 12 2.7z"/></svg></div>
+        <div><h4 data-i18n="adv2.t">Eau pure filtrée</h4><p data-i18n="adv2.p">Notre système de filtration donne des vitres éclatantes qui sèchent sans une seule trace.</p></div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico"><svg viewBox="0 0 24 24"><path d="M4 20s1-4 4-4 4-4 4-4"/><path d="M15 4l5 5-9 9H6v-5z"/><path d="M14 5l5 5"/></svg></div>
+        <div><h4 data-i18n="adv3.t">Aucun dégât laissé</h4><p data-i18n="adv3.p">On ensache tous les débris et on laisse votre terrain aussi propre qu'on l'a trouvé.</p></div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <div><h4 data-i18n="adv4.t">Équipe locale de Montréal</h4><p data-i18n="adv4.p">On connaît nos maisons et notre climat, et on se présente à l'heure, comme promis.</p></div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.3 2.3L16 9"/></svg></div>
+        <div><h4 data-i18n="adv5.t">Satisfaction garantie</h4><p data-i18n="adv5.p">Pas satisfait ? On revient corriger le tir, sans frais. C'est notre garantie.</p></div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-ico"><svg viewBox="0 0 24 24"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg></div>
+        <div><h4 data-i18n="adv6.t">Soumission gratuite</h4><p data-i18n="adv6.p">Un prix clair et sans surprise, sans engagement. Demandez votre soumission en quelques secondes.</p></div>
+      </div>
     </div>
   </div>
 </section>

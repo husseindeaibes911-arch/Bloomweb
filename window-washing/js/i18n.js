@@ -15,6 +15,19 @@
         'hero.line1':'Ultra-clear','hero.line2':'windows.',
         'hero.lead':'Pure-water window washing, gutter cleaning and gutter guards. 100% filtered water, a streak-free finish and zero mess left behind — careful work, guaranteed.',
         'wv.badge':'Streak-free',
+
+        /* trust bar */
+        'tb.rating':'happy clients','tb.homes':'homes cleaned','tb.insured':'Fully insured','tb.local':'Local · Montreal',
+
+        /* advantages */
+        'adv.eyebrow':'— Our advantages —','adv.title':'Why people choose <span class="gtext">HD Ultra</span>',
+        'adv.sub':'Careful work, a local crew and a satisfaction guarantee — that\'s what sets us apart.',
+        'adv1.t':'Fully insured','adv1.p':'An insured, professional crew you can trust from start to finish.',
+        'adv2.t':'Pure filtered water','adv2.p':'Our filtration system leaves brilliant glass that dries without a single streak.',
+        'adv3.t':'No mess left behind','adv3.p':'We bag every bit of debris and leave your property as clean as we found it.',
+        'adv4.t':'Local Montreal crew','adv4.p':'We know our homes and our weather, and we show up on time, as promised.',
+        'adv5.t':'Satisfaction guaranteed','adv5.p':'Not happy? We come back and make it right, free of charge. That\'s our guarantee.',
+        'adv6.t':'Free quotes','adv6.p':'A clear, no-surprise price with no obligation. Request your quote in seconds.',
         'hero.cta1':'Get a quote','hero.cta2':'Our services',
         'hero.t1.n':'500+','hero.t1.l':'Homes cleaned',
         'hero.t2.n':'100%','hero.t2.l':'Streak-free',
