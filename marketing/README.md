@@ -15,6 +15,6 @@ Print-ready door hanger to hand out door-to-door for new clients.
 - Ask the printer for **14–16pt cardstock**, gloss or matte, full-colour both sides.
 
 ## ⚠️ Before printing — things to confirm / edit
-- **Promo offer:** it currently says *"15 % de rabais sur votre 1re visite."* Keep, change the %, or remove it — your call.
-- **Website:** shows `hdultraexterior.ca` (a suggested domain you don't own yet). The **QR code works now** (it points to your live site). If you get a custom domain, tell me and I'll regenerate the QR + printed URL.
+- **Promo offer:** it currently says *"25 $ de rabais sur votre 1re visite."* Keep, change the amount, or remove it — your call.
+- **Website:** shows `hdultraexterior.com (QR now points here)` (a suggested domain you don't own yet). The **QR code works now** (it points to your live site). If you get a custom domain, tell me and I'll regenerate the QR + printed URL.
 - Phone `(438) 874-8757` and email are already your real ones.
