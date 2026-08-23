@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HD Ultra Exterior">
+  <defs>
+    <linearGradient id="hd" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a78bfa"/>
+      <stop offset="0.55" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#6d28d9"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#hd)"/>
+  <!-- water droplet -->
+  <path d="M32 15c0 0 11 12 11 20a11 11 0 0 1-22 0c0-8 11-20 11-20z" fill="#fff" fill-opacity="0.95"/>
+  <!-- shine on droplet -->
+  <path d="M28 36a4.5 4.5 0 0 0 4.5 4.5" stroke="#8b5cf6" stroke-width="2.4" stroke-linecap="round" fill="none" opacity="0.55"/>
+</svg>
